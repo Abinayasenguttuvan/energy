@@ -7,1621 +7,1542 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>User Dashboard</title>
+<title>Dashboard</title>
 
 <link rel="stylesheet"
-href="css/dashboard.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 
 </head>
 
 <body>
 
-<div class="re-dashboard">
+<!-- Overlay -->
 
-    <!--======================
-        Sidebar
-    =======================-->
+<div class="overlay"></div>
 
-    <aside class="re-sidebar" id="reSidebar">
+<!-- Sidebar -->
 
-        <div class="re-sidebar-logo">
+<aside class="sidebar">
 
-            <a href="index.html">
+<div class="sidebar-header">
 
-                <img src="white.webp"
-                alt="Logo">
+<a href="index.html" class="logo">
 
-            </a>
+<img src="white.webp" alt="Logo">
+
+</a>
+
+<button class="close-sidebar">
+
+<i class="fas fa-times"></i>
+
+</button>
+
+</div>
+
+<ul>
+
+    <li>
+        <a href="./user-dashboard.html" >
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="./energy dash.html">
+            <i class="fas fa-user"></i>
+            <span>Energy Management</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="./project.html" class="active">
+            <i class="fas fa-folder"></i>
+            <span>Projects</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="./report.html">
+            <i class="fas fa-chart-line"></i>
+            <span>Reports</span>
+        </a>
+    </li>
+
+
+    <li>
+        <a href="./billing.html">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <span>Billing </span>
+        </a>
+    </li>
+
+
+    <li>
+        <a href="./notification.html">
+            <i class="fa-solid fa-gear"></i>
+            <span>notification</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="./index.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    </li>
+
+</ul>
+
+
+
+
+</aside>
+
+<!-- Main -->
+
+<div class="main">
+
+<!-- Top Bar -->
+
+<header class="topbar">
+
+<div class="top-left">
+
+<button class="menu-btn">
+
+<i class="fas fa-bars"></i>
+
+</button>
+
+<h2>
+
+Welcome,
+
+<span id="userName">
+
+User
+
+</span>
+
+</h2>
+
+</div>
+
+<div class="top-right">
+
+<i class="fas fa-envelope"></i>
+
+<span id="userEmail">
+
+user@gmail.com
+
+</span>
+
+</div>
+
+</header>
+
+<div class="content">
+
+
+
+<p>
+
+<!-- =====================================
+PROJECT DASHBOARD
+===================================== -->
+
+<section class="project-dashboard">
+
+    <div class="project-heading">
+
+        <h2>📁 My Energy Projects</h2>
+
+        <p>
+            Track the progress of your renewable energy projects.
+        </p>
+
+    </div>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <div class="project-icon">
+                ☀
+            </div>
+
+            <h3>Solar Rooftop</h3>
+
+            <p>
+                Residential solar panel installation for clean energy production.
+            </p>
+
+            <span class="project-status completed">
+                Completed
+            </span>
 
         </div>
 
-        <ul class="re-menu">
+        <div class="project-card">
 
-            <li >
-
-                <a href="./user-dashboard.html">
-
-                    <i class="fa-solid fa-house"></i>
-
-                    Dashboard
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./myprofile.html">
-
-                    <i class="fa-solid fa-user"></i>
-
-                    My Profile
-
-                </a>
-
-            </li>
-
-            <li class="active">
-
-                <a href="./project.html">
-
-                    <i class="fa-solid fa-solar-panel"></i>
-
-                    My Projects
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./energy.html">
-
-                    <i class="fa-solid fa-bolt"></i>
-
-                    Energy Usage
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./billing.html">
-
-                    <i class="fa-solid fa-file-invoice-dollar"></i>
-
-                    Billing
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./support.html">
-
-                    <i class="fa-solid fa-headset"></i>
-
-                    Support
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./settings.html">
-
-                    <i class="fa-solid fa-gear"></i>
-
-                    Settings
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./login.html">
-
-                    <i class="fa-solid fa-right-from-bracket"></i>
-
-                    Logout
-
-                </a>
-
-            </li>
-        </ul>
-
-    </aside>
-
-    <!--=====================
-        Main Area
-    =====================-->
-
-    <main class="re-main">
-
-        <!--==================
-            Topbar
-        ===================-->
-
-        <header class="re-topbar">
-
-            <div class="re-top-left">
-
-                <button id="menuBtn">
-
-                    <i class="fa-solid fa-bars"></i>
-
-                </button>
-
-                
-
+            <div class="project-icon">
+                🌬
             </div>
 
-            <div class="re-top-right">
+            <h3>Wind Energy</h3>
 
-                <div class="re-user-email">
+            <p>
+                Small wind turbine supplying renewable electricity.
+            </p>
 
-                    <i class="fa-solid fa-envelope"></i>
+            <span class="project-status progress">
+                In Progress
+            </span>
 
-                    <span id="dashboardEmail"></span>
-                </div>
+        </div>
 
+        <div class="project-card">
+
+            <div class="project-icon">
+                🔋
             </div>
 
-        </header>
+            <h3>Battery Storage</h3>
 
-        <!-- Dashboard content starts here -->
+            <p>
+                Smart battery system for storing excess solar energy.
+            </p>
 
-        <section class="re-dashboard-content">
+            <span class="project-status active">
+                Active
+            </span>
 
-            <section class="project-header">
+        </div>
 
+        <div class="project-card">
 
-                <div>
-                
-                <h1>
-                Renewable Energy Projects
-                </h1>
-                
-                <p>
-                Track and manage your clean energy projects efficiently.
-                </p>
-                
-                </div>
-                
-                
-                <div class="project-status">
-                
-                <i class="fa-solid fa-circle-check"></i>
-                
-                Active Projects
-                
-                </div>
-                
-                
-                </section>
-                
-                
-                
-                
-                
-                
-                
-                <!-- Project Statistics -->
-                
-                
-                <section class="project-stats">
-                
-                
-                <div class="project-card">
-                
-                <i class="fa-solid fa-solar-panel"></i>
-                
-                <h3>
-                Solar Projects
-                </h3>
-                
-                <h2>
-                12
-                </h2>
-                
-                <span>
-                Completed & Active
-                </span>
-                
-                </div>
-                
-                
-                
-                
-                <div class="project-card">
-                
-                <i class="fa-solid fa-wind"></i>
-                
-                <h3>
-                Wind Projects
-                </h3>
-                
-                <h2>
-                8
-                </h2>
-                
-                <span>
-                Running Projects
-                </span>
-                
-                </div>
-                
-                
-                
-                
-                <div class="project-card">
-                
-                <i class="fa-solid fa-water"></i>
-                
-                <h3>
-                Hydro Projects
-                </h3>
-                
-                <h2>
-                5
-                </h2>
-                
-                <span>
-                Energy Plants
-                </span>
-                
-                </div>
-                
-                
-                
-                
-                <div class="project-card">
-                
-                <i class="fa-solid fa-bolt"></i>
-                
-                <h3>
-                Total Capacity
-                </h3>
-                
-                <h2>
-                250 MW
-                </h2>
-                
-                <span>
-                Generated Power
-                </span>
-                
-                </div>
-                
-                
-                </section>
-                
-                
-                
-                
-                
-                
-                
-                
-                <!-- Current Projects -->
-                
-                
-                <section class="projects-section">
-                
-                
-                <h2>
-                Current Projects
-                </h2>
-                
-                
-                
-                <div class="projects-grid">
-                
-                
-                
-                <div class="project-box">
-                
-                
-                <div class="project-icon">
-                <i class="fa-solid fa-solar-panel"></i>
-                </div>
-                
-                
-                <h3>
-                Solar Farm Installation
-                </h3>
-                
-                
-                <p>
-                Large scale solar panel installation project.
-                </p>
-                
-                
-                <div class="progress">
-                
-                <div class="progress-fill solar"></div>
-                
-                </div>
-                
-                
-                <span>
-                75% Completed
-                </span>
-                
-                
-                </div>
-                
-                
-                
-                
-                
-                <div class="project-box">
-                
-                
-                <div class="project-icon">
-                <i class="fa-solid fa-wind"></i>
-                </div>
-                
-                
-                <h3>
-                Wind Energy Project
-                </h3>
-                
-                
-                <p>
-                Wind turbine setup and energy production.
-                </p>
-                
-                
-                <div class="progress">
-                
-                <div class="progress-fill wind"></div>
-                
-                </div>
-                
-                
-                <span>
-                60% Completed
-                </span>
-                
-                
-                </div>
-                
-                
-                
-                
-                
-                
-                <div class="project-box">
-                
-                
-                <div class="project-icon">
-                <i class="fa-solid fa-water"></i>
-                </div>
-                
-                
-                <h3>
-                Hydro Power Plant
-                </h3>
-                
-                
-                <p>
-                Renewable water energy generation project.
-                </p>
-                
-                
-                <div class="progress">
-                
-                <div class="progress-fill hydro"></div>
-                
-                </div>
-                
-                
-                <span>
-                90% Completed
-                </span>
-                
-                
-                </div>
-                
-                
-                
-                
-                </div>
-                
-                
-                </section>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <!-- Project Updates -->
-                
-                
-                <section class="updates-section">
-                
-                
-                <h2>
-                Recent Updates
-                </h2>
-                
-                
-                <div class="update-list">
-                
-                
-                <div class="update-item">
-                
-                <i class="fa-solid fa-check"></i>
-                
-                <span>
-                Solar panel installation completed
-                </span>
-                
-                <b>
-                Today
-                </b>
-                
-                </div>
-                
-                
-                
-                <div class="update-item">
-                
-                <i class="fa-solid fa-gears"></i>
-                
-                <span>
-                Wind turbine maintenance scheduled
-                </span>
-                
-                <b>
-                Yesterday
-                </b>
-                
-                </div>
-                
-                
-                
-                <div class="update-item">
-                
-                <i class="fa-solid fa-leaf"></i>
-                
-                <span>
-                Carbon reduction target achieved
-                </span>
-                
-                <b>
-                2 Days Ago
-                </b>
-                
-                </div>
-                
-                
-                
-                </div>
-                
-                
-                </section>
-                
-                <style>
-                    *{
+            <div class="project-icon">
+                ⚡
+            </div>
 
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:"Poppins",sans-serif;
+            <h3>EV Charging</h3>
 
-}
+            <p>
+                Green energy powered charging station for electric vehicles.
+            </p>
 
+            <span class="project-status planning">
+                Planning
+            </span>
 
-body{
+        </div>
 
-background:#f2faf4;
-color:#21452d;
-padding:40px;
+    </div>
 
-}
+</section>
 
-
+<style>
+    /*===================================
+PROJECT DASHBOARD
+===================================*/
 
 .project-dashboard{
 
-max-width:1200px;
-margin:auto;
+padding:40px 25px;
 
 }
 
+.project-heading{
 
+text-align:center;
 
-
-
-/* ==========================
-Project Header
-========================== */
-
-
-.project-header{
-
-background:white;
-padding:35px;
-border-radius:25px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-margin-bottom:30px;
-
-}
-
-
-
-.project-header h1{
-
-color:#145c2d;
-font-size:32px;
-
-}
-
-
-
-.project-header p{
-
-color:#6b806f;
-margin-top:10px;
-
-}
-
-
-
-.project-status{
-
-background:#e5f8ea;
-color:#168039;
-padding:14px 25px;
-border-radius:30px;
-display:flex;
-align-items:center;
-gap:10px;
-font-weight:600;
-
-}
-
-
-
-
-
-
-/* ==========================
-Project Stats
-========================== */
-
-
-.project-stats{
-
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
 margin-bottom:35px;
 
 }
 
+.project-heading h2{
 
+font-size:32px;
 
-.project-card{
+color:#18b857;
 
-background:white;
-padding:30px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.07);
-transition:.3s;
+margin-bottom:10px;
 
 }
 
+.project-heading p{
 
+color:#666;
+
+}
+
+/*===================================
+PROJECT GRID
+===================================*/
+
+.project-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+align-items:stretch;
+
+}
+
+/*===================================
+PROJECT CARD
+===================================*/
+
+.project-card{
+
+background:#111;
+
+color:#fff;
+
+padding:25px;
+
+border-radius:18px;
+
+text-align:center;
+
+border-top:5px solid #18b857;
+
+transition:.3s;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:space-between;
+
+min-height:340px;
+
+}
 
 .project-card:hover{
 
 transform:translateY(-8px);
 
-}
-
-
-
-.project-card i{
-
-width:65px;
-height:65px;
-display:flex;
-justify-content:center;
-align-items:center;
-margin:auto;
-background:#e1f5e7;
-color:#168039;
-border-radius:50%;
-font-size:28px;
+box-shadow:0 15px 30px rgba(24,184,87,.25);
 
 }
-
-
-
-.project-card h3{
-
-margin:18px 0 10px;
-font-size:17px;
-
-}
-
-
-
-.project-card h2{
-
-color:#168039;
-font-size:30px;
-
-}
-
-
-
-.project-card span{
-
-font-size:14px;
-color:#777;
-
-}
-
-
-
-
-
-
-/* ==========================
-Sections
-========================== */
-
-
-.projects-section,
-.updates-section{
-
-background:white;
-padding:30px;
-border-radius:25px;
-margin-bottom:30px;
-box-shadow:0 10px 25px rgba(0,0,0,.07);
-
-}
-
-
-
-.projects-section h2,
-.updates-section h2{
-
-color:#145c2d;
-margin-bottom:25px;
-
-}
-
-
-
-
-
-
-/* ==========================
-Project Cards
-========================== */
-
-
-.projects-grid{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-
-}
-
-
-
-.project-box{
-
-background:#f7fcf8;
-padding:25px;
-border-radius:20px;
-
-}
-
-
 
 .project-icon{
 
-width:55px;
-height:55px;
-background:#dff5e5;
-color:#168039;
+width:70px;
+
+height:70px;
+
+margin:0 auto 18px;
+
 border-radius:50%;
+
+background:#18b857;
+
 display:flex;
+
+align-items:center;
+
 justify-content:center;
-align-items:center;
-font-size:23px;
-margin-bottom:20px;
+
+font-size:34px;
 
 }
 
+.project-card h3{
 
-
-.project-box h3{
-
-color:#145c2d;
-margin-bottom:10px;
+margin-bottom:15px;
 
 }
 
+.project-card p{
 
+font-size:15px;
 
-.project-box p{
+line-height:1.7;
 
-color:#667;
-font-size:14px;
-margin-bottom:20px;
+color:#ddd;
 
-}
-
-
-
-
-
-/* Progress Bar */
-
-
-.progress{
-
-height:12px;
-background:#dfece2;
-border-radius:20px;
-overflow:hidden;
-margin-bottom:10px;
-
-}
-
-
-
-.progress-fill{
-
-height:100%;
-border-radius:20px;
-
-}
-
-
-
-.solar{
-
-width:75%;
-background:#2ecc71;
-
-}
-
-
-
-.wind{
-
-width:60%;
-background:#27ae60;
-
-}
-
-
-
-.hydro{
-
-width:90%;
-background:#16a085;
-
-}
-
-
-
-.project-box span{
-
-font-size:14px;
-color:#168039;
-font-weight:600;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-Updates
-========================== */
-
-
-.update-list{
-
-display:flex;
-flex-direction:column;
-gap:15px;
-
-}
-
-
-
-.update-item{
-
-background:#f7fcf8;
-padding:18px;
-border-radius:15px;
-display:flex;
-align-items:center;
-gap:15px;
-
-}
-
-
-
-.update-item i{
-
-width:35px;
-height:35px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#dff5e5;
-color:#168039;
-
-}
-
-
-
-.update-item span{
+margin-bottom:25px;
 
 flex:1;
 
 }
 
+/*===================================
+STATUS BUTTON
+===================================*/
 
+.project-status{
 
-.update-item b{
+display:flex;
 
-color:#145c2d;
-font-size:14px;
+align-items:center;
+
+justify-content:center;
+
+width:170px;
+
+height:45px;
+
+margin:0 auto;
+
+border-radius:30px;
+
+font-size:15px;
+
+font-weight:600;
+
+text-align:center;
 
 }
 
+/* Status Colors */
 
+.completed{
 
+background:#22c55e;
 
+color:#fff;
 
+}
 
-/* ==========================
-Laptop
-========================== */
+.progress{
 
+background:#f59e0b;
 
-@media(max-width:1200px){
+color:#fff;
 
+}
 
-.project-stats{
+.active{
+
+background:#3b82f6;
+
+color:#fff;
+
+}
+
+.planning{
+
+background:#6b7280;
+
+color:#fff;
+
+}
+//* Tablet */
+
+@media(max-width:992px){
+
+.project-grid{
 
 grid-template-columns:repeat(2,1fr);
 
 }
 
+.project-card{
 
-
-.projects-grid{
-
-grid-template-columns:repeat(2,1fr);
+min-height:330px;
 
 }
 
-
 }
 
-
-
-
-
-/* ==========================
-Tablet
-========================== */
-
+/* Mobile */
 
 @media(max-width:768px){
 
-
-body{
-
-padding:20px;
-
-}
-
-
-
-.project-header{
-
-flex-direction:column;
-align-items:flex-start;
-
-}
-
-
-
-.project-header h1{
-
-font-size:26px;
-
-}
-
-
-
-.project-stats{
+.project-grid{
 
 grid-template-columns:1fr;
 
 }
 
+.project-card{
+
+min-height:auto;
+
+}
+
+.project-status{
+
+width:100%;
+
+max-width:220px;
+
+}
 
 
-.projects-grid{
+}
+</style>
+
+<section class="goal-section">
+
+    <h2>🎯 Energy Goals</h2>
+
+    <div class="goal-grid">
+
+        <div class="goal-card">
+            <h3>Monthly Target</h3>
+            <h1>80%</h1>
+            <progress value="80" max="100"></progress>
+        </div>
+
+        <div class="goal-card">
+            <h3>Solar Usage</h3>
+            <h1>92%</h1>
+            <progress value="92" max="100"></progress>
+        </div>
+
+        <div class="goal-card">
+            <h3>Battery Efficiency</h3>
+            <h1>89%</h1>
+            <progress value="89" max="100"></progress>
+        </div>
+
+        <div class="goal-card">
+            <h3>Carbon Reduction</h3>
+            <h1>75%</h1>
+            <progress value="75" max="100"></progress>
+        </div>
+
+    </div>
+
+</section>
+<section class="notification-section">
+
+    <h2>🔔 Recent Notifications</h2>
+    
+    <div class="notification-card">
+    
+    <p>☀ Solar panels generated 245 kWh today.</p>
+    
+    <span>5 Minutes Ago</span>
+    
+    </div>
+    
+    <div class="notification-card">
+    
+    <p>🔋 Battery fully charged successfully.</p>
+    
+    <span>20 Minutes Ago</span>
+    
+    </div>
+    
+    <div class="notification-card">
+    
+    <p>🌿 You saved ₹580 today.</p>
+    
+    <span>Today</span>
+    
+    </div>
+    
+    </section>
+
+    <section class="impact-section">
+
+        <h2>🌍 Environmental Impact</h2>
+        
+        <div class="impact-grid">
+        
+        <div class="impact-card">
+        
+        <h1>18 Kg</h1>
+        
+        <p>CO₂ Reduced</p>
+        
+        </div>
+        
+        <div class="impact-card">
+        
+        <h1>120</h1>
+        
+        <p>Trees Equivalent</p>
+        
+        </div>
+        
+        <div class="impact-card">
+        
+        <h1>2,450</h1>
+        
+        <p>Green Points</p>
+        
+        </div>
+        
+        <div class="impact-card">
+        
+        <h1>98%</h1>
+        
+        <p>Clean Energy Usage</p>
+        
+        </div>
+        
+        </div>
+        
+        </section>
+        <section class="impact-section">
+
+            <h2>🌍 Environmental Impact</h2>
+            
+            <div class="impact-grid">
+            
+            <div class="impact-card">
+            
+            <h1>18 Kg</h1>
+            
+            <p>CO₂ Reduced</p>
+            
+            </div>
+            
+            <div class="impact-card">
+            
+            <h1>120</h1>
+            
+            <p>Trees Equivalent</p>
+            
+            </div>
+            
+            <div class="impact-card">
+            
+            <h1>2,450</h1>
+            
+            <p>Green Points</p>
+            
+            </div>
+            
+            <div class="impact-card">
+            
+            <h1>98%</h1>
+            
+            <p>Clean Energy Usage</p>
+            
+            </div>
+            
+            </div>
+            
+            </section>
+            <section class="service-section">
+
+                <h2>⚡ Quick Services</h2>
+                
+                <div class="service-grid">
+                
+                <a href="404.html">📊 Reports</a>
+                
+                <a href="404.html">💳 Billing</a>
+                
+                <a href="404.html">⚙ Settings</a>
+                
+                <a href="404.html">📞 Support</a>
+                
+                <a href="404.html">📁 Projects</a>
+                
+                <a href="404.html">👤 Profile</a>
+                
+                <a href="404.html">📥 Downloads</a>
+                
+                <a href="404.html">💬 Feedback</a>
+                
+                </div>
+                
+                </section>
+
+                <Style>
+                    /*====================================
+COMMON SECTION
+====================================*/
+
+.goal-section,
+.notification-section,
+.impact-section,
+.service-section{
+    padding:40px 25px;
+}
+
+.goal-section h2,
+.notification-section h2,
+.impact-section h2,
+.service-section h2{
+    text-align:center;
+    color:#18b857;
+    font-size:30px;
+    margin-bottom:30px;
+}
+
+/*====================================
+ENERGY GOALS
+====================================*/
+
+.goal-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.goal-card{
+    background:#111;
+    color:#fff;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    transition:.3s;
+    border-top:4px solid #18b857;
+}
+
+.goal-card:hover{
+    transform:translateY(-8px);
+}
+
+.goal-card h3{
+    margin-bottom:15px;
+}
+
+.goal-card h1{
+    color:#22c55e;
+    margin-bottom:15px;
+}
+
+.goal-card progress{
+    width:100%;
+    height:10px;
+}
+
+/*====================================
+NOTIFICATIONS
+====================================*/
+
+.notification-card{
+    background:#111;
+    color:#fff;
+    border-left:5px solid #18b857;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.notification-card:hover{
+    transform:translateX(8px);
+}
+
+.notification-card p{
+    margin-bottom:10px;
+    line-height:1.6;
+}
+
+.notification-card span{
+    color:#22c55e;
+    font-size:14px;
+}
+
+/*====================================
+ENVIRONMENT
+====================================*/
+
+.impact-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.impact-card{
+    background:linear-gradient(135deg,#14532d,#22c55e);
+    color:#fff;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    transition:.3s;
+}
+
+.impact-card:hover{
+    transform:translateY(-8px);
+}
+
+.impact-card h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+/*====================================
+SERVICES
+====================================*/
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.service-grid a{
+    text-decoration:none;
+    background:#111;
+    color:#fff;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    transition:.3s;
+    font-weight:600;
+}
+
+.service-grid a:hover{
+    background:#18b857;
+    transform:translateY(-6px);
+}
+
+/*====================================
+TABLET
+====================================*/
+
+@media(max-width:992px){
+
+.goal-grid,
+.impact-grid,
+.service-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/*====================================
+MOBILE
+====================================*/
+
+@media(max-width:768px){
+
+.goal-section,
+.notification-section,
+.impact-section,
+.service-section{
+
+padding:25px 15px;
+
+}
+
+.goal-grid,
+.impact-grid,
+.service-grid{
 
 grid-template-columns:1fr;
 
 }
 
+.goal-section h2,
+.notification-section h2,
+.impact-section h2,
+.service-section h2{
 
+font-size:24px;
 
-.projects-section,
-.updates-section{
+}
+
+.goal-card,
+.impact-card,
+.service-grid a{
 
 padding:20px;
 
 }
 
+.notification-card{
 
-
-.update-item{
-
-flex-wrap:wrap;
+padding:18px;
 
 }
 
-
-
 }
 
-
-
-
-
-/* ==========================
-Mobile
-========================== */
-
+/*====================================
+SMALL MOBILE
+====================================*/
 
 @media(max-width:480px){
 
-
-
-.project-header{
-
-padding:20px;
-
-}
-
-
-
-.project-header h1{
+.goal-section h2,
+.notification-section h2,
+.impact-section h2,
+.service-section h2{
 
 font-size:22px;
 
 }
 
+.goal-card h1,
+.impact-card h1{
 
-
-.project-card{
-
-padding:22px;
-
-}
-
-
-
-.project-card h2{
-
-font-size:25px;
+font-size:30px;
 
 }
 
+.service-grid a{
 
+font-size:15px;
 
-.project-box{
-
-padding:20px;
-
-}
-
-
-
-.update-item{
-
-flex-direction:column;
-align-items:flex-start;
+padding:18px;
 
 }
 
-
 }
-                </style>
 
-    </main>
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.6s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+                </Style>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+
+const cards = document.querySelectorAll(
+    ".goal-card, .notification-card, .impact-card, .service-grid a"
+);
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+}, {
+    threshold: 0.2
+});
+
+cards.forEach(card => {
+
+    card.classList.add("hidden");
+
+    observer.observe(card);
+
+});
+
+});
+                </script>
+
+<style>
+
+</style>
+</p>
 
 </div>
 
-<script src="js/dashboard.js"></script>
+</div>
 
 <style>
-    /*==========================================
-    GOOGLE FONT
-==========================================*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    /* ==========================
+   Sidebar Menu
+========================== */
 
-/*==========================================
-    RESET
-==========================================*/
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+.sidebar ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
 }
 
-html{
-    scroll-behavior:smooth;
+.sidebar ul li {
+    margin: 8px 12px;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 18px;
+    color: #d1d5db;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sidebar ul li a i {
+    width: 22px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Hover */
+
+.sidebar ul li a:hover {
+    background: #1f8f45;
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+.sidebar ul li a:hover i {
+    color: #ffffff;
+}
+
+/* ==========================
+   Active Menu
+========================== */
+
+.sidebar ul li a.active {
+    background: linear-gradient(90deg, #16a34a, #22c55e);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(34, 197, 94, 0.35);
+    border-left: 5px solid #ffffff;
+}
+
+.sidebar ul li a.active i {
+    color: #ffffff;
+}
+
+.sidebar ul li a.active span {
+    color: #ffffff;
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width: 992px) {
+
+    .sidebar ul li a {
+        padding: 13px 16px;
+        font-size: 15px;
+    }
+
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+
+    .sidebar ul li {
+        margin: 6px 10px;
+    }
+
+    .sidebar ul li a {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+
+    .sidebar ul li a i {
+        font-size: 17px;
+    }
+
+}
+
+/* ==========================
+   Small Mobile
+========================== */
+
+@media (max-width: 480px) {
+
+    .sidebar ul li a {
+        padding: 12px;
+        font-size: 14px;
+        gap: 12px;
+    }
+
+    .sidebar ul li a i {
+        width: 20px;
+        font-size: 16px;
+    }
+
+}
+    *{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:'Segoe UI',sans-serif;
+
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#f5f8f4;
-    color:#222;
-    overflow-x:hidden;
-}
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
+background:#eef2f0;
 
-ul{
-    list-style:none;
-}
+display:flex;
 
-img{
-    max-width:100%;
-    display:block;
-}
-
-/*==========================================
-    VARIABLES
-==========================================*/
-
-:root{
-
-    --primary:#2E7D32;
-    --primary-dark:#1B5E20;
-    --secondary:#4CAF50;
-    --light:#F7FFF8;
-    --border:#dce8dc;
-    --white:#ffffff;
-    --text:#222;
-    --text-light:#666;
-    --shadow:0 10px 35px rgba(0,0,0,.08);
+overflow-x:hidden;
 
 }
 
-/*==========================================
-        LAYOUT
-==========================================*/
+/* Sidebar */
 
-.re-dashboard{
+.sidebar{
 
-    display:flex;
-    min-height:100vh;
-    width:100%;
+width:270px;
 
-}
+height:100vh;
 
-/*==========================================
-        SIDEBAR
-==========================================*/
+background:#111;
 
-.re-sidebar{
+color:#fff;
 
-    width:270px;
-    background:linear-gradient(180deg,#1B5E20,#2E7D32,#43A047);
-    color:#fff;
-    position:fixed;
-    left:0;
-    top:0;
-    height:100vh;
-    overflow-y:auto;
-    transition:.35s;
-    z-index:999;
+position:fixed;
+
+left:0;
+
+top:0;
+
+transition:.4s;
+
+z-index:1000;
+
+display:flex;
+
+flex-direction:column;
 
 }
 
-.re-sidebar-logo{
+.sidebar-header{
 
-    height:90px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-bottom:1px solid rgba(255,255,255,.12);
+display:flex;
 
-}
+justify-content:space-between;
 
-.re-sidebar-logo img{
+align-items:center;
 
-    width:170px;
-    transition:.4s;
+padding:20px;
+
+border-bottom:1px solid rgba(255,255,255,.08);
 
 }
 
-.re-sidebar-logo img:hover{
+.logo img{
 
-    transform:scale(1.05);
-
-}
-
-/*==========================================
-        MENU
-==========================================*/
-
-.re-menu{
-
-    padding:25px 15px;
+width:170px;
 
 }
 
-.re-menu li{
+.close-sidebar{
 
-    margin-bottom:10px;
+display:none;
 
-}
+background:none;
 
-.re-menu li a{
+border:none;
 
-    display:flex;
-    align-items:center;
-    gap:15px;
-    padding:14px 18px;
-    border-radius:12px;
-    transition:.3s;
-    font-size:15px;
-    font-weight:500;
+color:#fff;
+
+font-size:28px;
+
+cursor:pointer;
 
 }
 
-.re-menu li a i{
+.sidebar ul{
 
-    width:22px;
-    text-align:center;
-    font-size:18px;
+list-style:none;
 
-}
-
-.re-menu li a:hover{
-
-    background:rgba(255,255,255,.18);
-    transform:translateX(8px);
+padding:25px 0;
 
 }
 
-.re-menu li.active a{
+.sidebar ul li{
 
-    background:#fff;
-    color:var(--primary-dark);
-    font-weight:600;
-    box-shadow:0 8px 18px rgba(0,0,0,.18);
+margin:5px 0;
 
 }
 
-/*==========================================
-        MAIN
-==========================================*/
+.sidebar ul li a{
 
-.re-main{
+display:flex;
 
-    flex:1;
-    margin-left:270px;
-    width:calc(100% - 270px);
-    min-height:100vh;
+align-items:center;
 
-}
+gap:18px;
 
-/*==========================================
-        TOPBAR
-==========================================*/
+padding:16px 30px;
 
-.re-topbar{
+text-decoration:none;
 
-    position:sticky;
-    top:0;
-    background:#fff;
-    height:80px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 30px;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
-    z-index:100;
+color:#fff;
+
+font-size:16px;
+
+transition:.3s;
 
 }
 
-/*==========================================
-        LEFT
-==========================================*/
+.sidebar ul li a:hover{
 
-.re-top-left{
-
-    display:flex;
-    align-items:center;
-    gap:18px;
+background:#18b857;
 
 }
 
-.re-home-logo img{
+.sidebar ul li i{
 
-    width:150px;
+width:25px;
 
-}
-
-/*==========================================
-        MENU BUTTON
-==========================================*/
-
-#menuBtn{
-
-    display:none;
-    width:46px;
-    height:46px;
-    border:none;
-    border-radius:12px;
-    background:var(--primary);
-    color:#fff;
-    cursor:pointer;
-    font-size:20px;
-    transition:.3s;
+text-align:center;
 
 }
 
-#menuBtn:hover{
+/* Main */
 
-    background:var(--primary-dark);
+.main{
 
-}
+margin-left:270px;
 
-/*==========================================
-        EMAIL
-==========================================*/
+width:calc(100% - 270px);
 
-.re-user-email{
-
-    display:flex;
-    align-items:center;
-    gap:10px;
-    background:#F4FFF5;
-    border:1px solid #dce8dc;
-    padding:12px 20px;
-    border-radius:50px;
-    color:var(--primary-dark);
-    font-weight:600;
-    font-size:15px;
-    box-shadow:0 3px 12px rgba(0,0,0,.05);
+transition:.4s;
 
 }
 
-.re-user-email i{
+/* Topbar */
 
-    font-size:18px;
-    color:#43A047;
+.topbar{
 
-}
+height:75px;
 
-/*==========================================
-        CONTENT
-==========================================*/
+background:#0e1b12;
 
-.re-dashboard-content{
+display:flex;
 
-    padding:40px;
+justify-content:space-between;
 
-}
+align-items:center;
 
-.re-dashboard-content h1{
+padding:0 30px;
 
-    font-size:34px;
-    margin-bottom:12px;
-    color:#1B5E20;
+color:#fff;
 
-}
+box-shadow:0 3px 15px rgba(0,0,0,.15);
 
-.re-dashboard-content p{
+position:sticky;
 
-    color:#666;
-    line-height:1.8;
+top:0;
+
+z-index:999;
 
 }
 
-/*==========================================
-        TABLET
-==========================================*/
+.top-left{
 
-@media(max-width:991px){
+display:flex;
 
-.re-sidebar{
+align-items:center;
 
-    left:-280px;
+gap:18px;
 
 }
 
-.re-sidebar.active{
+.top-left h2{
 
-    left:0;
+font-size:23px;
 
-}
-
-.re-main{
-
-    margin-left:0;
-    width:100%;
+font-weight:600;
 
 }
 
-#menuBtn{
+.top-left span{
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+color:#22d366;
 
 }
 
-.re-topbar{
+.top-right{
 
-    padding:0 20px;
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+background:#1d3527;
+
+padding:12px 18px;
+
+border-radius:40px;
+
+}
+
+.top-right i{
+
+color:#22d366;
+
+}
+
+.menu-btn{
+
+display:none;
+
+background:none;
+
+border:none;
+
+color:#fff;
+
+font-size:25px;
+
+cursor:pointer;
+
+}
+
+.content{
+
+padding:35px;
+
+}
+
+.overlay{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.5);
+
+display:none;
+
+z-index:900;
+
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.sidebar{
+
+left:-270px;
+
+}
+
+.sidebar.active{
+
+left:0;
+
+}
+
+.main{
+
+margin-left:0;
+
+width:100%;
+
+}
+
+.menu-btn{
+
+display:block;
+
+}
+
+.close-sidebar{
+
+display:block;
+
+}
+
+.overlay.active{
+
+display:block;
 
 }
 
 }
 
-/*==========================================
-        MOBILE
-==========================================*/
+/* Mobile */
 
 @media(max-width:768px){
 
-.re-topbar{
+.topbar{
 
-    height:70px;
-    padding:0 15px;
+padding:15px;
 
-}
+flex-wrap:wrap;
 
-.re-home-logo img{
+height:auto;
 
-    width:120px;
-
-}
-
-.re-user-email{
-
-    padding:10px 14px;
-    font-size:13px;
-    gap:8px;
+gap:15px;
 
 }
 
-.re-dashboard-content{
+.top-left{
 
-    padding:25px 18px;
-
-}
-
-.re-dashboard-content h1{
-
-    font-size:28px;
+width:100%;
 
 }
 
-}
+.top-left h2{
 
-/*==========================================
-        SMALL MOBILE
-==========================================*/
-
-@media(max-width:576px){
-
-.re-user-email{
-
-    max-width:170px;
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
+font-size:18px;
 
 }
 
-.re-home-logo img{
+.top-right{
 
-    width:110px;
+width:100%;
+
+justify-content:center;
+
+font-size:14px;
+
+word-break:break-all;
 
 }
 
-.re-dashboard-content{
+.logo img{
 
-    padding:20px 15px;
+width:145px;
 
 }
 
-.re-dashboard-content h1{
+.sidebar{
 
-    font-size:24px;
+width:250px;
+
+left:-250px;
+
+}
+
+.sidebar.active{
+
+left:0;
 
 }
 
 }
 
-/*==========================================
-        SCROLLBAR
-==========================================*/
+/* Small Mobile */
 
-.re-sidebar::-webkit-scrollbar{
+@media(max-width:480px){
 
-    width:6px;
+.top-left h2{
 
-}
-
-.re-sidebar::-webkit-scrollbar-thumb{
-
-    background:rgba(255,255,255,.35);
-    border-radius:50px;
+font-size:17px;
 
 }
 
-.re-sidebar::-webkit-scrollbar-track{
+.top-right{
 
-    background:transparent;
+font-size:13px;
 
-}
-
-/*==========================================
-        SIDEBAR ANIMATION
-==========================================*/
-
-.re-sidebar{
-
-    animation:slideSidebar .6s ease;
+padding:10px;
 
 }
 
-@keyframes slideSidebar{
+.sidebar ul li a{
 
-    from{
+padding:14px 20px;
 
-        transform:translateX(-100%);
-        opacity:0;
-
-    }
-
-    to{
-
-        transform:translateX(0);
-        opacity:1;
-
-    }
+font-size:15px;
 
 }
 
-/*==========================================
-        TOPBAR ANIMATION
-==========================================*/
+.logo img{
 
-.re-topbar{
-
-    animation:topFade .6s ease;
+width:130px;
 
 }
-
-@keyframes topFade{
-
-    from{
-
-        opacity:0;
-        transform:translateY(-25px);
-
-    }
-
-    to{
-
-        opacity:1;
-        transform:translateY(0);
-
-    }
 
 }
 </style>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    const sidebar = document.querySelector(".sidebar");
+const menuBtn = document.querySelector(".menu-btn");
+const closeBtn = document.querySelector(".close-sidebar");
+const overlay = document.querySelector(".overlay");
 
-/*==============================
-    MOBILE MENU
-==============================*/
+menuBtn.onclick = () => {
 
-const menuBtn = document.getElementById("menuBtn");
-const sidebar = document.getElementById("reSidebar");
+sidebar.classList.add("active");
 
-if (menuBtn) {
+overlay.classList.add("active");
 
-    menuBtn.addEventListener("click", function () {
+};
 
-        sidebar.classList.toggle("active");
+closeBtn.onclick = closeSidebar;
 
-    });
+overlay.onclick = closeSidebar;
 
-}
+function closeSidebar(){
 
-/*==============================
-    DISPLAY USER EMAIL
-==============================*/
+sidebar.classList.remove("active");
 
-const emailSpan = document.getElementById("dashboardEmail");
-
-let email = "";
-
-// First check stackly_session
-const session = localStorage.getItem("stackly_session");
-
-if (session) {
-
-    const user = JSON.parse(session);
-
-    email = user.email;
+overlay.classList.remove("active");
 
 }
 
-// Otherwise check loggedInUserEmail
-if (!email) {
+// Local Storage User Details
 
-    email = localStorage.getItem("loggedInUserEmail");
+const userName = localStorage.getItem("userName") || "Guest";
 
-}
+const userEmail = localStorage.getItem("userEmail") || "guest@gmail.com";
 
-// Display email
-if (emailSpan) {
+document.getElementById("userName").textContent = userName;
 
-    emailSpan.textContent = email || "Guest User";
+document.getElementById("userEmail").textContent = userEmail;
+
+// Auto close sidebar after clicking menu (mobile)
+
+document.querySelectorAll(".sidebar a").forEach(link => {
+
+link.addEventListener("click", () => {
+
+if(window.innerWidth <= 992){
+
+closeSidebar();
 
 }
 
 });
+
+});
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (user) {
+    document.getElementById("userName").textContent = user.name;
+    document.getElementById("userEmail").textContent = user.email;
+}
+
+const session = JSON.parse(localStorage.getItem("stackly_session"));
+
+if (session) {
+
+    document.getElementById("userName").textContent = session.name;
+
+    document.getElementById("userEmail").textContent = session.email;
+
+} else {
+
+    document.getElementById("userName").textContent = "Guest";
+
+    document.getElementById("userEmail").textContent = "guest@gmail.com";
+
+}
 </script>
-
-
 
 </body>
 </html>

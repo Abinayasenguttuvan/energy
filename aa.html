@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+
+
+</head>
+
+<body>
+
+<!-- Overlay -->
+
+<div class="overlay"></div>
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="sidebar-header">
+
+<a href="index.html" class="logo">
+
+<img src="white.webp" alt="Logo">
+
+</a>
+
+<button class="close-sidebar">
+
+<i class="fas fa-times"></i>
+
+</button>
+
+</div>
+
+<ul>
+
+    <li>
+        <a href="./user-dashboard.html" class="active">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="./energy dash.html">
+            <i class="fas fa-user"></i>
+            <span>Energy Management</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="./project.html">
+            <i class="fas fa-folder"></i>
+            <span>Projects</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="./report.html">
+            <i class="fas fa-chart-line"></i>
+            <span>Reports</span>
+        </a>
+    </li>
+
+
+    <li>
+        <a href="./billing.html">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <span>Billing </span>
+        </a>
+    </li>
+
+
+    <li>
+        <a href="./notification.html">
+            <i class="fa-solid fa-gear"></i>
+            <span>notification</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="./index.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    </li>
+
+</ul>
+
+
+
+
+</aside>
+
+<!-- Main -->
+
+<div class="main">
+
+<!-- Top Bar -->
+
+<header class="topbar">
+
+<div class="top-left">
+
+<button class="menu-btn">
+
+<i class="fas fa-bars"></i>
+
+</button>
+
+<h2>
+
+Welcome,
+
+<span id="userName">
+
+User
+
+</span>
+
+</h2>
+
+</div>
+
+<div class="top-right">
+
+<i class="fas fa-envelope"></i>
+
+<span id="userEmail">
+
+user@gmail.com
+
+</span>
+
+</div>
+
+</header>
+
+<div class="content">
+
+<h1>
+
+Dashboard Content
+
+</h1>
+
+<p>
+
+Your dashboard starts here...
+
+</p>
+
+</div>
+
+</div>
+
+<style>
+    /* ==========================
+   Sidebar Menu
+========================== */
+
+.sidebar ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 8px 12px;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 18px;
+    color: #d1d5db;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sidebar ul li a i {
+    width: 22px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Hover */
+
+.sidebar ul li a:hover {
+    background: #1f8f45;
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+.sidebar ul li a:hover i {
+    color: #ffffff;
+}
+
+/* ==========================
+   Active Menu
+========================== */
+
+.sidebar ul li a.active {
+    background: linear-gradient(90deg, #16a34a, #22c55e);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(34, 197, 94, 0.35);
+    border-left: 5px solid #ffffff;
+}
+
+.sidebar ul li a.active i {
+    color: #ffffff;
+}
+
+.sidebar ul li a.active span {
+    color: #ffffff;
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width: 992px) {
+
+    .sidebar ul li a {
+        padding: 13px 16px;
+        font-size: 15px;
+    }
+
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+
+    .sidebar ul li {
+        margin: 6px 10px;
+    }
+
+    .sidebar ul li a {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+
+    .sidebar ul li a i {
+        font-size: 17px;
+    }
+
+}
+
+/* ==========================
+   Small Mobile
+========================== */
+
+@media (max-width: 480px) {
+
+    .sidebar ul li a {
+        padding: 12px;
+        font-size: 14px;
+        gap: 12px;
+    }
+
+    .sidebar ul li a i {
+        width: 20px;
+        font-size: 16px;
+    }
+
+}
+    *{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:'Segoe UI',sans-serif;
+
+}
+
+body{
+
+background:#eef2f0;
+
+display:flex;
+
+overflow-x:hidden;
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+width:270px;
+
+height:100vh;
+
+background:#111;
+
+color:#fff;
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+transition:.4s;
+
+z-index:1000;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.sidebar-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo img{
+
+width:170px;
+
+}
+
+.close-sidebar{
+
+display:none;
+
+background:none;
+
+border:none;
+
+color:#fff;
+
+font-size:28px;
+
+cursor:pointer;
+
+}
+
+.sidebar ul{
+
+list-style:none;
+
+padding:25px 0;
+
+}
+
+.sidebar ul li{
+
+margin:5px 0;
+
+}
+
+.sidebar ul li a{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+padding:16px 30px;
+
+text-decoration:none;
+
+color:#fff;
+
+font-size:16px;
+
+transition:.3s;
+
+}
+
+.sidebar ul li a:hover{
+
+background:#18b857;
+
+}
+
+.sidebar ul li i{
+
+width:25px;
+
+text-align:center;
+
+}
+
+/* Main */
+
+.main{
+
+margin-left:270px;
+
+width:calc(100% - 270px);
+
+transition:.4s;
+
+}
+
+/* Topbar */
+
+.topbar{
+
+height:75px;
+
+background:#0e1b12;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 30px;
+
+color:#fff;
+
+box-shadow:0 3px 15px rgba(0,0,0,.15);
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
+}
+
+.top-left{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.top-left h2{
+
+font-size:23px;
+
+font-weight:600;
+
+}
+
+.top-left span{
+
+color:#22d366;
+
+}
+
+.top-right{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+background:#1d3527;
+
+padding:12px 18px;
+
+border-radius:40px;
+
+}
+
+.top-right i{
+
+color:#22d366;
+
+}
+
+.menu-btn{
+
+display:none;
+
+background:none;
+
+border:none;
+
+color:#fff;
+
+font-size:25px;
+
+cursor:pointer;
+
+}
+
+.content{
+
+padding:35px;
+
+}
+
+.overlay{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.5);
+
+display:none;
+
+z-index:900;
+
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.sidebar{
+
+left:-270px;
+
+}
+
+.sidebar.active{
+
+left:0;
+
+}
+
+.main{
+
+margin-left:0;
+
+width:100%;
+
+}
+
+.menu-btn{
+
+display:block;
+
+}
+
+.close-sidebar{
+
+display:block;
+
+}
+
+.overlay.active{
+
+display:block;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.topbar{
+
+padding:15px;
+
+flex-wrap:wrap;
+
+height:auto;
+
+gap:15px;
+
+}
+
+.top-left{
+
+width:100%;
+
+}
+
+.top-left h2{
+
+font-size:18px;
+
+}
+
+.top-right{
+
+width:100%;
+
+justify-content:center;
+
+font-size:14px;
+
+word-break:break-all;
+
+}
+
+.logo img{
+
+width:145px;
+
+}
+
+.sidebar{
+
+width:250px;
+
+left:-250px;
+
+}
+
+.sidebar.active{
+
+left:0;
+
+}
+
+}
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+.top-left h2{
+
+font-size:17px;
+
+}
+
+.top-right{
+
+font-size:13px;
+
+padding:10px;
+
+}
+
+.sidebar ul li a{
+
+padding:14px 20px;
+
+font-size:15px;
+
+}
+
+.logo img{
+
+width:130px;
+
+}
+
+}
+</style>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+const menuBtn = document.querySelector(".menu-btn");
+const closeBtn = document.querySelector(".close-sidebar");
+const overlay = document.querySelector(".overlay");
+
+menuBtn.onclick = () => {
+
+sidebar.classList.add("active");
+
+overlay.classList.add("active");
+
+};
+
+closeBtn.onclick = closeSidebar;
+
+overlay.onclick = closeSidebar;
+
+function closeSidebar(){
+
+sidebar.classList.remove("active");
+
+overlay.classList.remove("active");
+
+}
+
+// Local Storage User Details
+
+const userName = localStorage.getItem("userName") || "Guest";
+
+const userEmail = localStorage.getItem("userEmail") || "guest@gmail.com";
+
+document.getElementById("userName").textContent = userName;
+
+document.getElementById("userEmail").textContent = userEmail;
+
+// Auto close sidebar after clicking menu (mobile)
+
+document.querySelectorAll(".sidebar a").forEach(link => {
+
+link.addEventListener("click", () => {
+
+if(window.innerWidth <= 992){
+
+closeSidebar();
+
+}
+
+});
+
+});
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (user) {
+    document.getElementById("userName").textContent = user.name;
+    document.getElementById("userEmail").textContent = user.email;
+}
+
+const session = JSON.parse(localStorage.getItem("stackly_session"));
+
+if (session) {
+
+    document.getElementById("userName").textContent = session.name;
+
+    document.getElementById("userEmail").textContent = session.email;
+
+} else {
+
+    document.getElementById("userName").textContent = "Guest";
+
+    document.getElementById("userEmail").textContent = "guest@gmail.com";
+
+}
+</script>
+
+</body>
+</html>

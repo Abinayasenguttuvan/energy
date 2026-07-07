@@ -864,32 +864,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-const email = document.getElementById("email").value;
-
-// Save logged in email
-localStorage.setItem("loggedInUserEmail", email);
-
-// Redirect
-window.location.href = "dashboard.html";
 
 
-document.addEventListener("DOMContentLoaded", function () {
 
-const emailSpan = document.getElementById("dashboardEmail");
 
-const savedEmail = localStorage.getItem("loggedInUserEmail");
-
-if (savedEmail && emailSpan) {
-
-    emailSpan.textContent = savedEmail;
-
-} else {
-
-    emailSpan.textContent = "Guest User";
-
-}
-
-});
 </script>
 </body>
 </html>

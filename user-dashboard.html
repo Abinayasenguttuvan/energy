@@ -7,1836 +7,1797 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>User Dashboard</title>
-
-
+<title>Dashboard</title>
 
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+
 
 </head>
 
 <body>
 
-<div class="re-dashboard">
+<!-- Overlay -->
 
-    <!--======================
-        Sidebar
-    =======================-->
+<div class="overlay"></div>
 
-    <aside class="re-sidebar" id="reSidebar">
+<!-- Sidebar -->
 
-        <div class="re-sidebar-logo">
+<aside class="sidebar">
 
-            <a href="index.html">
+<div class="sidebar-header">
 
-                <img src="./white.webp"
-                alt="Logo">
+<a href="index.html" class="logo">
 
-            </a>
+<img src="white.webp" alt="Logo">
+
+</a>
+
+<button class="close-sidebar">
+
+<i class="fas fa-times"></i>
+
+</button>
+
+</div>
+
+<ul>
+
+    <li>
+        <a href="./user-dashboard.html" class="active">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="./energy dash.html">
+            <i class="fas fa-user"></i>
+            <span>Energy Management</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="./project.html">
+            <i class="fas fa-folder"></i>
+            <span>Projects</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="./report.html">
+            <i class="fas fa-chart-line"></i>
+            <span>Reports</span>
+        </a>
+    </li>
+
+
+    <li>
+        <a href="./billing.html">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <span>Billing </span>
+        </a>
+    </li>
+
+
+    <li>
+        <a href="./notification.html">
+            <i class="fa-solid fa-gear"></i>
+            <span>notification</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="./index.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    </li>
+
+</ul>
+
+
+
+
+</aside>
+
+<!-- Main -->
+
+<div class="main">
+
+<!-- Top Bar -->
+
+<header class="topbar">
+
+<div class="top-left">
+
+<button class="menu-btn">
+
+<i class="fas fa-bars"></i>
+
+</button>
+
+<h2>
+
+Welcome,
+
+<span id="userName">
+
+User
+
+</span>
+
+</h2>
+
+</div>
+
+<div class="top-right">
+
+<i class="fas fa-envelope"></i>
+
+<span id="userEmail">
+
+user@gmail.com
+
+</span>
+
+</div>
+
+</header>
+
+<div class="content">
+
+
+<p>
+
+<!-- ================================
+USER DASHBOARD - PART 1A
+================================ -->
+
+<section class="user-home">
+
+    <!-- Welcome Banner -->
+
+    <div class="user-banner">
+
+        <div class="banner-left">
+
+            <span class="banner-badge">
+                🌿 Renewable Energy Dashboard
+            </span>
+
+            <h1>
+                Welcome,
+                <span id="dashboardUserName">User</span>
+                👋
+            </h1>
+
+            <p>
+                Monitor your renewable energy production, battery health,
+                carbon savings and electricity usage from one dashboard.
+            </p>
+
+            <div class="banner-buttons">
+
+                <a href="404.html" class="green-btn">
+                    View Reports
+                </a>
+
+                <a href="404.html" class="dark-btn">
+                    Energy Details
+                </a>
+
+            </div>
 
         </div>
 
-        <ul class="re-menu">
+        <div class="banner-right">
 
-            <li class="active">
+            <div class="energy-circle">
 
-                <a href="./user-dashboard.html">
-
-                    <i class="fa-solid fa-house"></i>
-
-                    Dashboard
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./myprofile.html">
-
-                    <i class="fa-solid fa-user"></i>
-
-                    My Profile
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./project.html">
-
-                    <i class="fa-solid fa-solar-panel"></i>
-
-                    My Projects
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./energy.html">
-
-                    <i class="fa-solid fa-bolt"></i>
-
-                    Energy Usage
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./billing.html">
-
-                    <i class="fa-solid fa-file-invoice-dollar"></i>
-
-                    Billing
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./support.html">
-
-                    <i class="fa-solid fa-headset"></i>
-
-                    Support
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./settings.html">
-
-                    <i class="fa-solid fa-gear"></i>
-
-                    Settings
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./login.html">
-
-                    <i class="fa-solid fa-right-from-bracket"></i>
-
-                    Logout
-
-                </a>
-
-            </li>
-
-        </ul>
-
-    </aside>
-
-    <!--=====================
-        Main Area
-    =====================-->
-
-    <main class="re-main">
-
-        <!--==================
-            Topbar
-        ===================-->
-
-        <header class="re-topbar">
-
-            <div class="re-top-left">
-
-                <button id="menuBtn">
-
-                    <i class="fa-solid fa-bars"></i>
-
-                </button>
-
-                
+                ⚡
 
             </div>
 
-            <div class="re-top-right">
+            <h2>Today's Status</h2>
 
-                <div class="re-user-email">
+            <h3 id="todayDate"></h3>
 
-                    <i class="fa-solid fa-envelope"></i>
+            <p>
 
-                    <span id="dashboardEmail"></span>
-                </div>
+                Solar Production Active
 
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+PART 1B - ENERGY OVERVIEW
+========================================= -->
+
+<section class="energy-overview-section">
+
+    <div class="section-title">
+        <h2>⚡ Energy Overview</h2>
+        <p>Monitor the live status of your renewable energy system.</p>
+    </div>
+
+    <div class="energy-overview-grid">
+
+        <div class="overview-card">
+            <div class="overview-icon solar">
+                <i class="fas fa-solar-panel"></i>
             </div>
 
-        </header>
+            <h3>Solar Panels</h3>
 
-        <!-- Dashboard content starts here -->
+            <h1>98%</h1>
 
-        <section class="re-dashboard-content">
+            <span class="status online">
+                ● Online
+            </span>
 
-            
+            <div class="progress">
+                <div class="progress-bar solar-progress"></div>
+            </div>
+        </div>
 
+        <div class="overview-card">
+            <div class="overview-icon battery">
+                <i class="fas fa-car-battery"></i>
+            </div>
 
+            <h3>Battery Health</h3>
 
+            <h1>89%</h1>
 
+            <span class="status excellent">
+                ● Excellent
+            </span>
 
+            <div class="progress">
+                <div class="progress-bar battery-progress"></div>
+            </div>
+        </div>
 
+        <div class="overview-card">
+            <div class="overview-icon grid">
+                <i class="fas fa-bolt"></i>
+            </div>
 
+            <h3>Grid Status</h3>
 
-<!-- Main Content -->
+            <h1>Stable</h1>
 
+            <span class="status online">
+                ● Connected
+            </span>
 
-<main class="dashboard-content">
+            <div class="progress">
+                <div class="progress-bar grid-progress"></div>
+            </div>
+        </div>
 
+        <div class="overview-card">
+            <div class="overview-icon eco">
+                <i class="fas fa-leaf"></i>
+            </div>
 
-<h1>
-Renewable Energy Overview
-</h1>
+            <h3>CO₂ Saved</h3>
 
-<p class="subtitle">
-Monitor your clean energy performance and savings.
-</p>
+            <h1>1.8 T</h1>
 
+            <span class="status excellent">
+                ● Eco Friendly
+            </span>
 
+            <div class="progress">
+                <div class="progress-bar eco-progress"></div>
+            </div>
+        </div>
 
-<!-- Cards -->
-
-
-<section class="stats-grid">
-
-
-<div class="energy-card">
-
-<i class="fa-solid fa-solar-panel"></i>
-
-<div>
-
-<h3>
-Solar Production
-</h3>
-
-<p>
-420 kWh
-</p>
-
-<span>
-This Month
-</span>
-
-</div>
-
-</div>
-
-
-
-<div class="energy-card">
-
-<i class="fa-solid fa-battery-full"></i>
-
-<div>
-
-<h3>
-Battery Status
-</h3>
-
-<p>
-85%
-</p>
-
-<span>
-Available Power
-</span>
-
-</div>
-
-</div>
-
-
-
-
-<div class="energy-card">
-
-<i class="fa-solid fa-coins"></i>
-
-<div>
-
-<h3>
-Energy Savings
-</h3>
-
-<p>
-₹4,250
-</p>
-
-<span>
-Monthly Savings
-</span>
-
-</div>
-
-</div>
-
-
-
-
-<div class="energy-card">
-
-<i class="fa-solid fa-tree"></i>
-
-<div>
-
-<h3>
-Carbon Reduction
-</h3>
-
-<p>
-120 Kg
-</p>
-
-<span>
-CO₂ Saved
-</span>
-
-</div>
-
-</div>
-
+    </div>
 
 </section>
 
 
 
+<!-- =========================================
+TODAY'S SUMMARY
+========================================= -->
 
+<section class="summary-section">
 
-<!-- Energy Progress -->
+    <div class="summary-card">
 
+        <h3>Today's Production</h3>
 
-<section class="energy-section">
+        <h1>45.8 kWh</h1>
 
+        <p>↑ +8% compared to yesterday</p>
 
-<h2>
-Energy Performance
-</h2>
+    </div>
 
+    <div class="summary-card">
 
-<div class="progress-box">
+        <h3>Today's Consumption</h3>
 
+        <h1>27.4 kWh</h1>
 
-<div class="progress-item">
+        <p>Efficient energy usage</p>
 
-<div class="progress-title">
+    </div>
 
-Solar Usage
+    <div class="summary-card">
 
-<span>
-80%
-</span>
+        <h3>Money Saved</h3>
 
-</div>
+        <h1>₹580</h1>
 
+        <p>Using renewable energy</p>
 
-<div class="progress-bar">
-
-<div class="solar-progress"></div>
-
-</div>
-
-</div>
-
-
-
-
-<div class="progress-item">
-
-<div class="progress-title">
-
-Battery Efficiency
-
-<span>
-65%
-</span>
-
-</div>
-
-
-<div class="progress-bar">
-
-<div class="battery-progress"></div>
-
-</div>
-
-</div>
-
-
-
-</div>
-
+    </div>
 
 </section>
 
 
 
+<!-- =========================================
+QUICK ACTIONS
+========================================= -->
 
+<section class="quick-actions">
 
-<!-- Recent Activity -->
+    <div class="section-title">
 
+        <h2>🚀 Quick Actions</h2>
 
-<section class="activity-section">
+    </div>
 
+    <div class="action-grid">
 
-<h2>
-Recent Activity
-</h2>
+        <a href="404.html" class="action-btn">
+            <i class="fas fa-chart-line"></i>
+            View Reports
+        </a>
 
+        <a href="404.html" class="action-btn">
+            <i class="fas fa-file-download"></i>
+            Download Report
+        </a>
 
-<div class="activity-table">
+        <a href="404.html" class="action-btn">
+            <i class="fas fa-wallet"></i>
+            Billing
+        </a>
 
+        <a href="404.html" class="action-btn">
+            <i class="fas fa-headset"></i>
+            Support
+        </a>
 
-<div class="activity-row">
-
-<span>
-<i class="fa-solid fa-sun"></i>
-Solar Energy Generated
-</span>
-
-<b>
-120 kWh
-</b>
-
-
-</div>
-
-
-
-<div class="activity-row">
-
-<span>
-<i class="fa-solid fa-bolt"></i>
-Energy Consumed
-</span>
-
-<b>
-75 kWh
-</b>
-
-
-</div>
-
-
-
-
-<div class="activity-row">
-
-<span>
-<i class="fa-solid fa-leaf"></i>
-Carbon Saved
-</span>
-
-<b>
-35 Kg
-</b>
-
-
-</div>
-
-
-</div>
-
+    </div>
 
 </section>
-
-
-
-
-</main>
-
-
-</div>
 
 <style>
-    *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Poppins",sans-serif;
+    /*=====================================
+SECTION TITLE
+=====================================*/
+
+.section-title{
+margin-bottom:25px;
+}
+
+.section-title h2{
+font-size:30px;
+color:#18b857;
+margin-bottom:8px;
+}
+
+.section-title p{
+color:#666;
 }
 
 
-body{
+/*=====================================
+OVERVIEW GRID
+=====================================*/
 
-    background:#f3faf4;
-    color:#1f3d2b;
-    min-height:100vh;
+.energy-overview-section{
 
-}
-
-
-
-/* Header */
-
-.dashboard-header{
-
-    width:100%;
-    height:75px;
-    background:#ffffff;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 40px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-    position:sticky;
-    top:0;
-    z-index:10;
+margin-top:50px;
 
 }
 
+.energy-overview-grid{
 
+display:grid;
 
-.logo{
+grid-template-columns:repeat(4,1fr);
 
-    font-size:24px;
-    font-weight:700;
-    color:#168039;
-    display:flex;
-    align-items:center;
-    gap:10px;
+gap:25px;
 
 }
 
+.overview-card{
 
-.logo i{
+background:#121212;
 
-    font-size:30px;
+padding:25px;
 
-}
+border-radius:18px;
 
+color:#fff;
 
+text-align:center;
 
-.user-profile{
-
-    display:flex;
-    align-items:center;
-    gap:15px;
-    color:#345;
-
-    font-size:16px;
+transition:.35s;
 
 }
 
+.overview-card:hover{
 
-.user-profile i{
+transform:translateY(-8px);
 
-    font-size:35px;
-    color:#168039;
-
-}
-
-
-
-
-
-/* Main Layout */
-
-
-.dashboard-container{
-
-    display:flex;
-    min-height:calc(100vh - 75px);
+box-shadow:0 20px 35px rgba(24,184,87,.25);
 
 }
 
+.overview-icon{
 
+width:70px;
 
+height:70px;
 
+margin:auto;
 
-/* Sidebar */
+border-radius:50%;
 
+display:flex;
 
-.sidebar{
+align-items:center;
 
-    width:250px;
-    background:#ffffff;
-    padding:30px 20px;
-    box-shadow:5px 0 15px rgba(0,0,0,0.05);
+justify-content:center;
 
-}
+font-size:28px;
 
-
-
-.sidebar ul{
-
-    list-style:none;
+margin-bottom:20px;
 
 }
 
+.solar{
 
-
-.sidebar li{
-
-    padding:15px;
-    margin-bottom:10px;
-    border-radius:12px;
-    cursor:pointer;
-    color:#486653;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    transition:.3s;
+background:#16a34a;
 
 }
 
+.battery{
 
-
-.sidebar li:hover,
-.sidebar .active{
-
-    background:#168039;
-    color:white;
+background:#22c55e;
 
 }
 
+.grid{
 
-
-.sidebar i{
-
-    width:20px;
+background:#059669;
 
 }
 
+.eco{
 
-
-
-
-/* Dashboard Content */
-
-
-.dashboard-content{
-
-    flex:1;
-    padding:40px;
+background:#15803d;
 
 }
 
+.overview-card h3{
 
+margin-bottom:15px;
 
-.dashboard-content h1{
-
-    font-size:32px;
-    color:#145c2d;
-    margin-bottom:10px;
+font-size:20px;
 
 }
 
+.overview-card h1{
 
+font-size:34px;
 
-.subtitle{
-
-    color:#6b8173;
-    margin-bottom:30px;
-
-}
-
-
-
-
-
-/* Cards */
-
-
-.stats-grid{
-
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
+margin-bottom:10px;
 
 }
 
+.status{
 
+font-size:14px;
 
-.energy-card{
+display:inline-block;
 
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    display:flex;
-    align-items:center;
-    gap:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    transition:.3s;
+margin-bottom:20px;
 
 }
 
+.online{
 
-
-.energy-card:hover{
-
-    transform:translateY(-8px);
+color:#22c55e;
 
 }
 
+.excellent{
 
-
-.energy-card i{
-
-    width:60px;
-    height:60px;
-    background:#e3f6e8;
-    color:#168039;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-radius:50%;
-    font-size:25px;
+color:#86efac;
 
 }
 
+/* Progress */
 
+.progress{
 
-.energy-card h3{
+height:8px;
 
-    font-size:16px;
-    margin-bottom:8px;
+background:#2b2b2b;
 
-}
+border-radius:30px;
 
-
-.energy-card p{
-
-    font-size:25px;
-    font-weight:700;
-    color:#168039;
+overflow:hidden;
 
 }
-
-
-
-.energy-card span{
-
-    font-size:13px;
-    color:#777;
-
-}
-
-
-
-
-
-/* Energy Section */
-
-
-.energy-section,
-.activity-section{
-
-    background:white;
-    margin-top:35px;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.07);
-
-}
-
-
-
-.energy-section h2,
-.activity-section h2{
-
-    margin-bottom:25px;
-    color:#145c2d;
-
-}
-
-
-
-
-.progress-item{
-
-    margin-bottom:25px;
-
-}
-
-
-
-.progress-title{
-
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:10px;
-    font-weight:600;
-
-}
-
-
 
 .progress-bar{
 
-    width:100%;
-    height:14px;
-    background:#e5eee7;
-    border-radius:20px;
-    overflow:hidden;
+height:100%;
+
+border-radius:30px;
+
+background:#22c55e;
 
 }
-
-
 
 .solar-progress{
 
-    height:100%;
-    width:80%;
-    background:#27ae60;
-    border-radius:20px;
+width:98%;
 
 }
-
-
 
 .battery-progress{
 
-    height:100%;
-    width:65%;
-    background:#f2c94c;
-    border-radius:20px;
+width:89%;
+
+}
+
+.grid-progress{
+
+width:100%;
+
+}
+
+.eco-progress{
+
+width:92%;
 
 }
 
 
+/*=====================================
+SUMMARY
+=====================================*/
 
+.summary-section{
 
+display:grid;
 
-/* Activity */
+grid-template-columns:repeat(3,1fr);
 
+gap:25px;
 
-.activity-table{
+margin:50px 0;
 
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+}
+
+.summary-card{
+
+background:linear-gradient(135deg,#14532d,#22c55e);
+
+padding:30px;
+
+border-radius:18px;
+
+color:#fff;
+
+transition:.3s;
+
+}
+
+.summary-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.summary-card h3{
+
+margin-bottom:15px;
+
+}
+
+.summary-card h1{
+
+font-size:38px;
+
+margin-bottom:10px;
 
 }
 
 
+/*=====================================
+ACTION BUTTONS
+=====================================*/
 
-.activity-row{
+.action-grid{
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:#f5faf6;
-    padding:18px;
-    border-radius:12px;
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+}
+
+.action-btn{
+
+background:#111;
+
+color:#fff;
+
+padding:18px;
+
+border-radius:15px;
+
+text-align:center;
+
+text-decoration:none;
+
+transition:.3s;
+
+font-weight:600;
+
+}
+
+.action-btn i{
+
+display:block;
+
+font-size:28px;
+
+margin-bottom:12px;
+
+color:#22c55e;
+
+}
+
+.action-btn:hover{
+
+background:#18b857;
+
+transform:translateY(-6px);
 
 }
 
 
+/*=====================================
+RESPONSIVE
+=====================================*/
 
-.activity-row span{
+@media(max-width:992px){
 
-    display:flex;
-    align-items:center;
-    gap:12px;
+.energy-overview-grid{
 
-}
-
-
-.activity-row i{
-
-    color:#168039;
+grid-template-columns:repeat(2,1fr);
 
 }
 
+.summary-section{
 
-
-.activity-row b{
-
-    color:#145c2d;
+grid-template-columns:1fr;
 
 }
 
+.action-grid{
 
-
-
-
-/* ===========================
-   Tablet View
-=========================== */
-
-
-@media(max-width:1024px){
-
-
-.stats-grid{
-
-    grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(2,1fr);
 
 }
 
-
-
-.sidebar{
-
-    width:210px;
-
 }
-
-
-
-.dashboard-content{
-
-    padding:30px;
-
-}
-
-
-
-}
-
-
-
-
-
-/* ===========================
-   Mobile View
-=========================== */
-
 
 @media(max-width:768px){
 
+.energy-overview-grid{
 
-
-.dashboard-header{
-
-    padding:0 20px;
+grid-template-columns:1fr;
 
 }
 
+.action-grid{
 
-
-.logo{
-
-    font-size:20px;
+grid-template-columns:1fr;
 
 }
 
+.section-title h2{
 
-
-.user-profile span{
-
-    display:none;
+font-size:24px;
 
 }
 
+.summary-card h1{
 
-
-.dashboard-container{
-
-    flex-direction:column;
+font-size:30px;
 
 }
 
+}
+</style>
+
+    <!-- Statistics -->
+
+    <div class="dashboard-cards">
+
+        <div class="energy-card">
+
+            <div class="card-icon">
+
+                ☀
+
+            </div>
+
+            <h4>Total Energy</h4>
+
+            <h2>2,450 kWh</h2>
+
+            <span>+18% This Month</span>
+
+        </div>
 
 
-.sidebar{
 
-    width:100%;
-    padding:15px;
+        <div class="energy-card">
+
+            <div class="card-icon">
+
+                🔋
+
+            </div>
+
+            <h4>Battery Health</h4>
+
+            <h2>89%</h2>
+
+            <span>Excellent</span>
+
+        </div>
+
+
+
+        <div class="energy-card">
+
+            <div class="card-icon">
+
+                🌿
+
+            </div>
+
+            <h4>Carbon Saved</h4>
+
+            <h2>1.8 Tons</h2>
+
+            <span>Eco Friendly</span>
+
+        </div>
+
+
+
+        <div class="energy-card">
+
+            <div class="card-icon">
+
+                💰
+
+            </div>
+
+            <h4>Monthly Savings</h4>
+
+            <h2>₹12,850</h2>
+
+            <span>Compared to Grid</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    /* ===================================
+PART 1A
+=================================== */
+
+.user-home{
+
+padding:30px;
 
 }
 
+/* Banner */
 
+.user-banner{
 
-.sidebar ul{
+display:flex;
 
-    display:flex;
-    overflow-x:auto;
-    gap:10px;
+justify-content:space-between;
 
-}
+align-items:center;
 
+gap:30px;
 
+background:linear-gradient(135deg,#0f3d22,#18b857);
 
-.sidebar li{
+padding:40px;
 
-    min-width:max-content;
-    margin:0;
+border-radius:20px;
 
-}
+color:#fff;
 
+box-shadow:0 20px 40px rgba(0,0,0,.2);
 
+margin-bottom:35px;
 
-.dashboard-content{
-
-    padding:20px;
-
-}
-
-
-
-.dashboard-content h1{
-
-    font-size:25px;
+flex-wrap:wrap;
 
 }
 
+.banner-left{
 
+flex:1;
 
-.stats-grid{
-
-    grid-template-columns:1fr;
+min-width:280px;
 
 }
 
+.banner-badge{
 
+display:inline-block;
+
+background:#ffffff22;
+
+padding:8px 18px;
+
+border-radius:30px;
+
+margin-bottom:20px;
+
+font-size:14px;
+
+}
+
+.banner-left h1{
+
+font-size:38px;
+
+margin-bottom:18px;
+
+}
+
+.banner-left h1 span{
+
+color:#c4ff75;
+
+}
+
+.banner-left p{
+
+font-size:17px;
+
+line-height:1.7;
+
+margin-bottom:25px;
+
+color:#eefef3;
+
+}
+
+.banner-buttons{
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+.green-btn,
+
+.dark-btn{
+
+text-decoration:none;
+
+padding:13px 24px;
+
+border-radius:30px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.green-btn{
+
+background:#fff;
+
+color:#0f6d37;
+
+}
+
+.green-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.dark-btn{
+
+background:#111;
+
+color:#fff;
+
+}
+
+.dark-btn:hover{
+
+background:#222;
+
+}
+
+.banner-right{
+
+width:280px;
+
+text-align:center;
+
+background:#ffffff15;
+
+padding:30px;
+
+border-radius:20px;
+
+}
+
+.energy-circle{
+
+width:90px;
+
+height:90px;
+
+background:#fff;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:42px;
+
+margin:auto;
+
+margin-bottom:20px;
+
+color:#18b857;
+
+}
+
+/* Cards */
+
+.dashboard-cards{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
 
 .energy-card{
 
-    padding:20px;
+background:#111;
+
+color:#fff;
+
+padding:25px;
+
+border-radius:18px;
+
+transition:.3s;
+
+border-top:5px solid #18b857;
 
 }
 
+.energy-card:hover{
 
+transform:translateY(-8px);
 
-.energy-section,
-.activity-section{
-
-    padding:20px;
-
-}
-
-
-
-.activity-row{
-
-    flex-direction:column;
-    align-items:flex-start;
-    gap:10px;
+background:#18b857;
 
 }
 
+.card-icon{
 
+font-size:38px;
 
-}
-
-
-
-
-
-
-
-/* ===========================
- Small Mobile
-=========================== */
-
-
-@media(max-width:420px){
-
-
-.logo i{
-
-    font-size:22px;
+margin-bottom:18px;
 
 }
 
+.energy-card h4{
 
-.logo{
+font-size:18px;
 
-    font-size:17px;
-
-}
-
-
-.dashboard-content h1{
-
-    font-size:22px;
+margin-bottom:10px;
 
 }
 
+.energy-card h2{
 
-.energy-card p{
+font-size:32px;
 
-    font-size:22px;
-
-}
-
-
-}
-</style>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function(){
-
-
-
-/* ==========================
-   Load User Name
-========================== */
-
-
-let username = localStorage.getItem("username");
-
-
-if(username){
-
-    document.querySelector(".user-profile span").innerHTML =
-    "Welcome, " + username;
+margin-bottom:10px;
 
 }
 
+.energy-card span{
 
+color:#ddd;
 
-
-
-/* ==========================
-   Dashboard Card Animation
-========================== */
-
-
-const cards = document.querySelectorAll(".energy-card");
-
-
-cards.forEach((card,index)=>{
-
-
-    card.style.opacity="0";
-    card.style.transform="translateY(30px)";
-
-
-    setTimeout(()=>{
-
-        card.style.transition="0.6s ease";
-        card.style.opacity="1";
-        card.style.transform="translateY(0)";
-
-
-    },index * 200);
-
-
-
-});
-
-
-
-
-
-/* ==========================
-   Progress Animation
-========================== */
-
-
-setTimeout(()=>{
-
-
-const solar =
-document.querySelector(".solar-progress");
-
-
-const battery =
-document.querySelector(".battery-progress");
-
-
-
-if(solar){
-
-    solar.style.width="0";
-
-    setTimeout(()=>{
-
-        solar.style.transition="1.5s ease";
-        solar.style.width="80%";
-
-    },300);
+font-size:15px;
 
 }
 
+.energy-card:hover span{
 
-
-if(battery){
-
-    battery.style.width="0";
-
-    setTimeout(()=>{
-
-        battery.style.transition="1.5s ease";
-        battery.style.width="65%";
-
-    },500);
+color:#fff;
 
 }
 
+/* Tablet */
 
+@media(max-width:992px){
 
-},500);
+.dashboard-cards{
 
-
-
-
-
-
-/* ==========================
- Sidebar Active Menu
-========================== */
-
-
-const menuItems =
-document.querySelectorAll(".sidebar li");
-
-
-
-menuItems.forEach(item=>{
-
-
-item.addEventListener("click",function(){
-
-
-menuItems.forEach(menu=>{
-
-menu.classList.remove("active");
-
-});
-
-
-this.classList.add("active");
-
-
-});
-
-
-});
-
-
-
-
-
-
-/* ==========================
- Number Counter Animation
-========================== */
-
-
-const numbers =
-document.querySelectorAll(".energy-card p");
-
-
-
-numbers.forEach(number=>{
-
-
-let value =
-number.innerText.replace(/[^0-9]/g,'');
-
-
-if(value){
-
-
-let count=0;
-
-
-let interval =
-setInterval(()=>{
-
-
-count += Math.ceil(value/40);
-
-
-
-if(count>=value){
-
-count=value;
-
-clearInterval(interval);
+grid-template-columns:repeat(2,1fr);
 
 }
 
+.banner-left h1{
 
-
-number.innerText =
-count + (number.innerText.includes("₹") ? "": "");
-
-
-
-
-},40);
-
-
-
-}
-
-
-
-
-});
-
-
-
-
-
-});
-    </script>
-
-
-<script src="js/user-dashboard.js"></script>
-
-
-</body>
-
-</html>
-
-        </section>
-
-    </main>
-
-</div>
-
-<script src="js/dashboard.js"></script>
-
-<style>
-    /*==========================================
-    GOOGLE FONT
-==========================================*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-/*==========================================
-    RESET
-==========================================*/
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Poppins',sans-serif;
-    background:#f5f8f4;
-    color:#222;
-    overflow-x:hidden;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-ul{
-    list-style:none;
-}
-
-img{
-    max-width:100%;
-    display:block;
-}
-
-/*==========================================
-    VARIABLES
-==========================================*/
-
-:root{
-
-    --primary:#2E7D32;
-    --primary-dark:#1B5E20;
-    --secondary:#4CAF50;
-    --light:#F7FFF8;
-    --border:#dce8dc;
-    --white:#ffffff;
-    --text:#222;
-    --text-light:#666;
-    --shadow:0 10px 35px rgba(0,0,0,.08);
-
-}
-
-/*==========================================
-        LAYOUT
-==========================================*/
-
-.re-dashboard{
-
-    display:flex;
-    min-height:100vh;
-    width:100%;
-
-}
-
-/*==========================================
-        SIDEBAR
-==========================================*/
-
-.re-sidebar{
-
-    width:270px;
-    background:linear-gradient(180deg,#1B5E20,#2E7D32,#43A047);
-    color:#fff;
-    position:fixed;
-    left:0;
-    top:0;
-    height:100vh;
-    overflow-y:auto;
-    transition:.35s;
-    z-index:999;
-
-}
-
-.re-sidebar-logo{
-
-    height:90px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-bottom:1px solid rgba(255,255,255,.12);
-
-}
-
-.re-sidebar-logo img{
-
-    width:170px;
-    transition:.4s;
-
-}
-
-.re-sidebar-logo img:hover{
-
-    transform:scale(1.05);
-
-}
-
-/*==========================================
-        MENU
-==========================================*/
-
-.re-menu{
-
-    padding:25px 15px;
-
-}
-
-.re-menu li{
-
-    margin-bottom:10px;
-
-}
-
-.re-menu li a{
-
-    display:flex;
-    align-items:center;
-    gap:15px;
-    padding:14px 18px;
-    border-radius:12px;
-    transition:.3s;
-    font-size:15px;
-    font-weight:500;
-
-}
-
-.re-menu li a i{
-
-    width:22px;
-    text-align:center;
-    font-size:18px;
-
-}
-
-.re-menu li a:hover{
-
-    background:rgba(255,255,255,.18);
-    transform:translateX(8px);
-
-}
-
-.re-menu li.active a{
-
-    background:#fff;
-    color:var(--primary-dark);
-    font-weight:600;
-    box-shadow:0 8px 18px rgba(0,0,0,.18);
-
-}
-
-/*==========================================
-        MAIN
-==========================================*/
-
-.re-main{
-
-    flex:1;
-    margin-left:270px;
-    width:calc(100% - 270px);
-    min-height:100vh;
-
-}
-
-/*==========================================
-        TOPBAR
-==========================================*/
-
-.re-topbar{
-
-    position:sticky;
-    top:0;
-    background:#fff;
-    height:80px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 30px;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
-    z-index:100;
-
-}
-
-/*==========================================
-        LEFT
-==========================================*/
-
-.re-top-left{
-
-    display:flex;
-    align-items:center;
-    gap:18px;
-
-}
-
-.re-home-logo img{
-
-    width:150px;
-
-}
-
-/*==========================================
-        MENU BUTTON
-==========================================*/
-
-#menuBtn{
-
-    display:none;
-    width:46px;
-    height:46px;
-    border:none;
-    border-radius:12px;
-    background:var(--primary);
-    color:#fff;
-    cursor:pointer;
-    font-size:20px;
-    transition:.3s;
-
-}
-
-#menuBtn:hover{
-
-    background:var(--primary-dark);
-
-}
-
-/*==========================================
-        EMAIL
-==========================================*/
-
-.re-user-email{
-
-    display:flex;
-    align-items:center;
-    gap:10px;
-    background:#F4FFF5;
-    border:1px solid #dce8dc;
-    padding:12px 20px;
-    border-radius:50px;
-    color:var(--primary-dark);
-    font-weight:600;
-    font-size:15px;
-    box-shadow:0 3px 12px rgba(0,0,0,.05);
-
-}
-
-.re-user-email i{
-
-    font-size:18px;
-    color:#43A047;
-
-}
-
-/*==========================================
-        CONTENT
-==========================================*/
-
-.re-dashboard-content{
-
-    padding:40px;
-
-}
-
-.re-dashboard-content h1{
-
-    font-size:34px;
-    margin-bottom:12px;
-    color:#1B5E20;
-
-}
-
-.re-dashboard-content p{
-
-    color:#666;
-    line-height:1.8;
-
-}
-
-/*==========================================
-        TABLET
-==========================================*/
-
-@media(max-width:991px){
-
-.re-sidebar{
-
-    left:-280px;
-
-}
-
-.re-sidebar.active{
-
-    left:0;
-
-}
-
-.re-main{
-
-    margin-left:0;
-    width:100%;
-
-}
-
-#menuBtn{
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-}
-
-.re-topbar{
-
-    padding:0 20px;
+font-size:32px;
 
 }
 
 }
 
-/*==========================================
-        MOBILE
-==========================================*/
+/* Mobile */
 
 @media(max-width:768px){
 
-.re-topbar{
+.user-banner{
 
-    height:70px;
-    padding:0 15px;
+padding:25px;
 
-}
+text-align:center;
 
-.re-home-logo img{
-
-    width:120px;
+justify-content:center;
 
 }
 
-.re-user-email{
+.banner-right{
 
-    padding:10px 14px;
-    font-size:13px;
-    gap:8px;
+width:100%;
 
 }
 
-.re-dashboard-content{
+.banner-buttons{
 
-    padding:25px 18px;
-
-}
-
-.re-dashboard-content h1{
-
-    font-size:28px;
+justify-content:center;
 
 }
 
-}
+.dashboard-cards{
 
-/*==========================================
-        SMALL MOBILE
-==========================================*/
-
-@media(max-width:576px){
-
-.re-user-email{
-
-    max-width:170px;
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
+grid-template-columns:1fr;
 
 }
 
-.re-home-logo img{
+.banner-left h1{
 
-    width:110px;
-
-}
-
-.re-dashboard-content{
-
-    padding:20px 15px;
+font-size:28px;
 
 }
 
-.re-dashboard-content h1{
+.banner-left p{
 
-    font-size:24px;
+font-size:15px;
 
 }
 
 }
 
-/*==========================================
-        SCROLLBAR
-==========================================*/
+/* Small Mobile */
 
-.re-sidebar::-webkit-scrollbar{
+@media(max-width:480px){
 
-    width:6px;
+.user-home{
 
-}
-
-.re-sidebar::-webkit-scrollbar-thumb{
-
-    background:rgba(255,255,255,.35);
-    border-radius:50px;
+padding:15px;
 
 }
 
-.re-sidebar::-webkit-scrollbar-track{
+.banner-left h1{
 
-    background:transparent;
-
-}
-
-/*==========================================
-        SIDEBAR ANIMATION
-==========================================*/
-
-.re-sidebar{
-
-    animation:slideSidebar .6s ease;
+font-size:24px;
 
 }
 
-@keyframes slideSidebar{
+.energy-card h2{
 
-    from{
-
-        transform:translateX(-100%);
-        opacity:0;
-
-    }
-
-    to{
-
-        transform:translateX(0);
-        opacity:1;
-
-    }
+font-size:28px;
 
 }
-
-/*==========================================
-        TOPBAR ANIMATION
-==========================================*/
-
-.re-topbar{
-
-    animation:topFade .6s ease;
-
-}
-
-@keyframes topFade{
-
-    from{
-
-        opacity:0;
-        transform:translateY(-25px);
-
-    }
-
-    to{
-
-        opacity:1;
-        transform:translateY(0);
-
-    }
 
 }
 </style>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    /* User Name */
 
-    /*==============================
-        MOBILE MENU
-    ==============================*/
+const session = JSON.parse(localStorage.getItem("stackly_session"));
 
-    const menuBtn = document.getElementById("menuBtn");
-    const sidebar = document.getElementById("reSidebar");
+if(session){
 
-    if (menuBtn) {
+document.getElementById("dashboardUserName").textContent = session.name;
 
-        menuBtn.addEventListener("click", function () {
+}
 
-            sidebar.classList.toggle("active");
+/* Date */
 
-        });
+const options={
 
+weekday:"long",
+
+day:"numeric",
+
+month:"long",
+
+year:"numeric"
+
+};
+
+document.getElementById("todayDate").innerHTML=
+
+new Date().toLocaleDateString("en-IN",options);
+</script>
+
+</p>
+
+</div>
+
+</div>
+
+<style>
+    /* ==========================
+   Sidebar Menu
+========================== */
+
+.sidebar ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 8px 12px;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 18px;
+    color: #d1d5db;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sidebar ul li a i {
+    width: 22px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Hover */
+
+.sidebar ul li a:hover {
+    background: #1f8f45;
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+.sidebar ul li a:hover i {
+    color: #ffffff;
+}
+
+/* ==========================
+   Active Menu
+========================== */
+
+.sidebar ul li a.active {
+    background: linear-gradient(90deg, #16a34a, #22c55e);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(34, 197, 94, 0.35);
+    border-left: 5px solid #ffffff;
+}
+
+.sidebar ul li a.active i {
+    color: #ffffff;
+}
+
+.sidebar ul li a.active span {
+    color: #ffffff;
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width: 992px) {
+
+    .sidebar ul li a {
+        padding: 13px 16px;
+        font-size: 15px;
     }
 
-    /*==============================
-        DISPLAY USER EMAIL
-    ==============================*/
+}
 
-    const emailSpan = document.getElementById("dashboardEmail");
+/* ==========================
+   Mobile
+========================== */
 
-    let email = "";
+@media (max-width: 768px) {
 
-    // First check stackly_session
-    const session = localStorage.getItem("stackly_session");
-
-    if (session) {
-
-        const user = JSON.parse(session);
-
-        email = user.email;
-
+    .sidebar ul li {
+        margin: 6px 10px;
     }
 
-    // Otherwise check loggedInUserEmail
-    if (!email) {
-
-        email = localStorage.getItem("loggedInUserEmail");
-
+    .sidebar ul li a {
+        padding: 12px 15px;
+        font-size: 15px;
     }
 
-    // Display email
-    if (emailSpan) {
-
-        emailSpan.textContent = email || "Guest User";
-
+    .sidebar ul li a i {
+        font-size: 17px;
     }
+
+}
+
+/* ==========================
+   Small Mobile
+========================== */
+
+@media (max-width: 480px) {
+
+    .sidebar ul li a {
+        padding: 12px;
+        font-size: 14px;
+        gap: 12px;
+    }
+
+    .sidebar ul li a i {
+        width: 20px;
+        font-size: 16px;
+    }
+
+}
+    *{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:'Segoe UI',sans-serif;
+
+}
+
+body{
+
+background:#eef2f0;
+
+display:flex;
+
+overflow-x:hidden;
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+width:270px;
+
+height:100vh;
+
+background:#111;
+
+color:#fff;
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+transition:.4s;
+
+z-index:1000;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.sidebar-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo img{
+
+width:170px;
+
+}
+
+.close-sidebar{
+
+display:none;
+
+background:none;
+
+border:none;
+
+color:#fff;
+
+font-size:28px;
+
+cursor:pointer;
+
+}
+
+.sidebar ul{
+
+list-style:none;
+
+padding:25px 0;
+
+}
+
+.sidebar ul li{
+
+margin:5px 0;
+
+}
+
+.sidebar ul li a{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+padding:16px 30px;
+
+text-decoration:none;
+
+color:#fff;
+
+font-size:16px;
+
+transition:.3s;
+
+}
+
+.sidebar ul li a:hover{
+
+background:#18b857;
+
+}
+
+.sidebar ul li i{
+
+width:25px;
+
+text-align:center;
+
+}
+
+/* Main */
+
+.main{
+
+margin-left:270px;
+
+width:calc(100% - 270px);
+
+transition:.4s;
+
+}
+
+/* Topbar */
+
+.topbar{
+
+height:75px;
+
+background:#0e1b12;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 30px;
+
+color:#fff;
+
+box-shadow:0 3px 15px rgba(0,0,0,.15);
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
+}
+
+.top-left{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.top-left h2{
+
+font-size:23px;
+
+font-weight:600;
+
+}
+
+.top-left span{
+
+color:#22d366;
+
+}
+
+.top-right{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+background:#1d3527;
+
+padding:12px 18px;
+
+border-radius:40px;
+
+}
+
+.top-right i{
+
+color:#22d366;
+
+}
+
+.menu-btn{
+
+display:none;
+
+background:none;
+
+border:none;
+
+color:#fff;
+
+font-size:25px;
+
+cursor:pointer;
+
+}
+
+.content{
+
+padding:35px;
+
+}
+
+.overlay{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.5);
+
+display:none;
+
+z-index:900;
+
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.sidebar{
+
+left:-270px;
+
+}
+
+.sidebar.active{
+
+left:0;
+
+}
+
+.main{
+
+margin-left:0;
+
+width:100%;
+
+}
+
+.menu-btn{
+
+display:block;
+
+}
+
+.close-sidebar{
+
+display:block;
+
+}
+
+.overlay.active{
+
+display:block;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.topbar{
+
+padding:15px;
+
+flex-wrap:wrap;
+
+height:auto;
+
+gap:15px;
+
+}
+
+.top-left{
+
+width:100%;
+
+}
+
+.top-left h2{
+
+font-size:18px;
+
+}
+
+.top-right{
+
+width:100%;
+
+justify-content:center;
+
+font-size:14px;
+
+word-break:break-all;
+
+}
+
+.logo img{
+
+width:145px;
+
+}
+
+.sidebar{
+
+width:250px;
+
+left:-250px;
+
+}
+
+.sidebar.active{
+
+left:0;
+
+}
+
+}
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+.top-left h2{
+
+font-size:17px;
+
+}
+
+.top-right{
+
+font-size:13px;
+
+padding:10px;
+
+}
+
+.sidebar ul li a{
+
+padding:14px 20px;
+
+font-size:15px;
+
+}
+
+.logo img{
+
+width:130px;
+
+}
+
+}
+</style>
+
+
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+const menuBtn = document.querySelector(".menu-btn");
+const closeBtn = document.querySelector(".close-sidebar");
+const overlay = document.querySelector(".overlay");
+
+menuBtn.onclick = () => {
+
+sidebar.classList.add("active");
+
+overlay.classList.add("active");
+
+};
+
+closeBtn.onclick = closeSidebar;
+
+overlay.onclick = closeSidebar;
+
+function closeSidebar(){
+
+sidebar.classList.remove("active");
+
+overlay.classList.remove("active");
+
+}
+
+// Local Storage User Details
+
+const userName = localStorage.getItem("userName") || "Guest";
+
+const userEmail = localStorage.getItem("userEmail") || "guest@gmail.com";
+
+document.getElementById("userName").textContent = userName;
+
+document.getElementById("userEmail").textContent = userEmail;
+
+// Auto close sidebar after clicking menu (mobile)
+
+document.querySelectorAll(".sidebar a").forEach(link => {
+
+link.addEventListener("click", () => {
+
+if(window.innerWidth <= 992){
+
+closeSidebar();
+
+}
 
 });
+
+});
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (user) {
+    document.getElementById("userName").textContent = user.name;
+    document.getElementById("userEmail").textContent = user.email;
+}
+
+const session = JSON.parse(localStorage.getItem("stackly_session"));
+
+if (session) {
+
+    document.getElementById("userName").textContent = session.name;
+
+    document.getElementById("userEmail").textContent = session.email;
+
+} else {
+
+    document.getElementById("userName").textContent = "Guest";
+
+    document.getElementById("userEmail").textContent = "guest@gmail.com";
+
+}
 </script>
 
 </body>
