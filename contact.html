@@ -123,6 +123,16 @@ body{
     cursor:pointer;
 }
 
+
+
+.re-contact-field select option{
+    font-size:16px;
+    padding:14px;
+    color:#143d22;
+    background:#fff;
+}
+
+
 /* OVERLAY */
 .stkhd-overlay{
     position:fixed;
@@ -1241,54 +1251,56 @@ height:400px;
     
     
     
-    <div class="re-contact-field">
+    <div class="recd-field">
+
+        <label class="recd-label">
+            Requirement *
+        </label>
     
+        <div class="recd-dropdown" id="recdDropdown">
     
-    <label>
-    Requirement *
-    </label>
+            <div class="recd-selected" id="recdSelected">
+                Select Service
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
     
+            <ul class="recd-options" id="recdOptions">
     
+                <li data-value="">Select Service</li>
     
-    <select id="reSubject">
+                <li data-value="Solar Energy">
+                    <i class="fa-solid fa-solar-panel"></i>
+                    Solar Energy
+                </li>
     
+                <li data-value="Wind Energy">
+                    <i class="fa-solid fa-wind"></i>
+                    Wind Energy
+                </li>
     
-    <option value="">
+                <li data-value="Battery Storage">
+                    <i class="fa-solid fa-car-battery"></i>
+                    Battery Storage
+                </li>
     
-    Select Service
+                <li data-value="EV Charging">
+                    <i class="fa-solid fa-charging-station"></i>
+                    EV Charging
+                </li>
     
-    </option>
+            </ul>
     
+        </div>
     
-    <option>
-    Solar Energy
-    </option>
+        <input
+            type="hidden"
+            id="reSubject"
+            value=""
+        >
     
-    
-    <option>
-    Wind Energy
-    </option>
-    
-    
-    <option>
-    Battery Storage
-    </option>
-    
-    
-    <option>
-    EV Charging
-    </option>
-    
-    
-    </select>
-    
-    
-    
-    <span id="reSubjectError"></span>
-    
+        <span id="reSubjectError"></span>
     
     </div>
-    
     
     
     
@@ -2041,6 +2053,295 @@ window.location.href="404.html";
 
 });
 
+
+});
+        </script>
+
+        <style>
+            .recd-field{
+
+width:100%;
+margin-top:20px;
+position:relative;
+
+}
+
+.recd-label{
+
+display:block;
+margin-bottom:8px;
+font-weight:600;
+color:#143d22;
+
+}
+
+.recd-dropdown{
+
+width:100%;
+position:relative;
+
+}
+
+.recd-selected{
+
+width:100%;
+min-height:56px;
+
+padding:16px 18px;
+
+border:1px solid #d5e7d8;
+
+border-radius:12px;
+
+background:#fff;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+cursor:pointer;
+
+font-size:16px;
+
+transition:.3s;
+
+}
+
+.recd-selected:hover{
+
+border-color:#1c9b46;
+
+}
+
+.recd-selected i{
+
+color:#1c9b46;
+
+transition:.3s;
+
+}
+
+.recd-dropdown.active .recd-selected i{
+
+transform:rotate(180deg);
+
+}
+
+.recd-options{
+
+position:absolute;
+
+top:calc(100% + 8px);
+
+left:0;
+
+width:100%;
+
+background:#fff;
+
+border-radius:12px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+border:1px solid #d5e7d8;
+
+overflow:hidden;
+
+display:none;
+
+z-index:9999;
+
+max-height:260px;
+
+overflow-y:auto;
+
+}
+
+.recd-dropdown.active .recd-options{
+
+display:block;
+
+}
+
+.recd-options li{
+
+list-style:none;
+
+padding:16px 20px;
+
+cursor:pointer;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+transition:.3s;
+
+}
+
+.recd-options li:hover{
+
+background:#1c9b46;
+
+color:#fff;
+
+}
+
+.recd-options li i{
+
+width:20px;
+
+}
+
+#reSubjectError{
+
+display:block;
+
+margin-top:8px;
+
+color:#e63946;
+
+font-size:13px;
+
+}
+
+/* Desktop */
+
+@media(min-width:1200px){
+
+.recd-selected{
+
+font-size:17px;
+
+padding:18px 20px;
+
+}
+
+}
+
+/* Laptop */
+
+@media(max-width:1199px){
+
+.recd-selected{
+
+font-size:16px;
+
+}
+
+}
+
+/* Tablet */
+
+@media(max-width:991px){
+
+.recd-selected{
+
+min-height:58px;
+
+font-size:16px;
+
+}
+
+.recd-options li{
+
+padding:18px;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.recd-selected{
+
+font-size:17px;
+
+min-height:60px;
+
+}
+
+.recd-options{
+
+max-height:240px;
+
+}
+
+.recd-options li{
+
+font-size:16px;
+
+padding:18px;
+
+}
+
+}
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+.recd-selected{
+
+font-size:16px;
+
+padding:16px;
+
+}
+
+.recd-options li{
+
+padding:16px;
+
+font-size:15px;
+
+}
+
+}
+        </style>
+
+        <script>
+            const dropdown = document.getElementById("recdDropdown");
+
+const selected = document.getElementById("recdSelected");
+
+const options = document.querySelectorAll(".recd-options li");
+
+const hidden = document.getElementById("reSubject");
+
+selected.onclick = function(){
+
+    dropdown.classList.toggle("active");
+
+}
+
+options.forEach(function(option){
+
+    option.onclick=function(){
+
+        selected.innerHTML=this.innerHTML+' <i class="fa-solid fa-chevron-down"></i>';
+
+        hidden.value=this.dataset.value;
+
+        dropdown.classList.remove("active");
+
+    }
+
+});
+
+document.addEventListener("click",function(e){
+
+    if(!dropdown.contains(e.target)){
+
+        dropdown.classList.remove("active");
+
+    }
 
 });
         </script>
