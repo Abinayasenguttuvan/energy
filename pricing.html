@@ -1,0 +1,3056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly Cloud Services</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    min-height:200vh;
+    background:#050505;
+}
+
+/* HEADER */
+.stkhd-header{
+    position:sticky;
+    top:0;
+    width:100%;
+    z-index:9999;
+    background:rgba(8,8,8,.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(0,255,136,.15);
+}
+
+.stkhd-container{
+    width:100%;
+    padding:16px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* LOGO */
+.stkhd-logo{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    gap:12px;
+}
+
+.stkhd-logo img{
+    height:55px;
+    display:block;
+}
+
+.stkhd-logo-text{
+    color:#00ff88;
+    font-size:28px;
+    font-weight:800;
+}
+
+/* NAV */
+.stkhd-nav{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.stkhd-nav a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+    position:relative;
+}
+
+.stkhd-nav a:hover,
+.stkhd-nav a.active{
+    color:#00ff88;
+}
+
+.stkhd-nav a.active::after,
+.stkhd-nav a:hover::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:100%;
+    height:2px;
+    background:#00ff88;
+}
+
+/* BUTTON */
+.stkhd-btn{
+    background:#00ff88;
+    color:#000 !important;
+    padding:14px 26px;
+    border-radius:50px;
+    font-weight:700;
+}
+
+.stkhd-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px rgba(0,255,136,.3);
+}
+
+/* HAMBURGER */
+.stkhd-menu-btn,
+.stkhd-close-btn{
+    display:none;
+    color:#fff;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* OVERLAY */
+.stkhd-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:9998;
+}
+
+.stkhd-overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+
+/* Laptop */
+@media(max-width:1200px){
+    .stkhd-nav{
+        gap:22px;
+    }
+}
+
+/* Tablet */
+@media(max-width:992px){
+    .stkhd-nav{
+        gap:16px;
+    }
+
+    .stkhd-btn{
+        padding:12px 18px;
+        font-size:14px;
+    }
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    .stkhd-menu-btn{
+        display:block;
+    }
+
+    .stkhd-nav{
+        position:fixed;
+        top:0;
+        right:-100%;
+        width:300px;
+        height:100vh;
+        background:#0b0b0b;
+        border-left:1px solid rgba(0,255,136,.2);
+        flex-direction:column;
+        justify-content:center;
+        gap:30px;
+        transition:.45s ease;
+        z-index:9999;
+    }
+
+    .stkhd-nav.active{
+        right:0;
+    }
+
+    .stkhd-close-btn{
+        display:block;
+        position:absolute;
+        top:25px;
+        right:25px;
+    }
+
+    .stkhd-nav a{
+        font-size:20px;
+    }
+
+    .stkhd-btn{
+        margin-top:10px;
+    }
+
+    .stkhd-logo img{
+        height:46px;
+    }
+}
+
+/* Small Mobile */
+@media(max-width:480px){
+    .stkhd-nav{
+        width:85%;
+    }
+
+    .stkhd-logo-text{
+        font-size:22px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="stkhd-overlay" id="stkhdOverlay" onclick="stkhdCloseMenu()"></div>
+
+<header class="stkhd-header">
+    <div class="stkhd-container">
+
+        <!-- Logo -->
+        <a href="./index.html" class="stkhd-logo">
+            <img src="./white.webp" alt="Stackly Logo"
+            style="filter:brightness(0) saturate(100%) invert(73%) sepia(94%) saturate(2874%) hue-rotate(92deg) brightness(103%) contrast(105%);">
+        </a>
+
+        <!-- Hamburger -->
+        <div class="stkhd-menu-btn" onclick="stkhdOpenMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Nav -->
+        <nav class="stkhd-nav" id="stkhdNav">
+
+            <div class="stkhd-close-btn" onclick="stkhdCloseMenu()">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About </a>
+            <a href="./blog.html" >Blog</a>
+            <a href="./pricing.html" class="active">Pricing</a>
+            <a href="./contact.html"  >Contact </a>
+            <a href="./login.html" class="stkhd-btn">Login </a>
+        </nav>
+
+    </div>
+</header>
+
+<script>
+const navLinks=document.querySelectorAll(".stkhd-nav a");
+
+navLinks.forEach(link=>{
+    link.addEventListener("click",function(){
+        navLinks.forEach(item=>item.classList.remove("active"));
+        this.classList.add("active");
+        stkhdCloseMenu();
+    });
+});
+
+function stkhdOpenMenu(){
+    document.getElementById("stkhdNav").classList.add("active");
+    document.getElementById("stkhdOverlay").classList.add("show");
+}
+
+function stkhdCloseMenu(){
+    document.getElementById("stkhdNav").classList.remove("active");
+    document.getElementById("stkhdOverlay").classList.remove("show");
+}
+</script>
+
+
+<!-- ==========================================
+        ABOUT HERO SECTION START
+========================================== -->
+
+
+<section class="re-about-hero">
+
+
+    <!-- BACKGROUND VIDEO -->
+    
+    
+    <video 
+    class="re-about-video"
+    autoplay
+    muted
+    loop
+    playsinline>
+    
+    
+    <source src="./112957-696336342_medium.mp4" type="video/mp4">
+    
+    
+    </video>
+    
+    
+    
+    
+    
+    <!-- OVERLAY -->
+    
+    
+    <div class="re-about-overlay"></div>
+    
+    
+    
+    
+    
+    
+    
+    <!-- CONTENT -->
+    
+    
+    <div class="re-about-content">
+    
+    
+    <span class="re-about-label">
+    
+    
+    <i class="fa-solid fa-leaf"></i>
+    
+    
+    Renewable Energy Solutions
+    
+    
+    </span>
+    
+    
+    
+    
+    
+    <h1>
+    
+Pricing
+    
+    
+    </h1>
+    
+    
+    
+    
+    
+    
+    
+    <div class="re-about-breadcrumb">
+    
+    
+    <a href="./index.html">
+    
+    <i class="fa-solid fa-house"></i>
+    
+    Home
+    
+    </a>
+    
+    
+    
+    
+    <i class="fa-solid fa-angle-right"></i>
+    
+    
+    
+    
+    
+    <span>
+    
+    <i class="fa-solid fa-circle-info"></i>
+    
+    pricing
+    
+    </span>
+    
+    
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+    
+    
+    
+    </section>
+    
+    
+    
+    <!-- ==========================================
+            ABOUT HERO SECTION END
+    ========================================== -->
+
+    <style>
+        /* ==========================================
+ ABOUT HERO SECTION
+========================================== */
+
+
+.re-about-hero{
+
+
+width:100%;
+
+height:600px;
+
+position:relative;
+
+overflow:hidden;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#06351b;
+
+
+}
+
+
+
+
+
+
+
+/* VIDEO */
+
+
+.re-about-video{
+
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+z-index:0;
+
+
+}
+
+
+
+
+
+
+
+
+/* OVERLAY */
+
+
+.re-about-overlay{
+
+
+position:absolute;
+
+inset:0;
+
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(2,35,18,.85),
+
+rgba(0,120,60,.65)
+
+);
+
+
+z-index:1;
+
+
+}
+
+
+
+
+
+
+
+
+/* CONTENT */
+
+
+.re-about-content{
+
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+color:white;
+
+padding:20px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* LABEL */
+
+
+.re-about-label{
+
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+
+padding:10px 25px;
+
+
+background:
+
+rgba(255,255,255,.15);
+
+
+border-radius:50px;
+
+
+border:
+
+1px solid rgba(255,255,255,.25);
+
+
+font-size:14px;
+
+
+letter-spacing:1px;
+
+
+animation:
+
+reAboutFade .8s ease;
+
+
+}
+
+
+
+
+
+
+
+
+/* HEADING */
+
+
+.re-about-content h1{
+
+
+font-size:70px;
+
+margin:25px 0;
+
+font-weight:800;
+
+letter-spacing:1px;
+
+
+animation:
+
+reAboutSlide 1s ease;
+
+
+}
+
+
+
+
+
+
+
+
+/* BREADCRUMB */
+
+
+.re-about-breadcrumb{
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:15px;
+
+
+font-size:16px;
+
+
+}
+
+
+
+.re-about-breadcrumb a{
+
+
+color:#8aff9d;
+
+text-decoration:none;
+
+
+}
+
+
+
+.re-about-breadcrumb span{
+
+
+color:white;
+
+
+}
+
+
+
+.re-about-breadcrumb i{
+
+
+font-size:14px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ANIMATION */
+
+
+@keyframes reAboutFade{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(-20px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+
+@keyframes reAboutSlide{
+
+
+from{
+
+
+opacity:0;
+
+transform:translateY(50px);
+
+
+}
+
+
+
+to{
+
+
+opacity:1;
+
+transform:translateY(0);
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+ LARGE DESKTOP
+========================================== */
+
+
+@media(min-width:1400px){
+
+
+.re-about-hero{
+
+
+height:700px;
+
+
+}
+
+
+
+.re-about-content h1{
+
+
+font-size:80px;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+ LAPTOP
+========================================== */
+
+
+@media(max-width:1200px){
+
+
+.re-about-hero{
+
+
+height:550px;
+
+
+}
+
+
+
+.re-about-content h1{
+
+
+font-size:55px;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+ TABLET
+========================================== */
+
+
+@media(max-width:900px){
+
+
+.re-about-hero{
+
+
+height:500px;
+
+
+}
+
+
+
+.re-about-content h1{
+
+
+font-size:45px;
+
+
+}
+
+
+
+.re-about-label{
+
+
+font-size:13px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+ MOBILE
+========================================== */
+
+
+@media(max-width:600px){
+
+
+.re-about-hero{
+
+
+height:430px;
+
+
+}
+
+
+
+.re-about-content h1{
+
+
+font-size:36px;
+
+
+}
+
+
+
+.re-about-label{
+
+
+padding:8px 18px;
+
+font-size:12px;
+
+
+}
+
+
+
+.re-about-breadcrumb{
+
+
+font-size:14px;
+
+gap:10px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+/* SMALL MOBILE */
+
+
+@media(max-width:400px){
+
+
+.re-about-content h1{
+
+
+font-size:30px;
+
+
+}
+
+
+
+.re-about-hero{
+
+
+height:400px;
+
+
+}
+
+
+}
+</style>
+<!-- ==========================================
+     RENEWABLE PRICING SECTION START
+========================================== -->
+
+<section class="re-price-section">
+
+
+    <div class="re-price-container">
+    
+    
+        <div class="re-price-heading re-price-reveal">
+    
+    
+            <span class="re-price-tag">
+    
+                <i class="fa-solid fa-bolt"></i>
+    
+                PRICING PLANS
+    
+            </span>
+    
+    
+    
+            <h2>
+    
+                Choose The Right
+                <span>Energy Package</span>
+    
+            </h2>
+    
+    
+    
+            <p>
+    
+                Flexible renewable energy plans designed
+                for homes, businesses and industries.
+    
+            </p>
+    
+    
+        </div>
+    
+    
+    
+    
+    
+        <div class="re-price-grid">
+    
+    
+    
+    
+    
+            <!-- BASIC -->
+    
+            <div class="re-price-card re-price-reveal">
+    
+    
+                <h3>
+                    Basic Solar
+                </h3>
+    
+    
+                <div class="re-price-value">
+    
+                    <span>$</span>
+                    499
+    
+                    <small>
+                        /month
+                    </small>
+    
+                </div>
+    
+    
+    
+                <ul>
+    
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Solar Installation
+                    </li>
+    
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Basic Monitoring
+                    </li>
+    
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Support Service
+                    </li>
+    
+                </ul>
+    
+    
+                <a href="./404.html">
+                    Get Started
+                </a>
+    
+    
+            </div>
+    
+    
+    
+    
+    
+    
+    
+            <!-- POPULAR -->
+    
+            <div class="re-price-card re-price-popular re-price-reveal">
+    
+    
+                <div class="re-price-badge">
+    
+                    Popular
+    
+                </div>
+    
+    
+                <h3>
+                    Premium Energy
+                </h3>
+    
+    
+    
+                <div class="re-price-value">
+    
+                    <span>$</span>
+                    899
+    
+                    <small>
+                        /month
+                    </small>
+    
+                </div>
+    
+    
+    
+                <ul>
+    
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Advanced Solar System
+                    </li>
+    
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Battery Storage
+                    </li>
+    
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        24/7 Monitoring
+                    </li>
+    
+                </ul>
+    
+    
+    
+                <a href="./404.html">
+    
+                    Get Started
+    
+                </a>
+    
+    
+    
+            </div>
+    
+    
+    
+    
+    
+    
+    
+            <!-- BUSINESS -->
+    
+    
+            <div class="re-price-card re-price-reveal">
+    
+    
+                <h3>
+                    Business Pro
+                </h3>
+    
+    
+    
+                <div class="re-price-value">
+    
+                    <span>$</span>
+                    1499
+    
+                    <small>
+                        /month
+                    </small>
+    
+                </div>
+    
+    
+    
+                <ul>
+    
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Industrial Energy
+                    </li>
+    
+    
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Smart Analytics
+                    </li>
+    
+    
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Priority Support
+                    </li>
+    
+    
+                </ul>
+    
+    
+    
+                <a href="./404.html">
+    
+                    Get Started
+    
+                </a>
+    
+    
+    
+            </div>
+    
+    
+    
+    
+        </div>
+    
+    
+    </div>
+    
+    
+    </section>
+    
+    
+    <!-- ==========================================
+         RENEWABLE PRICING SECTION END
+    ========================================== -->
+
+
+
+    <!-- ==========================================
+     RENEWABLE FAQ SECTION START
+========================================== -->
+
+
+<section class="re-faq-section">
+
+
+    <div class="re-faq-container">
+    
+    
+    
+    <div class="re-faq-grid">
+    
+    
+    
+    
+    
+    <!-- LEFT FAQ -->
+    
+    
+    <div class="re-faq-content re-faq-reveal">
+    
+    
+    
+    <span class="re-faq-tag">
+    
+    <i class="fa-solid fa-circle-question"></i>
+    
+    FAQ
+    
+    </span>
+    
+    
+    
+    <h2>
+    
+    Frequently Asked
+    <span>Questions</span>
+    
+    </h2>
+    
+    
+    
+    
+    
+    <div class="re-faq-box">
+    
+    
+    
+    <div class="re-faq-item">
+    
+    
+    <button>
+    
+    How does renewable energy work?
+    
+    <i class="fa-solid fa-plus"></i>
+    
+    </button>
+    
+    
+    <div class="re-faq-answer">
+    
+    <p>
+    
+    Renewable energy uses natural resources
+    like sunlight and wind to generate clean power.
+    
+    </p>
+    
+    </div>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    <div class="re-faq-item">
+    
+    
+    <button>
+    
+    Is solar installation expensive?
+    
+    <i class="fa-solid fa-plus"></i>
+    
+    </button>
+    
+    
+    <div class="re-faq-answer">
+    
+    <p>
+    
+    Modern solar systems reduce electricity costs
+    and provide long-term savings.
+    
+    </p>
+    
+    </div>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="re-faq-item">
+    
+    
+    <button>
+    
+    How much maintenance is required?
+    
+    <i class="fa-solid fa-plus"></i>
+    
+    </button>
+    
+    
+    <div class="re-faq-answer">
+    
+    <p>
+    
+    Renewable systems require minimal maintenance
+    with regular performance checks.
+    
+    </p>
+    
+    </div>
+    
+    
+    </div>
+    
+    
+    
+    </div>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <!-- RIGHT IMAGE -->
+    
+    
+    <div class="re-faq-image re-faq-reveal">
+    
+    
+    <img src="./faq-energy.webp"
+    alt="Renewable Energy FAQ">
+    
+    
+    <div class="re-faq-circle"></div>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    </div>
+    
+    
+    </div>
+    
+    
+    </section>
+    <script>
+        /* ==========================================
+   RENEWABLE PRICING + FAQ ANIMATION
+========================================== */
+
+
+(function(){
+
+
+
+/* ==========================================
+   PRICING SCROLL REVEAL
+========================================== */
+
+
+const rePriceItems = document.querySelectorAll(
+    ".re-price-reveal"
+);
+
+
+
+if(rePriceItems.length){
+
+
+    const rePriceObserver = new IntersectionObserver(
+
+
+        (entries)=>{
+
+
+            entries.forEach((entry)=>{
+
+
+                if(entry.isIntersecting){
+
+
+
+                    rePriceItems.forEach(
+
+                        (item,index)=>{
+
+
+                            setTimeout(()=>{
+
+
+                                item.classList.add(
+                                    "re-price-active"
+                                );
+
+
+                            }, index * 250);
+
+
+
+                        }
+
+                    );
+
+
+
+                    rePriceObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+
+            });
+
+
+
+        },
+
+
+        {
+            threshold:.15
+        }
+
+
+    );
+
+
+
+
+    const rePriceSection =
+    document.querySelector(
+        ".re-price-section"
+    );
+
+
+
+    if(rePriceSection){
+
+
+        rePriceObserver.observe(
+            rePriceSection
+        );
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   FAQ SCROLL REVEAL
+========================================== */
+
+
+const reFaqItems = document.querySelectorAll(
+    ".re-faq-reveal"
+);
+
+
+
+if(reFaqItems.length){
+
+
+    const reFaqObserver = new IntersectionObserver(
+
+
+        (entries)=>{
+
+
+            entries.forEach((entry)=>{
+
+
+                if(entry.isIntersecting){
+
+
+
+                    reFaqItems.forEach(
+
+                        (item,index)=>{
+
+
+                            setTimeout(()=>{
+
+
+                                item.classList.add(
+                                    "re-faq-active"
+                                );
+
+
+                            }, index * 300);
+
+
+
+                        }
+
+                    );
+
+
+
+                    reFaqObserver.unobserve(
+                        entry.target
+                    );
+
+
+                }
+
+
+
+            });
+
+
+        },
+
+
+        {
+            threshold:.20
+        }
+
+
+    );
+
+
+
+
+
+    const reFaqSection =
+    document.querySelector(
+        ".re-faq-section"
+    );
+
+
+
+    if(reFaqSection){
+
+
+        reFaqObserver.observe(
+            reFaqSection
+        );
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   FAQ ACCORDION
+========================================== */
+
+
+const reFaqButtons =
+document.querySelectorAll(
+    ".re-faq-item button"
+);
+
+
+
+reFaqButtons.forEach((button)=>{
+
+
+    button.addEventListener(
+        "click",
+        ()=>{
+
+
+            const currentItem =
+            button.parentElement;
+
+
+
+
+            document
+            .querySelectorAll(
+                ".re-faq-item"
+            )
+            .forEach((item)=>{
+
+
+                if(item !== currentItem){
+
+
+                    item.classList.remove(
+                        "active"
+                    );
+
+
+                }
+
+
+            });
+
+
+
+
+
+
+            currentItem.classList.toggle(
+                "active"
+            );
+
+
+
+        }
+    );
+
+
+});
+
+
+
+})();
+    </script>
+    
+    
+    <!-- ==========================================
+         RENEWABLE FAQ SECTION END
+    ========================================== -->
+
+    <style>
+        
+
+
+/* ==========================================
+   PRICING SECTION
+========================================== */
+
+
+.re-price-section{
+
+
+    width:100%;
+
+
+    padding:100px 20px;
+
+
+    background:#e9fbe9;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+.re-price-container{
+
+
+    max-width:1200px;
+
+
+    margin:auto;
+
+
+}
+
+
+
+
+
+
+
+/* HEADING */
+
+
+.re-price-heading{
+
+
+    max-width:750px;
+
+
+    text-align:center;
+
+
+    margin:
+
+    0 auto 70px;
+
+
+}
+
+
+
+.re-price-tag{
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+    gap:10px;
+
+
+    padding:10px 25px;
+
+
+    background:white;
+
+
+    border-radius:50px;
+
+
+    color:#1c9b46;
+
+
+    font-weight:700;
+
+
+    letter-spacing:1px;
+
+
+}
+
+
+
+
+
+.re-price-heading h2{
+
+
+    margin-top:20px;
+
+
+    font-size:45px;
+
+
+    color:#153d22;
+
+
+}
+
+
+
+.re-price-heading h2 span{
+
+
+    color:#1c9b46;
+
+
+}
+
+
+
+
+
+.re-price-heading p{
+
+
+    margin-top:20px;
+
+
+    color:#58715e;
+
+
+    font-size:17px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* PRICE GRID */
+
+
+.re-price-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* PRICE CARD */
+
+
+.re-price-card{
+
+
+    background:white;
+
+
+    padding:40px 30px;
+
+
+    border-radius:30px;
+
+
+    text-align:center;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+    box-shadow:
+
+    0 20px 45px
+
+    rgba(28,155,70,.12);
+
+
+    transition:.5s ease;
+
+
+}
+
+
+
+
+
+
+.re-price-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:0;
+
+
+    height:0;
+
+
+    border-radius:50%;
+
+
+    background:
+
+    rgba(28,155,70,.12);
+
+
+    top:50%;
+
+
+    left:50%;
+
+
+    transform:
+
+    translate(-50%,-50%);
+
+
+    transition:.6s ease;
+
+
+}
+
+
+
+
+.re-price-card:hover::before{
+
+
+    width:400px;
+
+
+    height:400px;
+
+
+}
+
+
+
+
+
+
+.re-price-card:hover{
+
+
+    transform:
+
+    translateY(-15px)
+
+    rotateX(5deg);
+
+
+}
+
+
+
+
+
+
+
+
+/* POPULAR CARD */
+
+
+.re-price-popular{
+
+
+    border:
+
+    3px solid #1c9b46;
+
+
+    transform:
+
+    translateY(-25px);
+
+
+}
+
+
+
+
+
+.re-price-popular:hover{
+
+
+    transform:
+
+    translateY(-40px)
+
+    rotateX(5deg);
+
+
+}
+
+
+
+
+
+
+.re-price-badge{
+
+
+    position:absolute;
+
+
+    top:20px;
+
+
+    right:20px;
+
+
+    background:#1c9b46;
+
+
+    color:white;
+
+
+    padding:8px 18px;
+
+
+    border-radius:50px;
+
+
+    font-size:13px;
+
+
+}
+
+
+
+
+
+
+
+
+/* CONTENT */
+
+
+.re-price-card h3{
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+    color:#163c22;
+
+
+    font-size:25px;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+.re-price-value{
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+    color:#1c9b46;
+
+
+    font-size:55px;
+
+
+    font-weight:800;
+
+
+}
+
+
+
+
+
+.re-price-value span{
+
+
+    font-size:25px;
+
+
+}
+
+
+
+.re-price-value small{
+
+
+    font-size:15px;
+
+
+    color:#65796b;
+
+
+}
+
+
+
+
+
+
+
+
+/* LIST */
+
+
+.re-price-card ul{
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+    list-style:none;
+
+
+    margin:30px 0;
+
+
+    padding:0;
+
+
+}
+
+
+
+.re-price-card li{
+
+
+    margin:15px 0;
+
+
+    color:#556d5c;
+
+
+}
+
+
+
+
+
+.re-price-card li i{
+
+
+    color:#1c9b46;
+
+
+    margin-right:8px;
+
+
+}
+
+
+
+
+
+
+
+
+/* BUTTON */
+
+
+.re-price-card a{
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+    display:inline-block;
+
+
+    padding:13px 35px;
+
+
+    background:#1c9b46;
+
+
+    color:white;
+
+
+    border-radius:50px;
+
+
+    text-decoration:none;
+
+
+    font-weight:700;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+.re-price-card a:hover{
+
+
+    background:#083d1b;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   FAQ SECTION
+========================================== */
+
+
+.re-faq-section{
+
+
+    width:100%;
+
+
+    padding:100px 20px;
+
+
+    background:#ffffff;
+
+
+}
+
+
+
+
+
+.re-faq-container{
+
+
+    max-width:1200px;
+
+
+    margin:auto;
+
+
+}
+
+
+
+
+
+
+
+.re-faq-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    1fr 1fr;
+
+
+    gap:70px;
+
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* FAQ CONTENT */
+
+
+.re-faq-tag{
+
+
+    display:inline-flex;
+
+
+    gap:10px;
+
+
+    padding:10px 22px;
+
+
+    border-radius:50px;
+
+
+    background:#e9fbe9;
+
+
+    color:#1c9b46;
+
+
+    font-weight:700;
+
+
+}
+
+
+
+
+
+.re-faq-content h2{
+
+
+    margin-top:20px;
+
+
+    font-size:45px;
+
+
+    color:#153d22;
+
+
+}
+
+
+
+
+
+.re-faq-content h2 span{
+
+
+    color:#1c9b46;
+
+
+}
+
+
+
+
+
+
+
+
+/* FAQ ITEM */
+
+
+.re-faq-item{
+
+
+    margin-top:20px;
+
+
+    border-radius:18px;
+
+
+    background:#e9fbe9;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+
+.re-faq-item button{
+
+
+    width:100%;
+
+
+    border:0;
+
+
+    background:none;
+
+
+    padding:20px;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    font-size:16px;
+
+
+    font-weight:700;
+
+
+    color:#163c22;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+.re-faq-item button i{
+
+
+    color:#1c9b46;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+
+
+
+.re-faq-answer{
+
+
+    max-height:0;
+
+
+    overflow:hidden;
+
+
+    transition:.5s ease;
+
+
+}
+
+
+
+
+
+.re-faq-answer p{
+
+
+    padding:0 20px 20px;
+
+
+    color:#607463;
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+
+
+
+
+.re-faq-item.active button i{
+
+
+    transform:
+
+    rotate(45deg);
+
+
+}
+
+
+
+.re-faq-item.active 
+.re-faq-answer{
+
+
+    max-height:200px;
+
+
+}
+
+
+
+
+
+
+
+
+/* FAQ IMAGE */
+
+
+.re-faq-image{
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.re-faq-image img{
+
+
+    width:100%;
+
+
+    border-radius:35px;
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+    animation:
+
+    reFaqFloat 5s infinite alternate;
+
+
+}
+
+
+
+
+
+@keyframes reFaqFloat{
+
+
+from{
+
+transform:
+translateY(0);
+
+}
+
+
+to{
+
+transform:
+translateY(-20px);
+
+}
+
+}
+
+
+
+
+.re-faq-circle{
+
+
+    position:absolute;
+
+
+    width:300px;
+
+
+    height:300px;
+
+
+    background:
+
+    rgba(28,155,70,.15);
+
+
+    border-radius:50%;
+
+
+    right:-50px;
+
+
+    bottom:-50px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* SCROLL REVEAL */
+
+
+.re-price-reveal,
+.re-faq-reveal{
+
+
+    opacity:0;
+
+
+    transform:
+
+    translateY(60px);
+
+
+    transition:.8s ease;
+
+
+}
+
+
+
+
+.re-price-active,
+.re-faq-active{
+
+
+    opacity:1;
+
+
+    transform:
+
+    translateY(0);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   LAPTOP
+========================================== */
+
+
+@media(max-width:1200px){
+
+
+.re-price-heading h2,
+.re-faq-content h2{
+
+
+    font-size:40px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+
+@media(max-width:900px){
+
+
+.re-price-grid{
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+}
+
+
+
+
+.re-price-popular{
+
+
+    transform:none;
+
+
+}
+
+
+
+
+.re-faq-grid{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+.re-faq-image{
+
+
+    order:-1;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+
+@media(max-width:600px){
+
+
+.re-price-section,
+.re-faq-section{
+
+
+    padding:60px 15px;
+
+
+}
+
+
+
+.re-price-grid{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+.re-price-heading h2,
+.re-faq-content h2{
+
+
+    font-size:30px;
+
+
+}
+
+
+
+.re-price-card{
+
+
+    padding:35px 20px;
+
+
+}
+
+
+
+.re-price-value{
+
+
+    font-size:45px;
+
+
+}
+
+
+
+.re-faq-image img{
+
+
+    border-radius:25px;
+
+
+}
+
+
+
+}
+
+
+</style>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<footer class="rstfooter-section">
+
+    <div class="rstfooter-container">
+
+        <!-- Column 1 -->
+        <div class="rstfooter-col rstfooter-first-col">
+            <a href="index.html" class="rstfooter-logo">
+                <img src="./white.webp" alt="Stackly Logo"
+                style="height:60px; filter: brightness(0) saturate(100%) invert(73%) sepia(94%) saturate(2874%) hue-rotate(92deg) brightness(103%) contrast(105%);">
+            </a>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, rerum!
+            </p>
+
+            <div class="rstfooter-social">
+                <a href="./404.html"><i class="fab fa-facebook-f"></i></a>
+                <a href="./404.html"><i class="fab fa-x-twitter"></i></a>
+                <a href="./404.html"><i class="fab fa-instagram"></i></a>
+                <a href="./404.html"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="rstfooter-col">
+            <h3>Working Hours</h3>
+
+            <ul class="rstfooter-hours">
+                <li><span>Mon - Fri</span><span>09:00 - 22:00</span></li>
+                <li><span>Saturday</span><span>11:00 - 00:00</span></li>
+                <li><span>Sunday</span><span>11:00 - 23:00</span></li>
+                <li><span>Happy Hour</span><span>17:00 - 21:00</span></li>
+            </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="rstfooter-col">
+            <h3>Contact Us</h3>
+
+            <p><i class="fas fa-map-marker-alt"></i> Salem Tamil Nadu</p>
+            <p><i class="fas fa-phone"></i> +91 9876543210</p>
+            <p><i class="fas fa-envelope"></i> booking@thestackly.com</p>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="rstfooter-col">
+            <h3>Newsletter</h3>
+            <p>Receive latest updates from us.</p>
+
+            <form id="rstfooterForm">
+                <input type="email" id="rstfooterEmail" placeholder="Enter Email">
+                <button type="submit">Subscribe</button>
+            </form>
+
+            <small id="rstfooterMsg"></small>
+        </div>
+
+    </div>
+
+    <div class="rstfooter-bottom">
+        © 2026 Stackly services. All Rights Reserved.
+    </div>
+
+</footer>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.rstfooter-section{
+    background:#111;
+    color:white;
+    padding:70px 20px;
+}
+
+.rstfooter-container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+    align-items:start;
+}
+
+.rstfooter-col{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+.rstfooter-col h3{
+    margin-bottom:25px;
+    color:#00ff88;
+    min-height:40px; /* makes all headings align */
+    display:flex;
+    align-items:center;
+}
+
+.rstfooter-col p{
+    color:#bbb;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.rstfooter-logo img{
+    width:160px;
+    margin-bottom:20px;
+    cursor:pointer;
+}
+
+.rstfooter-social{
+    display:flex;
+    gap:15px;
+    margin-top:10px;
+}
+
+.rstfooter-social a{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#222;
+    color:white;
+    text-decoration:none;
+    transition:.4s;
+}
+
+.rstfooter-social a:hover{
+    background:#00ff88;
+    color:black;
+}
+
+.rstfooter-hours{
+    list-style:none;
+    padding:0;
+}
+
+.rstfooter-hours li{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+    color:#bbb;
+    gap:20px;
+}
+
+#rstfooterForm{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+#rstfooterForm input{
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    outline:none;
+}
+
+#rstfooterForm button{
+    padding:14px;
+    border:none;
+    background:#123e29;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+#rstfooterMsg{
+    display:block;
+    margin-top:10px;
+    color:#00ff88;
+}
+
+.rstfooter-bottom{
+    text-align:center;
+    border-top:1px solid #333;
+    margin-top:50px;
+    padding-top:20px;
+    color:#999;
+}
+
+/* Tablet */
+@media(max-width:992px){
+    .rstfooter-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .rstfooter-container{
+        grid-template-columns:1fr;
+    }
+
+    .rstfooter-hours li{
+        flex-direction:column;
+        gap:5px;
+    }
+
+    .rstfooter-col h3{
+        min-height:auto;
+    }
+}
+</style>
+
+<script>
+document.getElementById("rstfooterForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const email = document.getElementById("rstfooterEmail").value.trim();
+    const msg = document.getElementById("rstfooterMsg");
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if(emailPattern.test(email)){
+        msg.style.color = "#4CAF50";
+        msg.innerText = "Email verified ✓";
+
+        setTimeout(()=>{
+            window.location.href = "404.html";
+        },1500);
+    } else {
+        msg.style.color = "#ff7b7b";
+        msg.innerText = "Fill details correctly";
+    }
+});
+</script>
+
+</body>
+</html>

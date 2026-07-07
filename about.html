@@ -1,0 +1,10110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly Cloud Services</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    min-height:200vh;
+    background:#050505;
+}
+
+/* HEADER */
+.stkhd-header{
+    position:sticky;
+    top:0;
+    width:100%;
+    z-index:9999;
+    background:rgba(8,8,8,.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(0,255,136,.15);
+}
+
+.stkhd-container{
+    width:100%;
+    padding:16px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* LOGO */
+.stkhd-logo{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    gap:12px;
+}
+
+.stkhd-logo img{
+    height:55px;
+    display:block;
+}
+
+.stkhd-logo-text{
+    color:#00ff88;
+    font-size:28px;
+    font-weight:800;
+}
+
+/* NAV */
+.stkhd-nav{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.stkhd-nav a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+    position:relative;
+}
+
+.stkhd-nav a:hover,
+.stkhd-nav a.active{
+    color:#00ff88;
+}
+
+.stkhd-nav a.active::after,
+.stkhd-nav a:hover::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:100%;
+    height:2px;
+    background:#00ff88;
+}
+
+/* BUTTON */
+.stkhd-btn{
+    background:#00ff88;
+    color:#000 !important;
+    padding:14px 26px;
+    border-radius:50px;
+    font-weight:700;
+}
+
+.stkhd-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px rgba(0,255,136,.3);
+}
+
+/* HAMBURGER */
+.stkhd-menu-btn,
+.stkhd-close-btn{
+    display:none;
+    color:#fff;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* OVERLAY */
+.stkhd-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:9998;
+}
+
+.stkhd-overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+
+/* Laptop */
+@media(max-width:1200px){
+    .stkhd-nav{
+        gap:22px;
+    }
+}
+
+/* Tablet */
+@media(max-width:992px){
+    .stkhd-nav{
+        gap:16px;
+    }
+
+    .stkhd-btn{
+        padding:12px 18px;
+        font-size:14px;
+    }
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    .stkhd-menu-btn{
+        display:block;
+    }
+
+    .stkhd-nav{
+        position:fixed;
+        top:0;
+        right:-100%;
+        width:300px;
+        height:100vh;
+        background:#0b0b0b;
+        border-left:1px solid rgba(0,255,136,.2);
+        flex-direction:column;
+        justify-content:center;
+        gap:30px;
+        transition:.45s ease;
+        z-index:9999;
+    }
+
+    .stkhd-nav.active{
+        right:0;
+    }
+
+    .stkhd-close-btn{
+        display:block;
+        position:absolute;
+        top:25px;
+        right:25px;
+    }
+
+    .stkhd-nav a{
+        font-size:20px;
+    }
+
+    .stkhd-btn{
+        margin-top:10px;
+    }
+
+    .stkhd-logo img{
+        height:46px;
+    }
+}
+
+/* Small Mobile */
+@media(max-width:480px){
+    .stkhd-nav{
+        width:85%;
+    }
+
+    .stkhd-logo-text{
+        font-size:22px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="stkhd-overlay" id="stkhdOverlay" onclick="stkhdCloseMenu()"></div>
+
+<header class="stkhd-header">
+    <div class="stkhd-container">
+
+        <!-- Logo -->
+        <a href="./index.html" class="stkhd-logo">
+            <img src="./white.webp" alt="Stackly Logo"
+            style="filter:brightness(0) saturate(100%) invert(73%) sepia(94%) saturate(2874%) hue-rotate(92deg) brightness(103%) contrast(105%);">
+        </a>
+
+        <!-- Hamburger -->
+        <div class="stkhd-menu-btn" onclick="stkhdOpenMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Nav -->
+        <nav class="stkhd-nav" id="stkhdNav">
+
+            <div class="stkhd-close-btn" onclick="stkhdCloseMenu()">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <a href="./index.html">Home</a>
+            <a href="./about.html" class="active">About </a>
+            <a href="./blog.html" >Blog</a>
+            <a href="./pricing.html" >Pricing</a>
+            <a href="./contact.html"  >Contact </a>
+            <a href="./login.html" class="stkhd-btn">Login </a>
+        </nav>
+
+    </div>
+</header>
+
+<script>
+const navLinks=document.querySelectorAll(".stkhd-nav a");
+
+navLinks.forEach(link=>{
+    link.addEventListener("click",function(){
+        navLinks.forEach(item=>item.classList.remove("active"));
+        this.classList.add("active");
+        stkhdCloseMenu();
+    });
+});
+
+function stkhdOpenMenu(){
+    document.getElementById("stkhdNav").classList.add("active");
+    document.getElementById("stkhdOverlay").classList.add("show");
+}
+
+function stkhdCloseMenu(){
+    document.getElementById("stkhdNav").classList.remove("active");
+    document.getElementById("stkhdOverlay").classList.remove("show");
+}
+</script>
+
+<!-- ==========================================
+        ABOUT HERO SECTION START
+========================================== -->
+
+
+<section class="re-about-hero">
+
+
+    <!-- BACKGROUND VIDEO -->
+    
+    
+    <video 
+    class="re-about-video"
+    autoplay
+    muted
+    loop
+    playsinline>
+    
+    
+    <source src="./112957-696336342_medium.mp4" type="video/mp4">
+    
+    
+    </video>
+    
+    
+    
+    
+    
+    <!-- OVERLAY -->
+    
+    
+    <div class="re-about-overlay"></div>
+    
+    
+    
+    
+    
+    
+    
+    <!-- CONTENT -->
+    
+    
+    <div class="re-about-content">
+    
+    
+    <span class="re-about-label">
+    
+    
+    <i class="fa-solid fa-leaf"></i>
+    
+    
+    Renewable Energy Solutions
+    
+    
+    </span>
+    
+    
+    
+    
+    
+    <h1>
+    
+    About Us
+    
+    
+    </h1>
+    
+    
+    
+    
+    
+    
+    
+    <div class="re-about-breadcrumb">
+    
+    
+    <a href="./index.html">
+    
+    <i class="fa-solid fa-house"></i>
+    
+    Home
+    
+    </a>
+    
+    
+    
+    
+    <i class="fa-solid fa-angle-right"></i>
+    
+    
+    
+    
+    
+    <span>
+    
+    <i class="fa-solid fa-circle-info"></i>
+    
+    About
+    
+    </span>
+    
+    
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+    
+    
+    
+    </section>
+    
+    
+    
+    <!-- ==========================================
+            ABOUT HERO SECTION END
+    ========================================== -->
+
+    <style>
+        /* ==========================================
+ ABOUT HERO SECTION
+========================================== */
+
+
+.re-about-hero{
+
+
+width:100%;
+
+height:600px;
+
+position:relative;
+
+overflow:hidden;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#06351b;
+
+
+}
+
+
+
+
+
+
+
+/* VIDEO */
+
+
+.re-about-video{
+
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+z-index:0;
+
+
+}
+
+
+
+
+
+
+
+
+/* OVERLAY */
+
+
+.re-about-overlay{
+
+
+position:absolute;
+
+inset:0;
+
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(2,35,18,.85),
+
+rgba(0,120,60,.65)
+
+);
+
+
+z-index:1;
+
+
+}
+
+
+
+
+
+
+
+
+/* CONTENT */
+
+
+.re-about-content{
+
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+color:white;
+
+padding:20px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* LABEL */
+
+
+.re-about-label{
+
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+
+padding:10px 25px;
+
+
+background:
+
+rgba(255,255,255,.15);
+
+
+border-radius:50px;
+
+
+border:
+
+1px solid rgba(255,255,255,.25);
+
+
+font-size:14px;
+
+
+letter-spacing:1px;
+
+
+animation:
+
+reAboutFade .8s ease;
+
+
+}
+
+
+
+
+
+
+
+
+/* HEADING */
+
+
+.re-about-content h1{
+
+
+font-size:70px;
+
+margin:25px 0;
+
+font-weight:800;
+
+letter-spacing:1px;
+
+
+animation:
+
+reAboutSlide 1s ease;
+
+
+}
+
+
+
+
+
+
+
+
+/* BREADCRUMB */
+
+
+.re-about-breadcrumb{
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:15px;
+
+
+font-size:16px;
+
+
+}
+
+
+
+.re-about-breadcrumb a{
+
+
+color:#8aff9d;
+
+text-decoration:none;
+
+
+}
+
+
+
+.re-about-breadcrumb span{
+
+
+color:white;
+
+
+}
+
+
+
+.re-about-breadcrumb i{
+
+
+font-size:14px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ANIMATION */
+
+
+@keyframes reAboutFade{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(-20px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+
+@keyframes reAboutSlide{
+
+
+from{
+
+
+opacity:0;
+
+transform:translateY(50px);
+
+
+}
+
+
+
+to{
+
+
+opacity:1;
+
+transform:translateY(0);
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+ LARGE DESKTOP
+========================================== */
+
+
+@media(min-width:1400px){
+
+
+.re-about-hero{
+
+
+height:700px;
+
+
+}
+
+
+
+.re-about-content h1{
+
+
+font-size:80px;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+ LAPTOP
+========================================== */
+
+
+@media(max-width:1200px){
+
+
+.re-about-hero{
+
+
+height:550px;
+
+
+}
+
+
+
+.re-about-content h1{
+
+
+font-size:55px;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+ TABLET
+========================================== */
+
+
+@media(max-width:900px){
+
+
+.re-about-hero{
+
+
+height:500px;
+
+
+}
+
+
+
+.re-about-content h1{
+
+
+font-size:45px;
+
+
+}
+
+
+
+.re-about-label{
+
+
+font-size:13px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+ MOBILE
+========================================== */
+
+
+@media(max-width:600px){
+
+
+.re-about-hero{
+
+
+height:430px;
+
+
+}
+
+
+
+.re-about-content h1{
+
+
+font-size:36px;
+
+
+}
+
+
+
+.re-about-label{
+
+
+padding:8px 18px;
+
+font-size:12px;
+
+
+}
+
+
+
+.re-about-breadcrumb{
+
+
+font-size:14px;
+
+gap:10px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+/* SMALL MOBILE */
+
+
+@media(max-width:400px){
+
+
+.re-about-content h1{
+
+
+font-size:30px;
+
+
+}
+
+
+
+.re-about-hero{
+
+
+height:400px;
+
+
+}
+
+
+}
+</style>
+<!-- =========================================
+     ABOUT US SECTION START
+========================================== -->
+
+<section class="about-section">
+
+    <div class="container">
+
+        <!-- Left Side Images -->
+        <div class="about-images">
+
+            <!-- Main Image -->
+            <div class="about-main-image">
+
+                <img src="./energy3.webp"
+                     alt="Renewable Energy">
+
+            </div>
+
+            <!-- Floating Image -->
+            <div class="about-floating-image">
+
+                <img src="./energy.webp"
+                     alt="Solar Panel">
+
+            </div>
+
+            <!-- Experience Badge -->
+            <div class="experience-box">
+
+                <h2>10+</h2>
+
+                <span>
+                    Years of<br>
+                    Experience
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- Right Side -->
+        <div class="about-content">
+
+            <span class="section-subtitle">
+
+                <i class="fa-solid fa-leaf"></i>
+
+                About Stackly Energy
+
+            </span>
+
+            <h2>
+
+                Delivering Clean &
+                Sustainable Energy
+                Solutions For A
+                Greener Tomorrow
+
+            </h2>
+
+            <p>
+
+                We are committed to accelerating the transition toward
+                renewable energy through innovative solar, wind,
+                hydropower and biomass solutions. Our experienced
+                professionals design, install and maintain efficient
+                systems that reduce environmental impact while
+                maximizing long-term energy savings.
+
+            </p>
+
+            <!-- Features -->
+
+            <div class="about-features">
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        100% Eco-Friendly Energy Solutions
+                    </span>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        Certified Renewable Energy Experts
+                    </span>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        Smart Solar & Wind Technologies
+                    </span>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        24/7 Technical Support & Maintenance
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom Area -->
+
+            <div class="about-bottom">
+
+                <a href="./404.html" class="about-btn">
+
+                    Discover More
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+                <div class="project-box">
+
+                    <h3>500+</h3>
+
+                    <p>
+                        Successful Projects
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     ABOUT US SECTION END
+========================================== -->
+
+<style>
+    /*=========================================
+ABOUT SECTION
+=========================================*/
+
+.about-section{
+
+position:relative;
+
+padding:120px 0;
+
+background:#f8fcf8;
+
+overflow:hidden;
+
+}
+
+.about-section .container{
+
+width:min(1320px,92%);
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:80px;
+
+align-items:center;
+
+}
+
+/*=========================================
+LEFT SIDE
+=========================================*/
+
+.about-images{
+
+position:relative;
+
+min-height:650px;
+
+}
+
+/*=========================================
+MAIN IMAGE
+=========================================*/
+
+.about-main-image{
+
+width:85%;
+
+border-radius:30px;
+
+overflow:hidden;
+
+position:relative;
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.18);
+
+}
+
+.about-main-image img{
+
+width:100%;
+
+height:100%;
+
+display:block;
+
+object-fit:cover;
+
+transition:1s;
+
+}
+
+.about-main-image:hover img{
+
+transform:scale(1.08);
+
+}
+
+/*=========================================
+FLOATING IMAGE
+=========================================*/
+
+.about-floating-image{
+
+position:absolute;
+
+right:0;
+
+bottom:40px;
+
+width:320px;
+
+border-radius:25px;
+
+overflow:hidden;
+
+border:8px solid #fff;
+
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.25);
+
+animation:floatingImage 5s ease-in-out infinite;
+
+z-index:5;
+
+}
+
+.about-floating-image img{
+
+width:100%;
+
+display:block;
+
+object-fit:cover;
+
+transition:.8s;
+
+}
+
+.about-floating-image:hover img{
+
+transform:scale(1.08);
+
+}
+
+@keyframes floatingImage{
+
+0%{
+
+    transform:translateY(0);
+
+}
+
+50%{
+
+    transform:translateY(-18px);
+
+}
+
+100%{
+
+    transform:translateY(0);
+
+}
+
+}
+
+/*=========================================
+EXPERIENCE BOX
+=========================================*/
+
+.experience-box{
+
+position:absolute;
+
+top:30px;
+
+left:-30px;
+
+width:180px;
+
+height:180px;
+
+border-radius:30px;
+
+background:rgba(34,197,94,.95);
+
+color:#fff;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+box-shadow:
+
+0 20px 45px rgba(34,197,94,.35);
+
+backdrop-filter:blur(10px);
+
+animation:pulseBox 3s infinite;
+
+z-index:6;
+
+}
+
+.experience-box h2{
+
+font-size:60px;
+
+font-weight:700;
+
+line-height:1;
+
+margin-bottom:12px;
+
+}
+
+.experience-box span{
+
+font-size:16px;
+
+line-height:1.7;
+
+font-weight:500;
+
+}
+
+@keyframes pulseBox{
+
+0%{
+
+    transform:scale(1);
+
+}
+
+50%{
+
+    transform:scale(1.05);
+
+}
+
+100%{
+
+    transform:scale(1);
+
+}
+
+}
+
+/*=========================================
+DECORATIVE SHAPES
+=========================================*/
+
+.about-section::before{
+
+content:"";
+
+position:absolute;
+
+width:380px;
+
+height:380px;
+
+border-radius:50%;
+
+background:rgba(34,197,94,.08);
+
+top:-180px;
+
+left:-180px;
+
+}
+
+.about-section::after{
+
+content:"";
+
+position:absolute;
+
+width:280px;
+
+height:280px;
+
+border-radius:50%;
+
+background:rgba(34,197,94,.06);
+
+bottom:-120px;
+
+right:-120px;
+
+}
+
+/*=========================================
+IMAGE GLOW
+=========================================*/
+
+.about-main-image::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+    to top,
+    rgba(0,0,0,.20),
+    transparent
+);
+
+z-index:2;
+
+}
+
+.about-main-image:hover{
+
+transform:translateY(-8px);
+
+transition:.6s;
+
+}
+
+/*=========================================
+FLOATING IMAGE SHADOW
+=========================================*/
+
+.about-floating-image::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+    to top,
+    rgba(0,0,0,.25),
+    transparent
+);
+
+pointer-events:none;
+
+}
+
+/*=========================================
+ABOUT CONTENT
+=========================================*/
+
+.about-content{
+
+position:relative;
+
+z-index:5;
+
+}
+
+/*=============================
+SECTION SUBTITLE
+=============================*/
+
+.section-subtitle{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:10px 22px;
+
+border-radius:50px;
+
+background:rgba(34,197,94,.12);
+
+color:#16a34a;
+
+font-size:15px;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+border:1px solid rgba(34,197,94,.15);
+
+}
+
+.section-subtitle i{
+
+color:#22c55e;
+
+animation:leafRotate 4s linear infinite;
+
+}
+
+@keyframes leafRotate{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+50%{
+
+transform:rotate(15deg);
+
+}
+
+100%{
+
+transform:rotate(0deg);
+
+}
+
+}
+
+/*=============================
+HEADING
+=============================*/
+
+.about-content h2{
+
+font-size:52px;
+
+line-height:1.2;
+
+color:#0d3b2a;
+
+font-weight:700;
+
+margin-bottom:28px;
+
+position:relative;
+
+}
+
+.about-content h2::after{
+
+content:"";
+
+display:block;
+
+width:90px;
+
+height:5px;
+
+border-radius:30px;
+
+margin-top:18px;
+
+background:#22c55e;
+
+}
+
+/*=============================
+PARAGRAPH
+=============================*/
+
+.about-content p{
+
+font-size:17px;
+
+color:#666;
+
+line-height:1.9;
+
+margin-bottom:35px;
+
+}
+
+/*=============================
+FEATURE LIST
+=============================*/
+
+.about-features{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:22px;
+
+margin-bottom:45px;
+
+}
+
+.feature-item{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:15px;
+
+transition:.4s;
+
+}
+
+.feature-item:hover{
+
+transform:translateX(8px);
+
+}
+
+.feature-item i{
+
+width:40px;
+
+height:40px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:#fff;
+
+background:#22c55e;
+
+flex-shrink:0;
+
+box-shadow:
+
+0 10px 20px rgba(34,197,94,.25);
+
+transition:.4s;
+
+}
+
+.feature-item:hover i{
+
+transform:rotate(360deg);
+
+background:#15803d;
+
+}
+
+.feature-item span{
+
+font-size:16px;
+
+font-weight:500;
+
+color:#444;
+
+line-height:1.7;
+
+}
+
+/*=============================
+BOTTOM AREA
+=============================*/
+
+.about-bottom{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:30px;
+
+margin-top:10px;
+
+}
+
+/*=============================
+BUTTON
+=============================*/
+
+.about-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:14px;
+
+padding:18px 36px;
+
+background:linear-gradient(
+135deg,
+#16a34a,
+#22c55e
+);
+
+color:#fff;
+
+border-radius:60px;
+
+text-decoration:none;
+
+font-size:16px;
+
+font-weight:600;
+
+position:relative;
+
+overflow:hidden;
+
+transition:.45s;
+
+box-shadow:
+
+0 15px 35px rgba(34,197,94,.30);
+
+}
+
+.about-btn::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.35),
+transparent
+);
+
+transition:.7s;
+
+}
+
+.about-btn:hover::before{
+
+left:120%;
+
+}
+
+.about-btn:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 20px 45px rgba(34,197,94,.40);
+
+}
+
+.about-btn i{
+
+transition:.4s;
+
+}
+
+.about-btn:hover i{
+
+transform:translateX(8px);
+
+}
+
+/*=============================
+PROJECT BOX
+=============================*/
+
+.project-box{
+
+min-width:190px;
+
+background:#fff;
+
+padding:28px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:
+
+0 18px 45px rgba(0,0,0,.08);
+
+transition:.45s;
+
+}
+
+.project-box:hover{
+
+transform:translateY(-8px);
+
+}
+
+.project-box h3{
+
+font-size:48px;
+
+color:#22c55e;
+
+font-weight:700;
+
+margin-bottom:10px;
+
+}
+
+.project-box p{
+
+margin:0;
+
+color:#666;
+
+font-size:15px;
+
+line-height:1.6;
+
+}
+
+/*=============================
+CONTENT ANIMATION
+=============================*/
+
+.about-content>*{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:.8s ease;
+
+}
+
+.about-section.show .about-content>*{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.about-section.show .section-subtitle{
+
+transition-delay:.1s;
+
+}
+
+.about-section.show h2{
+
+transition-delay:.25s;
+
+}
+
+.about-section.show p{
+
+transition-delay:.4s;
+
+}
+
+.about-section.show .about-features{
+
+transition-delay:.55s;
+
+}
+
+.about-section.show .about-bottom{
+
+transition-delay:.7s;
+
+}
+
+/*=========================================
+PART 2C
+RESPONSIVE CSS
+=========================================*/
+
+/*==================================
+Large Desktop (1600px+)
+==================================*/
+
+@media (min-width:1600px){
+
+.about-section{
+
+padding:150px 0;
+
+}
+
+.about-section .container{
+
+max-width:1500px;
+
+gap:100px;
+
+}
+
+.about-images{
+
+min-height:760px;
+
+}
+
+.about-main-image{
+
+width:88%;
+
+}
+
+.about-floating-image{
+
+width:360px;
+
+bottom:60px;
+
+}
+
+.about-content h2{
+
+font-size:62px;
+
+}
+
+.about-content p{
+
+font-size:18px;
+
+}
+
+.project-box{
+
+padding:35px;
+
+}
+
+}
+
+/*==================================
+Desktop (1400px)
+==================================*/
+
+@media (max-width:1399px){
+
+.about-section{
+
+padding:120px 0;
+
+}
+
+.about-section .container{
+
+gap:70px;
+
+}
+
+.about-images{
+
+min-height:620px;
+
+}
+
+.about-floating-image{
+
+width:290px;
+
+}
+
+.about-content h2{
+
+font-size:48px;
+
+}
+
+}
+
+/*==================================
+Laptop
+==================================*/
+
+@media (max-width:1199px){
+
+.about-section{
+
+padding:100px 0;
+
+}
+
+.about-section .container{
+
+gap:50px;
+
+}
+
+.about-images{
+
+min-height:560px;
+
+}
+
+.about-main-image{
+
+width:100%;
+
+}
+
+.about-floating-image{
+
+width:240px;
+
+bottom:20px;
+
+}
+
+.experience-box{
+
+width:150px;
+
+height:150px;
+
+left:-15px;
+
+}
+
+.experience-box h2{
+
+font-size:48px;
+
+}
+
+.about-content h2{
+
+font-size:40px;
+
+}
+
+.about-content p{
+
+font-size:16px;
+
+}
+
+.about-features{
+
+grid-template-columns:1fr;
+
+}
+
+.project-box{
+
+min-width:170px;
+
+padding:25px;
+
+}
+
+}
+
+/*==================================
+Tablet Landscape
+==================================*/
+
+@media (max-width:991px){
+
+.about-section{
+
+padding:90px 0;
+
+}
+
+.about-section .container{
+
+grid-template-columns:1fr;
+
+gap:70px;
+
+}
+
+.about-images{
+
+order:1;
+
+min-height:540px;
+
+}
+
+.about-content{
+
+order:2;
+
+}
+
+.about-main-image{
+
+width:85%;
+
+margin:auto;
+
+}
+
+.about-floating-image{
+
+right:40px;
+
+bottom:0;
+
+width:240px;
+
+}
+
+.experience-box{
+
+left:20px;
+
+top:20px;
+
+}
+
+.about-content{
+
+text-align:center;
+
+}
+
+.about-content h2::after{
+
+margin-left:auto;
+
+margin-right:auto;
+
+}
+
+.about-bottom{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.about-features{
+
+grid-template-columns:1fr 1fr;
+
+text-align:left;
+
+}
+
+}
+
+/*==================================
+Tablet Portrait
+==================================*/
+
+@media (max-width:768px){
+
+.about-section{
+
+padding:80px 0;
+
+}
+
+.about-images{
+
+min-height:480px;
+
+}
+
+.about-main-image{
+
+width:100%;
+
+}
+
+.about-floating-image{
+
+width:200px;
+
+right:20px;
+
+bottom:-10px;
+
+border-width:6px;
+
+}
+
+.experience-box{
+
+width:130px;
+
+height:130px;
+
+left:10px;
+
+}
+
+.experience-box h2{
+
+font-size:40px;
+
+}
+
+.experience-box span{
+
+font-size:13px;
+
+}
+
+.about-content h2{
+
+font-size:34px;
+
+}
+
+.about-content p{
+
+font-size:15px;
+
+}
+
+.about-features{
+
+grid-template-columns:1fr;
+
+gap:18px;
+
+}
+
+.about-btn{
+
+padding:15px 28px;
+
+}
+
+.project-box{
+
+width:100%;
+
+}
+
+}
+
+/*==================================
+Mobile
+==================================*/
+
+@media (max-width:576px){
+
+.about-section{
+
+padding:70px 0;
+
+}
+
+.about-section .container{
+
+width:92%;
+
+gap:60px;
+
+}
+
+.about-images{
+
+min-height:420px;
+
+}
+
+.about-main-image{
+
+border-radius:20px;
+
+}
+
+.about-floating-image{
+
+width:170px;
+
+right:10px;
+
+bottom:-20px;
+
+border-radius:18px;
+
+}
+
+.experience-box{
+
+width:105px;
+
+height:105px;
+
+left:0;
+
+top:-10px;
+
+border-radius:20px;
+
+}
+
+.experience-box h2{
+
+font-size:32px;
+
+margin-bottom:6px;
+
+}
+
+.experience-box span{
+
+font-size:11px;
+
+line-height:1.4;
+
+}
+
+.section-subtitle{
+
+font-size:13px;
+
+padding:8px 18px;
+
+}
+
+.about-content h2{
+
+font-size:28px;
+
+}
+
+.about-content p{
+
+font-size:14px;
+
+line-height:1.8;
+
+}
+
+.feature-item{
+
+gap:12px;
+
+}
+
+.feature-item i{
+
+width:34px;
+
+height:34px;
+
+font-size:14px;
+
+}
+
+.feature-item span{
+
+font-size:14px;
+
+}
+
+.about-bottom{
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+.about-btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+.project-box{
+
+width:100%;
+
+padding:22px;
+
+}
+
+.project-box h3{
+
+font-size:38px;
+
+}
+
+}
+
+/*==================================
+Small Mobile
+==================================*/
+
+@media (max-width:420px){
+
+.about-images{
+
+min-height:360px;
+
+}
+
+.about-main-image{
+
+width:100%;
+
+}
+
+.about-floating-image{
+
+width:140px;
+
+bottom:-10px;
+
+right:5px;
+
+}
+
+.experience-box{
+
+width:90px;
+
+height:90px;
+
+}
+
+.experience-box h2{
+
+font-size:26px;
+
+}
+
+.experience-box span{
+
+font-size:10px;
+
+}
+
+.about-content h2{
+
+font-size:24px;
+
+line-height:1.35;
+
+}
+
+.about-content p{
+
+font-size:13px;
+
+}
+
+.about-btn{
+
+font-size:14px;
+
+padding:14px;
+
+}
+
+.project-box{
+
+padding:18px;
+
+}
+
+.project-box h3{
+
+font-size:32px;
+
+}
+
+}
+
+/*==================================
+Smooth Hover Effects
+==================================*/
+
+@media (hover:hover){
+
+.about-main-image:hover{
+
+transform:translateY(-10px);
+
+}
+
+.about-floating-image:hover{
+
+transform:translateY(-15px) scale(1.03);
+
+}
+
+.feature-item:hover{
+
+transform:translateX(10px);
+
+}
+
+.project-box:hover{
+
+transform:translateY(-10px);
+
+}
+
+.about-btn:hover{
+
+transform:translateY(-5px);
+
+}
+
+}
+
+/*==================================
+Touch Devices
+==================================*/
+
+@media (hover:none){
+
+.about-main-image:hover,
+
+.about-floating-image:hover,
+
+.project-box:hover,
+
+.feature-item:hover,
+
+.about-btn:hover{
+
+transform:none;
+
+}
+
+}
+    </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    
+        const aboutSection = document.querySelector(".about-section");
+    
+        if (aboutSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        aboutSection.classList.add("show");
+                    }
+                });
+            }, {
+                threshold: 0.25
+            });
+    
+            observer.observe(aboutSection);
+        }
+    
+    });
+    </script>
+
+
+<!--====================================
+        ENERGY SOLUTIONS SECTION
+=====================================-->
+
+<section class="energy-section">
+
+    <div class="energy-container">
+
+        <!-- Left Content -->
+
+        <div class="energy-left">
+
+            <span class="energy-subtitle">
+                ENERGY SOLUTIONS TAILORED TO YOUR NEEDS
+            </span>
+
+            <h2 class="energy-title">
+                Powering Communities With Clean,
+                Reliable & Renewable Energy
+            </h2>
+
+            <div class="energy-small-text">
+
+                <h5 id="energyLabel">
+                    OUR EXPERT TEAM HANDLES THE COMPLETE PROCESS
+                </h5>
+
+            </div>
+
+            <!--========================
+                SERVICE LIST
+            =========================-->
+
+            <div class="energy-list">
+
+                <!-- Item 1 -->
+
+                <div class="energy-item active"
+
+                     data-image="images/energy1.jpg"
+
+                     data-title="Energy Solutions"
+
+                     data-description="Complete renewable energy systems designed for residential, commercial and industrial applications.">
+
+                    <h3>Energy Solutions</h3>
+
+                </div>
+
+                <!-- Item 2 -->
+
+                <div class="energy-item"
+
+                     data-image="images/energy2.jpg"
+
+                     data-title="Analysis & Planning"
+
+                     data-description="Detailed site analysis, energy audits and strategic planning for maximum efficiency.">
+
+                    <h3>Analysis & Planning</h3>
+
+                </div>
+
+                <!-- Item 3 -->
+
+                <div class="energy-item"
+
+                     data-image="images/energy3.jpg"
+
+                     data-title="Engineering Services"
+
+                     data-description="Professional engineering, structural design and renewable energy implementation.">
+
+                    <h3>Engineering Services</h3>
+
+                </div>
+
+                <!-- Item 4 -->
+
+                <div class="energy-item"
+
+                     data-image="images/energy4.jpg"
+
+                     data-title="Turbine Maintenance"
+
+                     data-description="Preventive maintenance and performance optimization for wind turbines.">
+
+                    <h3>Turbine Maintenance</h3>
+
+                </div>
+
+                <!-- Item 5 -->
+
+                <div class="energy-item"
+
+                     data-image="images/energy5.jpg"
+
+                     data-title="Solar Farm Development"
+
+                     data-description="Large-scale solar farm design, installation and long-term operational support.">
+
+                    <h3>Solar Farm Development</h3>
+
+                </div>
+
+                <!-- Item 6 -->
+
+                <div class="energy-item"
+
+                     data-image="images/energy6.jpg"
+
+                     data-title="Green Energy Consulting"
+
+                     data-description="Helping organizations adopt sustainable energy strategies for a greener future.">
+
+                    <h3>Green Energy Consulting</h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--==========================
+            RIGHT IMAGE AREA
+        ============================-->
+
+        <div class="energy-right">
+
+            <div class="energy-image-wrapper">
+
+                <img
+                    src="images/energy1.jpg"
+                    id="energyMainImage"
+                    alt="Renewable Energy">
+
+            </div>
+
+            <div class="energy-info-card">
+
+                <h3 id="energyTitle">
+
+                    Energy Solutions
+
+                </h3>
+
+                <p id="energyDescription">
+
+                    Complete renewable energy systems designed for residential,
+                    commercial and industrial applications.
+
+                </p>
+
+                <a href="#" class="energy-btn">
+
+                    Learn More
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--====================================
+        END ENERGY SOLUTIONS
+=====================================-->
+
+<style>
+    /*=========================================================
+        ENERGY SOLUTIONS
+        PART 2A-1
+        SECTION LAYOUT + TYPOGRAPHY
+=========================================================*/
+
+/*=============================
+SECTION
+=============================*/
+
+.energy-section{
+
+position:relative;
+padding:120px 0;
+overflow:hidden;
+background:#ffffff;
+
+}
+
+.energy-section::before{
+
+content:"";
+position:absolute;
+width:420px;
+height:420px;
+border-radius:50%;
+background:rgba(34,197,94,.05);
+left:-180px;
+top:-180px;
+
+}
+
+.energy-section::after{
+
+content:"";
+position:absolute;
+width:350px;
+height:350px;
+border-radius:50%;
+background:rgba(34,197,94,.04);
+right:-150px;
+bottom:-150px;
+
+}
+
+/*=============================
+CONTAINER
+=============================*/
+
+.energy-container{
+
+width:min(1320px,92%);
+margin:auto;
+
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:70px;
+
+align-items:center;
+
+position:relative;
+z-index:2;
+
+}
+
+/*=============================
+LEFT
+=============================*/
+
+.energy-left{
+
+position:relative;
+
+}
+
+/*=============================
+SUBTITLE
+=============================*/
+
+.energy-subtitle{
+
+display:inline-block;
+
+font-size:15px;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+text-transform:uppercase;
+
+color:#16a34a;
+
+margin-bottom:30px;
+
+position:relative;
+
+}
+
+.energy-subtitle::before{
+
+content:"";
+
+position:absolute;
+
+width:60px;
+
+height:3px;
+
+background:#22c55e;
+
+left:0;
+
+bottom:-12px;
+
+border-radius:20px;
+
+}
+
+/*=============================
+MAIN TITLE
+=============================*/
+
+.energy-title{
+
+font-size:64px;
+
+line-height:1.15;
+
+font-weight:700;
+
+color:#111827;
+
+margin-bottom:55px;
+
+max-width:760px;
+
+}
+
+/*=============================
+SMALL LABEL
+=============================*/
+
+.energy-small-text{
+
+margin-bottom:45px;
+
+}
+
+.energy-small-text h5{
+
+font-size:17px;
+
+color:#555;
+
+font-weight:600;
+
+text-transform:uppercase;
+
+letter-spacing:.6px;
+
+max-width:280px;
+
+line-height:1.6;
+
+}
+
+/*=============================
+SERVICE LIST
+=============================*/
+
+.energy-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:8px;
+
+}
+
+/*=============================
+SERVICE ITEM
+=============================*/
+
+.energy-item{
+
+position:relative;
+
+cursor:pointer;
+
+transition:.45s;
+
+padding:8px 0;
+
+}
+
+.energy-item h3{
+
+font-size:72px;
+
+font-weight:700;
+
+line-height:1.05;
+
+color:#d6d6d6;
+
+transition:.45s;
+
+user-select:none;
+
+}
+
+/*=============================
+ACTIVE
+=============================*/
+
+.energy-item.active h3{
+
+color:#111827;
+
+}
+
+/*=============================
+HOVER
+=============================*/
+
+.energy-item:hover h3{
+
+color:#16a34a;
+
+transform:translateX(18px);
+
+}
+
+/*=============================
+LEFT LINE
+=============================*/
+
+.energy-item::before{
+
+content:"";
+
+position:absolute;
+
+left:-25px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+width:0;
+
+height:4px;
+
+background:#22c55e;
+
+border-radius:10px;
+
+transition:.4s;
+
+}
+
+.energy-item:hover::before,
+
+.energy-item.active::before{
+
+width:18px;
+
+}
+
+/*=============================
+RIGHT SIDE
+=============================*/
+
+.energy-right{
+
+position:relative;
+
+}
+
+/*=============================
+IMAGE WRAPPER
+=============================*/
+
+.energy-image-wrapper{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:30px;
+
+box-shadow:
+
+0 35px 80px rgba(0,0,0,.12);
+
+}
+
+/*=============================
+IMAGE
+=============================*/
+
+.energy-image-wrapper img{
+
+width:100%;
+
+height:700px;
+
+object-fit:cover;
+
+display:block;
+
+transition:1s;
+
+}
+
+.energy-image-wrapper:hover img{
+
+transform:scale(1.08);
+
+}
+
+/*=============================
+IMAGE OVERLAY
+=============================*/
+
+.energy-image-wrapper::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+
+    to top,
+
+    rgba(0,0,0,.28),
+
+    transparent
+
+);
+
+}
+
+/*=========================================================
+        ENERGY SOLUTIONS
+        PART 2A-2
+        INFO CARD + BUTTON + HOVER EFFECTS
+=========================================================*/
+
+/*==============================
+INFO CARD
+==============================*/
+
+.energy-info-card{
+
+position:absolute;
+
+left:-70px;
+
+bottom:40px;
+
+width:340px;
+
+background:rgba(255,255,255,.96);
+
+backdrop-filter:blur(18px);
+
+border-radius:26px;
+
+padding:35px;
+
+box-shadow:
+0 25px 60px rgba(0,0,0,.12);
+
+border:1px solid rgba(34,197,94,.10);
+
+transition:.45s ease;
+
+z-index:5;
+
+}
+
+.energy-right:hover .energy-info-card{
+
+transform:translateY(-10px);
+
+}
+
+/*==============================
+INFO TITLE
+==============================*/
+
+.energy-info-card h3{
+
+font-size:30px;
+
+color:#123b2c;
+
+font-weight:700;
+
+margin-bottom:18px;
+
+line-height:1.3;
+
+transition:.35s;
+
+}
+
+/*==============================
+DESCRIPTION
+==============================*/
+
+.energy-info-card p{
+
+font-size:15px;
+
+color:#666;
+
+line-height:1.9;
+
+margin-bottom:28px;
+
+}
+
+/*==============================
+BUTTON
+==============================*/
+
+.energy-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:12px;
+
+text-decoration:none;
+
+color:#fff;
+
+background:linear-gradient(
+135deg,
+#16a34a,
+#22c55e
+);
+
+padding:16px 32px;
+
+border-radius:50px;
+
+font-size:15px;
+
+font-weight:600;
+
+transition:.4s;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:
+0 18px 35px rgba(34,197,94,.30);
+
+}
+
+/*==============================
+BUTTON SHINE
+==============================*/
+
+.energy-btn::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.35),
+transparent
+);
+
+transition:.7s;
+
+}
+
+.energy-btn:hover::before{
+
+left:120%;
+
+}
+
+.energy-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 25px 45px rgba(34,197,94,.35);
+
+}
+
+.energy-btn i{
+
+transition:.35s;
+
+}
+
+.energy-btn:hover i{
+
+transform:translateX(8px);
+
+}
+
+/*==============================
+IMAGE FADE ANIMATION
+==============================*/
+
+.energy-image-wrapper img{
+
+opacity:1;
+
+transition:
+opacity .45s ease,
+transform .8s ease;
+
+}
+
+.energy-image-wrapper.change img{
+
+opacity:0;
+
+}
+
+/*==============================
+ACTIVE TEXT EFFECT
+==============================*/
+
+.energy-item.active h3{
+
+color:#111827;
+
+transform:translateX(22px);
+
+}
+
+.energy-item.active::before{
+
+width:22px;
+
+}
+
+/*==============================
+HOVER GLOW
+==============================*/
+
+.energy-item:hover h3{
+
+text-shadow:
+0 10px 30px rgba(34,197,94,.18);
+
+}
+
+/*==============================
+CARD DECORATION
+==============================*/
+
+.energy-info-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:5px;
+
+background:linear-gradient(
+90deg,
+#16a34a,
+#22c55e
+);
+
+border-radius:26px 26px 0 0;
+
+}
+
+.energy-info-card::after{
+
+content:"";
+
+position:absolute;
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+background:rgba(34,197,94,.05);
+
+right:-20px;
+
+bottom:-20px;
+
+}
+
+/*==============================
+SMOOTH TRANSITIONS
+==============================*/
+
+.energy-item,
+.energy-item h3,
+.energy-image-wrapper,
+.energy-info-card,
+.energy-btn{
+
+transition:.45s ease;
+
+}
+
+/*=========================================================
+        ENERGY SOLUTIONS
+        PART 2A-3
+        PREMIUM ANIMATIONS + EFFECTS
+=========================================================*/
+
+/*=====================================
+SCROLL REVEAL
+=====================================*/
+
+.energy-subtitle,
+.energy-title,
+.energy-small-text,
+.energy-item,
+.energy-right{
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:all .8s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.energy-section.show .energy-subtitle{
+
+    opacity:1;
+    transform:translateY(0);
+
+}
+
+.energy-section.show .energy-title{
+
+    opacity:1;
+    transform:translateY(0);
+
+    transition-delay:.15s;
+
+}
+
+.energy-section.show .energy-small-text{
+
+    opacity:1;
+    transform:translateY(0);
+
+    transition-delay:.3s;
+
+}
+
+.energy-section.show .energy-right{
+
+    opacity:1;
+    transform:translateY(0);
+
+    transition-delay:.45s;
+
+}
+
+/*=====================================
+STAGGER TEXT ANIMATION
+=====================================*/
+
+.energy-section.show .energy-item:nth-child(1){
+
+opacity:1;
+transform:translateY(0);
+transition-delay:.45s;
+
+}
+
+.energy-section.show .energy-item:nth-child(2){
+
+opacity:1;
+transform:translateY(0);
+transition-delay:.60s;
+
+}
+
+.energy-section.show .energy-item:nth-child(3){
+
+opacity:1;
+transform:translateY(0);
+transition-delay:.75s;
+
+}
+
+.energy-section.show .energy-item:nth-child(4){
+
+opacity:1;
+transform:translateY(0);
+transition-delay:.90s;
+
+}
+
+.energy-section.show .energy-item:nth-child(5){
+
+opacity:1;
+transform:translateY(0);
+transition-delay:1.05s;
+
+}
+
+.energy-section.show .energy-item:nth-child(6){
+
+opacity:1;
+transform:translateY(0);
+transition-delay:1.20s;
+
+}
+
+/*=====================================
+IMAGE SHINE
+=====================================*/
+
+.energy-image-wrapper::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-140%;
+
+width:60%;
+
+height:100%;
+
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.45),
+transparent
+);
+
+z-index:5;
+
+transition:1s;
+
+}
+
+.energy-right:hover .energy-image-wrapper::before{
+
+left:150%;
+
+}
+
+/*=====================================
+IMAGE HOVER
+=====================================*/
+
+.energy-right:hover img{
+
+transform:scale(1.08);
+
+}
+
+/*=====================================
+ACTIVE ITEM
+=====================================*/
+
+.energy-item.active h3{
+
+color:#111827;
+
+}
+
+.energy-item.active{
+
+padding-left:25px;
+
+}
+
+/*=====================================
+TEXT FADE
+=====================================*/
+
+.energy-item h3{
+
+transition:
+
+color .4s,
+
+transform .4s,
+
+letter-spacing .4s;
+
+}
+
+.energy-item:hover h3{
+
+letter-spacing:1px;
+
+}
+
+/*=====================================
+FLOATING CARD
+=====================================*/
+
+.energy-info-card{
+
+animation:energyCardFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes energyCardFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/*=====================================
+GREEN GLOW
+=====================================*/
+
+.energy-info-card{
+
+box-shadow:
+
+0 20px 60px rgba(34,197,94,.15),
+
+0 15px 35px rgba(0,0,0,.08);
+
+}
+
+/*=====================================
+DECORATIVE CIRCLE
+=====================================*/
+
+.energy-right::before{
+
+content:"";
+
+position:absolute;
+
+width:160px;
+
+height:160px;
+
+border-radius:50%;
+
+background:rgba(34,197,94,.05);
+
+top:-40px;
+
+left:-40px;
+
+z-index:-1;
+
+}
+
+.energy-right::after{
+
+content:"";
+
+position:absolute;
+
+width:22px;
+
+height:22px;
+
+border-radius:50%;
+
+background:#22c55e;
+
+bottom:20px;
+
+right:-15px;
+
+animation:energyDot 4s ease-in-out infinite;
+
+}
+
+@keyframes energyDot{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/*=====================================
+BUTTON RIPPLE SUPPORT
+=====================================*/
+
+.energy-btn{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.energy-ripple{
+
+position:absolute;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.35);
+
+transform:scale(0);
+
+pointer-events:none;
+
+animation:energyRipple .7s linear;
+
+}
+
+@keyframes energyRipple{
+
+to{
+
+transform:scale(4);
+
+opacity:0;
+
+}
+
+}
+
+/*=====================================
+IMAGE CHANGE EFFECT
+=====================================*/
+
+.energy-image-wrapper img{
+
+transition:
+
+opacity .45s ease,
+
+transform .8s ease;
+
+}
+
+.energy-image-wrapper.fade-out img{
+
+opacity:0;
+
+}
+
+.energy-image-wrapper.fade-in img{
+
+opacity:1;
+
+}
+
+/*=====================================
+SMOOTH PERFORMANCE
+=====================================*/
+
+.energy-item,
+.energy-image-wrapper,
+.energy-info-card,
+.energy-btn,
+.energy-image-wrapper img{
+
+will-change:transform,opacity;
+
+backface-visibility:hidden;
+
+}
+
+/*=====================================
+REDUCE MOTION
+=====================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+.energy-item,
+.energy-info-card,
+.energy-image-wrapper,
+.energy-btn{
+
+animation:none;
+
+transition:none;
+
+}
+
+}
+
+/*=========================================================
+        ENERGY SOLUTIONS
+        PART 2B
+        RESPONSIVE CSS
+=========================================================*/
+
+/*==============================
+Large Desktop
+==============================*/
+
+@media (min-width:1600px){
+
+.energy-container{
+max-width:1500px;
+}
+
+.energy-title{
+font-size:72px;
+}
+
+.energy-image-wrapper img{
+height:760px;
+}
+
+}
+
+/*==============================
+Desktop
+==============================*/
+
+@media (max-width:1400px){
+
+.energy-container{
+
+gap:60px;
+
+}
+
+.energy-title{
+
+font-size:56px;
+
+}
+
+.energy-item h3{
+
+font-size:60px;
+
+}
+
+.energy-image-wrapper img{
+
+height:640px;
+
+}
+
+.energy-info-card{
+
+width:320px;
+
+left:-40px;
+
+}
+
+}
+
+/*==============================
+Laptop
+==============================*/
+
+@media (max-width:1200px){
+
+.energy-container{
+
+grid-template-columns:1fr 1fr;
+
+gap:45px;
+
+}
+
+.energy-title{
+
+font-size:48px;
+
+}
+
+.energy-item h3{
+
+font-size:52px;
+
+}
+
+.energy-image-wrapper img{
+
+height:560px;
+
+}
+
+.energy-info-card{
+
+position:absolute;
+
+left:-20px;
+
+bottom:25px;
+
+width:290px;
+
+padding:28px;
+
+}
+
+.energy-info-card h3{
+
+font-size:26px;
+
+}
+
+}
+
+/*==============================
+Tablet
+==============================*/
+
+@media (max-width:991px){
+
+.energy-section{
+
+padding:90px 0;
+
+}
+
+.energy-container{
+
+grid-template-columns:1fr;
+
+gap:50px;
+
+}
+
+.energy-title{
+
+font-size:42px;
+
+}
+
+.energy-small-text{
+
+margin-bottom:35px;
+
+}
+
+.energy-item h3{
+
+font-size:44px;
+
+}
+
+.energy-right{
+
+max-width:700px;
+
+margin:auto;
+
+width:100%;
+
+}
+
+.energy-image-wrapper img{
+
+height:520px;
+
+}
+
+.energy-info-card{
+
+left:30px;
+
+bottom:30px;
+
+width:320px;
+
+}
+
+}
+
+/*==============================
+Small Tablet
+==============================*/
+
+@media (max-width:768px){
+
+.energy-section{
+
+padding:80px 0;
+
+}
+
+.energy-title{
+
+font-size:36px;
+
+}
+
+.energy-subtitle{
+
+font-size:14px;
+
+}
+
+.energy-small-text h5{
+
+font-size:15px;
+
+}
+
+.energy-item{
+
+padding:6px 0;
+
+}
+
+.energy-item h3{
+
+font-size:34px;
+
+}
+
+.energy-image-wrapper{
+
+border-radius:22px;
+
+}
+
+.energy-image-wrapper img{
+
+height:420px;
+
+}
+
+.energy-info-card{
+
+position:relative;
+
+left:0;
+
+bottom:auto;
+
+margin-top:20px;
+
+width:100%;
+
+border-radius:20px;
+
+padding:25px;
+
+}
+
+.energy-info-card h3{
+
+font-size:24px;
+
+}
+
+.energy-info-card p{
+
+font-size:14px;
+
+}
+
+}
+
+/*==============================
+Mobile
+==============================*/
+
+@media (max-width:576px){
+
+.energy-section{
+
+padding:70px 0;
+
+}
+
+.energy-container{
+
+width:92%;
+
+gap:35px;
+
+}
+
+.energy-title{
+
+font-size:30px;
+
+line-height:1.35;
+
+margin-bottom:30px;
+
+}
+
+.energy-subtitle{
+
+font-size:13px;
+
+}
+
+.energy-small-text{
+
+margin-bottom:25px;
+
+}
+
+.energy-small-text h5{
+
+font-size:14px;
+
+}
+
+.energy-item{
+
+padding:10px 0;
+
+}
+
+.energy-item::before{
+
+display:none;
+
+}
+
+.energy-item.active{
+
+padding-left:0;
+
+}
+
+.energy-item h3{
+
+font-size:26px;
+
+line-height:1.25;
+
+}
+
+.energy-item:hover h3{
+
+transform:none;
+
+}
+
+.energy-image-wrapper{
+
+border-radius:18px;
+
+}
+
+.energy-image-wrapper img{
+
+height:320px;
+
+}
+
+.energy-info-card{
+
+padding:20px;
+
+border-radius:18px;
+
+}
+
+.energy-info-card h3{
+
+font-size:22px;
+
+}
+
+.energy-info-card p{
+
+font-size:14px;
+
+line-height:1.7;
+
+}
+
+.energy-btn{
+
+padding:14px 24px;
+
+font-size:14px;
+
+}
+
+}
+
+/*==============================
+Small Mobile
+==============================*/
+
+@media (max-width:400px){
+
+.energy-title{
+
+font-size:26px;
+
+}
+
+.energy-item h3{
+
+font-size:22px;
+
+}
+
+.energy-image-wrapper img{
+
+height:260px;
+
+}
+
+.energy-info-card{
+
+padding:18px;
+
+}
+
+.energy-info-card h3{
+
+font-size:20px;
+
+}
+
+.energy-info-card p{
+
+font-size:13px;
+
+}
+
+.energy-btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+}
+
+/*==============================
+Landscape Mobile
+==============================*/
+
+@media (max-height:500px) and (orientation:landscape){
+
+.energy-section{
+
+padding:60px 0;
+
+}
+
+.energy-container{
+
+gap:30px;
+
+}
+
+.energy-image-wrapper img{
+
+height:260px;
+
+}
+
+.energy-item h3{
+
+font-size:28px;
+
+}
+
+}
+
+/*==============================
+Touch Devices
+==============================*/
+
+@media (hover:none){
+
+.energy-item:hover h3{
+
+transform:none;
+
+}
+
+.energy-right:hover img{
+
+transform:none;
+
+}
+
+.energy-btn:hover{
+
+transform:none;
+
+}
+
+}
+
+/*==============================
+Performance
+==============================*/
+
+@media (prefers-reduced-motion:reduce){
+
+.energy-item,
+.energy-image-wrapper,
+.energy-info-card,
+.energy-btn,
+.energy-image-wrapper img{
+
+transition:none;
+
+animation:none;
+
+}
+
+}
+
+</style>
+<script>
+/*=========================================================
+        ENERGY SOLUTIONS
+        PART 3
+=========================================================*/
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+const section=document.querySelector(".energy-section");
+
+if(!section) return;
+
+/*==========================================
+SCROLL REVEAL
+==========================================*/
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+section.classList.add("show");
+
+observer.unobserve(section);
+
+}
+
+});
+
+},{
+
+threshold:0.25
+
+});
+
+observer.observe(section);
+
+/*==========================================
+ELEMENTS
+==========================================*/
+
+const items=document.querySelectorAll(".energy-item");
+
+const image=document.getElementById("energyMainImage");
+
+const title=document.getElementById("energyTitle");
+
+const description=document.getElementById("energyDescription");
+
+const label=document.getElementById("energyLabel");
+
+/*==========================================
+CHANGE CONTENT
+==========================================*/
+
+items.forEach(item=>{
+
+item.addEventListener("mouseenter",()=>{
+
+items.forEach(card=>card.classList.remove("active"));
+
+item.classList.add("active");
+
+const img=item.dataset.image;
+
+const newTitle=item.dataset.title;
+
+const newDescription=item.dataset.description;
+
+/* Fade Out */
+
+image.style.opacity="0";
+
+image.style.transform="scale(1.05)";
+
+setTimeout(()=>{
+
+image.src=img;
+
+title.textContent=newTitle;
+
+description.textContent=newDescription;
+
+label.textContent=newTitle.toUpperCase();
+
+image.style.opacity="1";
+
+image.style.transform="scale(1)";
+
+},250);
+
+});
+
+});
+
+/*==========================================
+IMAGE PARALLAX
+==========================================*/
+
+if(window.innerWidth>991){
+
+const wrapper=document.querySelector(".energy-image-wrapper");
+
+wrapper.addEventListener("mousemove",(e)=>{
+
+const rect=wrapper.getBoundingClientRect();
+
+const x=(e.clientX-rect.left)/rect.width-.5;
+
+const y=(e.clientY-rect.top)/rect.height-.5;
+
+image.style.transform=
+
+`scale(1.05) translate(${x*18}px,${y*18}px)`;
+
+});
+
+wrapper.addEventListener("mouseleave",()=>{
+
+image.style.transform="scale(1) translate(0,0)";
+
+});
+
+}
+
+/*==========================================
+BUTTON RIPPLE
+==========================================*/
+
+const btn=document.querySelector(".energy-btn");
+
+if(btn){
+
+btn.addEventListener("click",function(e){
+
+const ripple=document.createElement("span");
+
+const rect=this.getBoundingClientRect();
+
+const size=Math.max(rect.width,rect.height);
+
+ripple.style.width=size+"px";
+
+ripple.style.height=size+"px";
+
+ripple.style.left=(e.clientX-rect.left-size/2)+"px";
+
+ripple.style.top=(e.clientY-rect.top-size/2)+"px";
+
+ripple.classList.add("energy-ripple");
+
+this.appendChild(ripple);
+
+ripple.addEventListener("animationend",()=>{
+
+ripple.remove();
+
+});
+
+});
+
+}
+
+/*==========================================
+FLOATING CARD
+==========================================*/
+
+const card=document.querySelector(".energy-info-card");
+
+if(card){
+
+let dir=1;
+
+setInterval(()=>{
+
+dir*=-1;
+
+card.style.transform=`translateY(${dir*8}px)`;
+
+},2200);
+
+}
+
+/*==========================================
+AUTO CHANGE (OPTIONAL)
+Comment this block if not needed.
+==========================================*/
+
+let index=0;
+
+setInterval(()=>{
+
+if(document.hidden) return;
+
+index++;
+
+if(index>=items.length){
+
+index=0;
+
+}
+
+items[index].dispatchEvent(new Event("mouseenter"));
+
+},6000);
+
+});
+</script>
+
+
+<!-- ============================
+     RENEWABLE WORK PROCESS SECTION
+============================= -->
+
+<section class="re-work-section">
+
+    <div class="re-work-container">
+
+        <!-- Section Heading -->
+        <div class="re-work-heading re-work-reveal">
+
+            <span class="re-work-tag">
+                OUR PROCESS
+            </span>
+
+            <h2>
+                How We Create 
+                <span>Clean Energy Solutions</span>
+            </h2>
+
+            <p>
+                From planning to installation, we follow a smart and
+                sustainable process to deliver reliable renewable
+                energy solutions for homes and businesses.
+            </p>
+
+        </div>
+
+
+        <!-- Process Timeline -->
+
+        <div class="re-work-timeline">
+
+
+            <!-- Step 01 -->
+            <div class="re-work-card re-work-reveal">
+
+                <div class="re-work-number">
+                    01
+                </div>
+
+
+                <div class="re-work-icon">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                </div>
+
+
+                <div class="re-work-content">
+
+                    <h3>
+                        Energy Assessment
+                    </h3>
+
+                    <p>
+                        We analyze your energy requirements,
+                        location, and consumption patterns to
+                        design the perfect renewable solution.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+
+            <!-- Step 02 -->
+            <div class="re-work-card re-work-reveal">
+
+                <div class="re-work-number">
+                    02
+                </div>
+
+
+                <div class="re-work-icon">
+                    <i class="fa-solid fa-solar-panel"></i>
+                </div>
+
+
+                <div class="re-work-content">
+
+                    <h3>
+                        Smart System Design
+                    </h3>
+
+                    <p>
+                        Our experts create efficient solar,
+                        wind, and hybrid energy designs
+                        based on advanced technology.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+
+            <!-- Step 03 -->
+            <div class="re-work-card re-work-reveal">
+
+                <div class="re-work-number">
+                    03
+                </div>
+
+
+                <div class="re-work-icon">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+
+
+                <div class="re-work-content">
+
+                    <h3>
+                        Installation
+                    </h3>
+
+                    <p>
+                        Professional engineers install and
+                        configure renewable systems with
+                        safety and quality standards.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+
+            <!-- Step 04 -->
+            <div class="re-work-card re-work-reveal">
+
+                <div class="re-work-number">
+                    04
+                </div>
+
+
+                <div class="re-work-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+
+                <div class="re-work-content">
+
+                    <h3>
+                        Monitoring & Support
+                    </h3>
+
+                    <p>
+                        We continuously monitor performance
+                        and provide long-term maintenance
+                        support.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+<style>
+    /* ==========================================
+   RENEWABLE WORK PROCESS SECTION
+========================================== */
+
+
+.re-work-section{
+    width:100%;
+    padding:100px 20px;
+    background:
+    linear-gradient(
+        135deg,
+        #061f14,
+        #0a3d25,
+        #062417
+    );
+    position:relative;
+    overflow:hidden;
+}
+
+
+/* Background glow */
+
+.re-work-section::before{
+
+    content:"";
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    background:rgba(79,255,133,0.15);
+
+    border-radius:50%;
+
+    top:-150px;
+    left:-120px;
+
+    filter:blur(80px);
+
+}
+
+
+.re-work-section::after{
+
+    content:"";
+    position:absolute;
+
+    width:400px;
+    height:400px;
+
+    background:rgba(0,255,170,0.12);
+
+    border-radius:50%;
+
+    bottom:-150px;
+    right:-100px;
+
+    filter:blur(90px);
+
+}
+
+
+
+.re-work-container{
+
+    max-width:1200px;
+    margin:auto;
+
+    position:relative;
+    z-index:2;
+
+}
+
+
+
+/* ============================
+   HEADING
+============================ */
+
+
+.re-work-heading{
+
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 70px;
+
+}
+
+
+.re-work-tag{
+
+    display:inline-block;
+
+    padding:8px 22px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    color:#8cff9b;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+}
+
+
+
+.re-work-heading h2{
+
+    margin-top:20px;
+
+    color:white;
+
+    font-size:45px;
+
+    line-height:1.2;
+
+    font-weight:700;
+
+}
+
+
+
+.re-work-heading h2 span{
+
+    color:#65ff86;
+
+}
+
+
+
+.re-work-heading p{
+
+    margin-top:20px;
+
+    color:#c8ddd0;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+}
+
+
+
+
+/* ============================
+   TIMELINE
+============================ */
+
+
+.re-work-timeline{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:35px;
+
+}
+
+
+.re-work-timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    transform:translateX(-50%);
+
+    width:3px;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #4cff7b,
+        transparent
+    );
+
+    opacity:.5;
+
+}
+
+
+
+
+
+/* ============================
+   PROCESS CARD
+============================ */
+
+
+.re-work-card{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    background:
+
+    rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    padding:30px;
+
+    border-radius:25px;
+
+    position:relative;
+
+    transition:.5s ease;
+
+
+}
+
+
+
+
+.re-work-card:nth-child(even){
+
+    flex-direction:row-reverse;
+
+}
+
+
+
+.re-work-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    border-color:#69ff8b;
+
+    box-shadow:
+
+    0 20px 40px rgba(0,255,120,.18);
+
+}
+
+
+
+
+/* Number */
+
+
+.re-work-number{
+
+    position:absolute;
+
+    top:-15px;
+
+    left:25px;
+
+
+    width:45px;
+
+    height:45px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    border-radius:50%;
+
+
+    background:#65ff86;
+
+    color:#06351c;
+
+
+    font-weight:800;
+
+}
+
+
+
+.re-work-card:nth-child(even)
+.re-work-number{
+
+    left:auto;
+    right:25px;
+
+}
+
+
+
+/* Icon */
+
+
+.re-work-icon{
+
+
+    min-width:90px;
+
+    height:90px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    border-radius:50%;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #65ff86,
+        #00c96b
+    );
+
+
+    color:#06351c;
+
+
+    font-size:38px;
+
+
+    box-shadow:
+
+    0 0 25px rgba(101,255,134,.4);
+
+
+    transition:.4s;
+
+}
+
+
+
+
+.re-work-card:hover 
+.re-work-icon{
+
+    transform:
+
+    rotateY(360deg);
+
+}
+
+
+
+
+
+/* Content */
+
+
+.re-work-content h3{
+
+    color:white;
+
+    font-size:26px;
+
+    margin-bottom:12px;
+
+}
+
+
+
+.re-work-content p{
+
+    color:#c9ddd2;
+
+    line-height:1.7;
+
+    font-size:16px;
+
+}
+
+
+
+
+
+/* ============================
+   SCROLL REVEAL
+============================ */
+
+
+.re-work-reveal{
+
+
+    opacity:0;
+
+    transform:
+
+    translateY(60px);
+
+
+    transition:
+
+    all .8s ease;
+
+
+}
+
+
+
+.re-work-reveal.re-work-active{
+
+
+    opacity:1;
+
+    transform:
+
+    translateY(0);
+
+
+}
+
+
+
+/* ==========================================
+   LAPTOP VIEW
+========================================== */
+
+
+@media(max-width:1200px){
+
+
+.re-work-heading h2{
+
+    font-size:40px;
+
+}
+
+
+.re-work-card{
+
+    padding:28px;
+
+}
+
+
+}
+
+
+
+
+
+/* ==========================================
+   TABLET VIEW
+========================================== */
+
+
+@media(max-width:900px){
+
+
+.re-work-section{
+
+    padding:80px 20px;
+
+}
+
+
+
+.re-work-heading h2{
+
+    font-size:34px;
+
+}
+
+
+
+.re-work-timeline::before{
+
+    left:35px;
+
+}
+
+
+
+.re-work-card,
+.re-work-card:nth-child(even){
+
+    flex-direction:row;
+
+    padding-left:40px;
+
+}
+
+
+
+.re-work-number,
+.re-work-card:nth-child(even)
+.re-work-number{
+
+    left:10px;
+
+    right:auto;
+
+}
+
+
+
+.re-work-icon{
+
+    min-width:75px;
+
+    height:75px;
+
+    font-size:30px;
+
+}
+
+
+.re-work-content h3{
+
+    font-size:22px;
+
+}
+
+
+}
+
+
+
+
+
+/* ==========================================
+   MOBILE VIEW
+========================================== */
+
+
+@media(max-width:600px){
+
+
+
+.re-work-section{
+
+    padding:60px 15px;
+
+}
+
+
+
+.re-work-heading{
+
+    margin-bottom:45px;
+
+}
+
+
+
+.re-work-heading h2{
+
+    font-size:28px;
+
+}
+
+
+
+.re-work-heading p{
+
+    font-size:15px;
+
+}
+
+
+
+.re-work-timeline::before{
+
+    left:25px;
+
+}
+
+
+
+.re-work-card,
+.re-work-card:nth-child(even){
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    padding:45px 22px 25px;
+
+    gap:20px;
+
+}
+
+
+
+.re-work-number,
+.re-work-card:nth-child(even)
+.re-work-number{
+
+
+    left:5px;
+
+    top:-18px;
+
+}
+
+
+
+.re-work-icon{
+
+    width:70px;
+
+    height:70px;
+
+    min-width:70px;
+
+    font-size:28px;
+
+}
+
+
+
+.re-work-content h3{
+
+    font-size:21px;
+
+}
+
+
+
+.re-work-content p{
+
+    font-size:14px;
+
+}
+
+
+}
+</style>
+
+<script>
+     /* ==========================================
+    RENEWABLE WORK PROCESS ANIMATION
+ ========================================== */
+
+
+(function(){
+
+const reWorkItems = document.querySelectorAll(
+    ".re-work-reveal"
+);
+
+
+if(reWorkItems.length === 0) return;
+
+
+
+const reWorkObserver = new IntersectionObserver(
+    
+    (entries)=>{
+
+
+        entries.forEach(entry=>{
+
+
+            if(entry.isIntersecting){
+
+
+                reWorkItems.forEach((item,index)=>{
+
+
+                    setTimeout(()=>{
+
+
+                        item.classList.add(
+                            "re-work-active"
+                        );
+
+
+                    }, index * 250);
+
+
+
+                });
+
+
+                reWorkObserver.unobserve(
+                    entry.target
+                );
+
+
+            }
+
+
+
+        });
+
+
+
+    },
+
+
+    {
+        threshold:0.15
+    }
+
+
+
+);
+
+
+
+
+const reWorkSection = document.querySelector(
+    ".re-work-section"
+);
+
+
+if(reWorkSection){
+
+    reWorkObserver.observe(
+        reWorkSection
+    );
+
+}
+
+
+
+})();
+</script>
+
+<!-- ==========================================
+     RENEWABLE ENERGY TEAM EXPERTS SECTION
+========================================== -->
+
+
+<section class="re-team-section">
+
+
+    <div class="re-team-container">
+
+
+
+        <!-- Section Heading -->
+
+        <div class="re-team-heading re-team-reveal">
+
+
+            <span class="re-team-tag">
+                OUR EXPERTS
+            </span>
+
+
+            <h2>
+                Meet Our 
+                <span>Renewable Energy Specialists</span>
+            </h2>
+
+
+            <p>
+                Our experienced engineers, designers, and energy
+                specialists work together to create sustainable
+                solutions for a greener future.
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <!-- Team Grid -->
+
+        <div class="re-team-grid">
+
+
+
+            <!-- Member 01 -->
+
+            <div class="re-team-card re-team-reveal">
+
+
+                <div class="re-team-image-box">
+
+
+                    <img src="images/team-1.jpg"
+                    alt="Solar Energy Expert">
+
+
+
+                    <!-- Hover Social Overlay -->
+
+                    <div class="re-team-social">
+
+
+                        <a href="404.html">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+
+                        <a href="404.html">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+
+                        <a href="404.html">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+
+                        <a href="404.html">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="re-team-info">
+
+
+                    <h3>
+                        Olivia Martin
+                    </h3>
+
+
+                    <span>
+                        Solar Energy Engineer
+                    </span>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- Member 02 -->
+
+            <div class="re-team-card re-team-reveal">
+
+
+                <div class="re-team-image-box">
+
+
+                    <img src="images/team-2.jpg"
+                    alt="Renewable Energy Consultant">
+
+
+
+                    <div class="re-team-social">
+
+
+                        <a href="404.html">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+
+                        <a href="404.html">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+
+                        <a href="404.html">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+
+                        <a href="404.html">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="re-team-info">
+
+
+                    <h3>
+                        Daniel Wilson
+                    </h3>
+
+
+                    <span>
+                        Renewable Consultant
+                    </span>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <!-- Member 03 -->
+
+            <div class="re-team-card re-team-reveal">
+
+
+                <div class="re-team-image-box">
+
+
+                    <img src="images/team-3.jpg"
+                    alt="Wind Energy Expert">
+
+
+
+                    <div class="re-team-social">
+
+
+                        <a href="404.html">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+
+                        <a href="404.html">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+
+                        <a href="404.html">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+
+                        <a href="404.html">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="re-team-info">
+
+
+                    <h3>
+                        Sophia Anderson
+                    </h3>
+
+
+                    <span>
+                        Wind Energy Specialist
+                    </span>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <!-- Member 04 -->
+
+            <div class="re-team-card re-team-reveal">
+
+
+                <div class="re-team-image-box">
+
+
+                    <img src="images/team-4.jpg"
+                    alt="Energy Project Manager">
+
+
+
+                    <div class="re-team-social">
+
+
+                        <a href="404.html">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+
+                        <a href="404.html">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+
+                        <a href="404.html">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+
+                        <a href="404.html">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="re-team-info">
+
+
+                    <h3>
+                        Ethan Brown
+                    </h3>
+
+
+                    <span>
+                        Energy Project Manager
+                    </span>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</section>
+
+<style>
+    /* ==========================================
+   RENEWABLE ENERGY TEAM SECTION
+========================================== */
+
+
+.re-team-section{
+
+width:100%;
+
+padding:100px 20px;
+
+/* background:
+linear-gradient(
+    135deg,
+    #041c12,
+    #08351f,
+    #061f14
+); */
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+.re-team-section::before{
+
+content:"";
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+background:
+
+rgba(76,255,123,.14);
+
+border-radius:50%;
+
+top:-150px;
+
+right:-120px;
+
+filter:blur(90px);
+
+}
+
+
+
+.re-team-section::after{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+background:
+
+rgba(0,255,170,.12);
+
+border-radius:50%;
+
+bottom:-100px;
+
+left:-100px;
+
+filter:blur(80px);
+
+}
+
+
+
+
+/* Container */
+
+
+.re-team-container{
+
+max-width:1200px;
+
+margin:auto;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+
+
+/* ==========================
+HEADING
+========================== */
+
+
+.re-team-heading{
+
+max-width:750px;
+
+margin:0 auto 70px;
+
+text-align:center;
+
+}
+
+
+
+.re-team-tag{
+
+
+display:inline-block;
+
+padding:8px 22px;
+
+border-radius:50px;
+
+background:
+
+rgba(255,255,255,.1);
+
+border:
+
+1px solid rgba(255,255,255,.2);
+
+
+color:#79ff94;
+
+font-size:14px;
+
+font-weight:600;
+
+letter-spacing:2px;
+
+
+}
+
+
+
+.re-team-heading h2{
+
+
+margin-top:20px;
+
+color:black;
+
+font-size:45px;
+
+line-height:1.2;
+
+}
+
+
+
+.re-team-heading h2 span{
+
+color:#65ff86;
+
+}
+
+
+
+.re-team-heading p{
+
+
+margin-top:20px;
+
+color:black;
+
+font-size:17px;
+
+line-height:1.7;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+TEAM GRID
+========================== */
+
+
+.re-team-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(4,1fr);
+
+gap:30px;
+
+}
+
+
+
+
+
+
+/* ==========================
+TEAM CARD
+========================== */
+
+
+.re-team-card{
+
+
+background:
+
+rgba(255,255,255,.08);
+
+
+border:
+
+1px solid rgba(255,255,255,.15);
+
+
+border-radius:25px;
+
+
+overflow:hidden;
+
+
+backdrop-filter:blur(15px);
+
+
+transition:.5s ease;
+
+
+}
+
+
+
+.re-team-card:hover{
+
+
+transform:
+
+translateY(-12px);
+
+
+border-color:#65ff86;
+
+
+box-shadow:
+
+0 20px 45px
+
+rgba(0,255,120,.2);
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+IMAGE BOX
+========================== */
+
+
+.re-team-image-box{
+
+
+width:100%;
+
+height:320px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+.re-team-image-box img{
+
+
+width:100%;
+
+height:100%;
+
+
+object-fit:cover;
+
+
+transition:.6s ease;
+
+
+}
+
+
+
+
+.re-team-card:hover 
+.re-team-image-box img{
+
+
+transform:
+
+scale(1.12);
+
+
+}
+
+
+
+
+
+
+/* ==========================
+SOCIAL OVERLAY
+========================== */
+
+
+.re-team-social{
+
+
+position:absolute;
+
+
+inset:0;
+
+
+background:
+
+rgba(0,30,15,.65);
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+gap:14px;
+
+
+
+opacity:0;
+
+
+transform:
+
+translateY(30px);
+
+
+transition:.5s ease;
+
+
+
+}
+
+
+
+
+
+.re-team-card:hover 
+.re-team-social{
+
+
+opacity:1;
+
+
+transform:
+
+translateY(0);
+
+
+}
+
+
+
+
+
+/* Social Icons */
+
+
+.re-team-social a{
+
+
+width:42px;
+
+height:42px;
+
+
+border-radius:50%;
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+background:#65ff86;
+
+
+color:#06351c;
+
+
+font-size:18px;
+
+
+text-decoration:none;
+
+
+transition:.4s ease;
+
+
+}
+
+
+
+
+.re-team-social a:hover{
+
+
+transform:
+
+translateY(-8px)
+
+rotate(360deg);
+
+
+background:white;
+
+
+}
+
+
+
+
+
+/* ==========================
+MEMBER INFO
+========================== */
+
+
+.re-team-info{
+
+
+padding:25px;
+
+text-align:center;
+
+}
+
+
+
+.re-team-info h3{
+
+
+color:white;
+
+font-size:22px;
+
+margin-bottom:8px;
+
+
+}
+
+
+
+.re-team-info span{
+
+
+color:#8dd9a1;
+
+font-size:15px;
+
+
+}
+
+
+
+
+
+/* ==========================
+SCROLL REVEAL
+========================== */
+
+
+.re-team-reveal{
+
+
+opacity:0;
+
+
+transform:
+
+translateY(60px);
+
+
+transition:
+
+.8s ease;
+
+
+}
+
+
+
+.re-team-reveal.re-team-active{
+
+
+opacity:1;
+
+
+transform:
+
+translateY(0);
+
+
+}
+
+
+
+
+
+
+
+/* ==================================
+LAPTOP VIEW
+================================== */
+
+
+@media(max-width:1200px){
+
+
+.re-team-grid{
+
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+
+}
+
+
+.re-team-heading h2{
+
+
+font-size:40px;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ==================================
+TABLET VIEW
+================================== */
+
+
+@media(max-width:900px){
+
+
+.re-team-section{
+
+
+padding:80px 20px;
+
+
+}
+
+
+
+.re-team-grid{
+
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+
+}
+
+
+
+.re-team-image-box{
+
+
+height:300px;
+
+
+}
+
+
+.re-team-heading h2{
+
+
+font-size:34px;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ==================================
+MOBILE VIEW
+================================== */
+
+
+@media(max-width:600px){
+
+
+.re-team-section{
+
+
+padding:60px 15px;
+
+
+}
+
+
+
+.re-team-grid{
+
+
+grid-template-columns:
+
+1fr;
+
+
+gap:25px;
+
+
+}
+
+
+
+.re-team-heading{
+
+
+margin-bottom:45px;
+
+
+}
+
+
+
+.re-team-heading h2{
+
+
+font-size:28px;
+
+
+}
+
+
+
+.re-team-heading p{
+
+
+font-size:15px;
+
+
+}
+
+
+
+.re-team-image-box{
+
+
+height:280px;
+
+
+}
+
+
+
+.re-team-info h3{
+
+
+font-size:20px;
+
+
+}
+
+
+}
+
+</style>
+
+<script>
+    /* ==========================================
+   RENEWABLE TEAM SECTION ANIMATION
+========================================== */
+
+
+(function(){
+
+
+const reTeamElements = document.querySelectorAll(
+    ".re-team-reveal"
+);
+
+
+if(reTeamElements.length === 0){
+    return;
+}
+
+
+
+const reTeamObserver = new IntersectionObserver(
+
+    (entries)=>{
+
+
+        entries.forEach((entry)=>{
+
+
+            if(entry.isIntersecting){
+
+
+
+                reTeamElements.forEach(
+                    (element,index)=>{
+
+
+                        setTimeout(()=>{
+
+
+                            element.classList.add(
+                                "re-team-active"
+                            );
+
+
+                        }, index * 220);
+
+
+
+                    }
+                );
+
+
+
+                reTeamObserver.unobserve(
+                    entry.target
+                );
+
+
+            }
+
+
+        });
+
+
+    },
+
+
+    {
+        threshold:0.15
+    }
+
+
+);
+
+
+
+
+
+const reTeamSection = document.querySelector(
+    ".re-team-section"
+);
+
+
+
+if(reTeamSection){
+
+
+    reTeamObserver.observe(
+        reTeamSection
+    );
+
+
+}
+
+
+
+})();
+</script>
+<!-- =========================================
+        WHY CHOOSE US SECTION START
+========================================== -->
+
+<section class="why-section">
+
+    <div class="why-container">
+
+        <!--=========================
+              LEFT IMAGE
+        ==========================-->
+
+        <div class="why-image-area">
+
+            <div class="why-main-image">
+
+                <img src="./energy.webp" alt="Renewable Energy">
+
+            </div>
+
+            <div class="why-floating-card">
+
+                <i class="fa-solid fa-leaf"></i>
+
+                <div>
+
+                    <h3>100%</h3>
+
+                    <p>Green Energy</p>
+
+                </div>
+
+            </div>
+
+            <div class="why-experience">
+
+                <h2>15+</h2>
+
+                <span>Years Experience</span>
+
+            </div>
+
+        </div>
+
+        <!--=========================
+             RIGHT CONTENT
+        ==========================-->
+
+        <div class="why-content">
+
+            <span class="why-subtitle">
+
+                <i class="fa-solid fa-solar-panel"></i>
+
+                WHY CHOOSE US
+
+            </span>
+
+            <h2>
+
+                Powering The Future With
+                Reliable Renewable
+                Energy Solutions
+
+            </h2>
+
+            <p>
+
+                We provide innovative renewable energy systems that help
+                businesses and homeowners reduce energy costs while
+                protecting the environment. Our experienced engineers
+                deliver customized, efficient and sustainable solutions.
+
+            </p>
+
+            <!--======================
+                 FEATURE GRID
+            =======================-->
+
+            <div class="why-features">
+
+                <!-- Card 1 -->
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+
+                        <i class="fa-solid fa-solar-panel"></i>
+
+                    </div>
+
+                    <div class="why-text">
+
+                        <h4>Solar Solutions</h4>
+
+                        <p>
+
+                            High-efficiency solar systems for homes,
+                            industries and commercial projects.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Card 2 -->
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+
+                        <i class="fa-solid fa-wind"></i>
+
+                    </div>
+
+                    <div class="why-text">
+
+                        <h4>Wind Energy</h4>
+
+                        <p>
+
+                            Advanced wind turbine technology designed
+                            for maximum energy generation.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Card 3 -->
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+
+                        <i class="fa-solid fa-bolt"></i>
+
+                    </div>
+
+                    <div class="why-text">
+
+                        <h4>Smart Technology</h4>
+
+                        <p>
+
+                            Intelligent monitoring systems for improved
+                            efficiency and performance.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Card 4 -->
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+
+                        <i class="fa-solid fa-earth-americas"></i>
+
+                    </div>
+
+                    <div class="why-text">
+
+                        <h4>Sustainability</h4>
+
+                        <p>
+
+                            Eco-friendly renewable energy solutions that
+                            reduce carbon emissions.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--====================
+                COUNTERS
+            ====================-->
+
+            <div class="why-counter-area">
+
+                <div class="counter-box">
+
+                    <h3 class="counter" data-target="500">0</h3>
+
+                    <span>Projects Completed</span>
+
+                </div>
+
+                <div class="counter-box">
+
+                    <h3 class="counter" data-target="250">0</h3>
+
+                    <span>Expert Engineers</span>
+
+                </div>
+
+                <div class="counter-box">
+
+                    <h3 class="counter" data-target="98">0</h3>
+
+                    <span>Client Satisfaction</span>
+
+                </div>
+
+            </div>
+
+            <!--====================
+                BUTTON
+            ====================-->
+
+            <a href="./404.html" class="why-btn">
+
+                Explore More
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+        WHY CHOOSE US SECTION END
+========================================== -->
+<style>
+/*=====================================================
+WHY CHOOSE US
+PART 2A-1
+SECTION LAYOUT + IMAGE AREA
+======================================================*/
+
+.why-section{
+    position:relative;
+    padding:120px 0;
+    background:#f8fcf8;
+    overflow:hidden;
+}
+
+.why-section::before{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:rgba(34,197,94,.08);
+    top:-180px;
+    left:-180px;
+}
+
+.why-section::after{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:rgba(34,197,94,.06);
+    right:-140px;
+    bottom:-140px;
+}
+
+.why-container{
+
+    width:min(1320px,92%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+    position:relative;
+    z-index:5;
+
+}
+
+/*=============================
+IMAGE AREA
+==============================*/
+
+.why-image-area{
+
+    position:relative;
+
+    min-height:720px;
+
+}
+
+/*=============================
+MAIN IMAGE
+==============================*/
+
+.why-main-image{
+
+    width:86%;
+
+    height:640px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 30px 70px rgba(0,0,0,.18);
+
+    position:relative;
+
+}
+
+.why-main-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:1s;
+
+}
+
+.why-main-image:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.why-main-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.25),
+        transparent
+    );
+
+}
+
+/*=============================
+FLOATING GREEN CARD
+==============================*/
+
+.why-floating-card{
+
+    position:absolute;
+
+    right:0;
+
+    top:130px;
+
+    width:250px;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    background:#22c55e;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    box-shadow:
+    0 25px 50px rgba(34,197,94,.35);
+
+    animation:floatCard 4s ease-in-out infinite;
+
+    z-index:10;
+
+}
+
+.why-floating-card i{
+
+    width:65px;
+    height:65px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.20);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:26px;
+
+    flex-shrink:0;
+
+}
+
+.why-floating-card h3{
+
+    font-size:34px;
+
+    margin-bottom:4px;
+
+    line-height:1;
+
+}
+
+.why-floating-card p{
+
+    font-size:15px;
+
+    opacity:.95;
+
+}
+
+/*=============================
+EXPERIENCE BOX
+==============================*/
+
+.why-experience{
+
+    position:absolute;
+
+    left:-30px;
+
+    bottom:45px;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:30px;
+
+    background:#ffffff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.12);
+
+    z-index:10;
+
+}
+
+.why-experience h2{
+
+    font-size:56px;
+
+    color:#22c55e;
+
+    line-height:1;
+
+    margin-bottom:10px;
+
+}
+
+.why-experience span{
+
+    font-size:16px;
+
+    color:#555;
+
+    font-weight:600;
+
+}
+
+/*=============================
+DECORATIVE CIRCLE
+==============================*/
+
+.why-image-area::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    border:2px dashed rgba(34,197,94,.30);
+
+    top:-20px;
+
+    right:60px;
+
+    animation:rotateCircle 18s linear infinite;
+
+}
+
+.why-image-area::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    bottom:15%;
+
+    right:18%;
+
+}
+
+/*=============================
+ANIMATIONS
+==============================*/
+
+@keyframes floatCard{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes rotateCircle{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/*=============================
+HOVER EFFECTS
+==============================*/
+
+.why-main-image{
+
+transition:.5s;
+
+}
+
+.why-main-image:hover{
+
+transform:translateY(-10px);
+
+}
+
+.why-floating-card{
+
+transition:.5s;
+
+}
+
+.why-floating-card:hover{
+
+transform:translateY(-10px) scale(1.03);
+
+}
+
+.why-experience{
+
+transition:.5s;
+
+}
+
+.why-experience:hover{
+
+transform:translateY(-10px);
+
+}
+
+/*=====================================================
+WHY CHOOSE US
+PART 2A-2
+CONTENT AREA + FEATURE CARDS
+======================================================*/
+
+/*==================================
+RIGHT CONTENT
+==================================*/
+
+.why-content{
+    position:relative;
+    z-index:5;
+}
+
+/*==================================
+SUBTITLE
+==================================*/
+
+.why-subtitle{
+
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:10px 22px;
+
+    border-radius:50px;
+
+    background:rgba(34,197,94,.12);
+
+    border:1px solid rgba(34,197,94,.15);
+
+    color:#16a34a;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    margin-bottom:25px;
+
+}
+
+.why-subtitle i{
+
+    color:#22c55e;
+
+    font-size:16px;
+
+    animation:iconRotate 4s linear infinite;
+
+}
+
+@keyframes iconRotate{
+
+0%{
+
+transform:rotate(0);
+
+}
+
+50%{
+
+transform:rotate(20deg);
+
+}
+
+100%{
+
+transform:rotate(0);
+
+}
+
+}
+
+/*==================================
+HEADING
+==================================*/
+
+.why-content h2{
+
+    font-size:52px;
+
+    line-height:1.18;
+
+    color:#113c2b;
+
+    font-weight:700;
+
+    margin-bottom:28px;
+
+    position:relative;
+
+}
+
+.why-content h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:5px;
+
+    background:#22c55e;
+
+    border-radius:20px;
+
+    margin-top:20px;
+
+}
+
+/*==================================
+PARAGRAPH
+==================================*/
+
+.why-content>p{
+
+    font-size:17px;
+
+    color:#666;
+
+    line-height:1.9;
+
+    margin-bottom:40px;
+
+}
+
+/*==================================
+FEATURE GRID
+==================================*/
+
+.why-features{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:24px;
+
+}
+
+/*==================================
+FEATURE CARD
+==================================*/
+
+.why-card{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    padding:26px;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    border:1px solid rgba(34,197,94,.08);
+
+    box-shadow:
+
+    0 18px 40px rgba(0,0,0,.05);
+
+    transition:.45s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Green Top Border */
+
+.why-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:0;
+
+    height:4px;
+
+    background:#22c55e;
+
+    transition:.45s;
+
+}
+
+/* Hover */
+
+.why-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+    0 25px 55px rgba(34,197,94,.15);
+
+}
+
+.why-card:hover::before{
+
+    width:100%;
+
+}
+
+/*==================================
+ICON
+==================================*/
+
+.why-icon{
+
+    width:72px;
+
+    height:72px;
+
+    min-width:72px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+    135deg,
+    #16a34a,
+    #22c55e
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:28px;
+
+    transition:.45s;
+
+    box-shadow:
+
+    0 15px 30px rgba(34,197,94,.30);
+
+}
+
+.why-card:hover .why-icon{
+
+    transform:rotate(10deg) scale(1.08);
+
+}
+
+/*==================================
+TEXT
+==================================*/
+
+.why-text{
+
+    flex:1;
+
+}
+
+.why-text h4{
+
+    font-size:22px;
+
+    color:#103b29;
+
+    margin-bottom:12px;
+
+    font-weight:700;
+
+}
+
+.why-text p{
+
+    color:#666;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+/*==================================
+FEATURE ANIMATION
+==================================*/
+
+.why-card{
+
+opacity:0;
+
+transform:translateY(70px);
+
+}
+
+.why-section.show .why-card{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.why-section.show .why-card:nth-child(1){
+
+transition:.7s .15s;
+
+}
+
+.why-section.show .why-card:nth-child(2){
+
+transition:.7s .30s;
+
+}
+
+.why-section.show .why-card:nth-child(3){
+
+transition:.7s .45s;
+
+}
+
+.why-section.show .why-card:nth-child(4){
+
+transition:.7s .60s;
+
+}
+
+/*==================================
+CONTENT ANIMATION
+==================================*/
+
+.why-subtitle,
+.why-content h2,
+.why-content>p{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:.8s;
+
+}
+
+.why-section.show .why-subtitle{
+
+opacity:1;
+
+transform:translateY(0);
+
+transition-delay:.10s;
+
+}
+
+.why-section.show .why-content h2{
+
+opacity:1;
+
+transform:translateY(0);
+
+transition-delay:.25s;
+
+}
+
+.why-section.show .why-content>p{
+
+opacity:1;
+
+transform:translateY(0);
+
+transition-delay:.40s;
+
+}
+/*=====================================================
+WHY CHOOSE US
+PART 2A-3
+COUNTERS + BUTTON + FINAL STYLING
+======================================================*/
+
+/*==================================
+BOTTOM AREA
+==================================*/
+
+.why-counter-area{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+margin-top:50px;
+
+margin-bottom:45px;
+
+}
+
+/*==================================
+COUNTER BOX
+==================================*/
+
+.counter-box{
+
+position:relative;
+
+background:#ffffff;
+
+padding:30px 25px;
+
+border-radius:22px;
+
+text-align:center;
+
+overflow:hidden;
+
+border:1px solid rgba(34,197,94,.08);
+
+box-shadow:
+0 18px 40px rgba(0,0,0,.06);
+
+transition:.45s ease;
+
+}
+
+.counter-box::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:5px;
+
+background:linear-gradient(
+90deg,
+#16a34a,
+#22c55e
+);
+
+}
+
+.counter-box:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 28px 60px rgba(34,197,94,.18);
+
+}
+
+.counter-box h3{
+
+font-size:52px;
+
+font-weight:700;
+
+color:#22c55e;
+
+margin-bottom:12px;
+
+line-height:1;
+
+}
+
+.counter-box h3::after{
+
+content:"+";
+
+color:#16a34a;
+
+}
+
+.counter-box:last-child h3::after{
+
+content:"%";
+
+}
+
+.counter-box span{
+
+display:block;
+
+color:#666;
+
+font-size:15px;
+
+font-weight:500;
+
+line-height:1.7;
+
+}
+
+/*==================================
+COUNTER ICON
+==================================*/
+
+.counter-box::after{
+
+content:"";
+
+position:absolute;
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+background:rgba(34,197,94,.05);
+
+right:-20px;
+
+bottom:-20px;
+
+}
+
+/*==================================
+BUTTON
+==================================*/
+
+.why-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:14px;
+
+padding:18px 38px;
+
+border-radius:60px;
+
+text-decoration:none;
+
+color:#ffffff;
+
+font-size:16px;
+
+font-weight:600;
+
+background:linear-gradient(
+135deg,
+#16a34a,
+#22c55e
+);
+
+position:relative;
+
+overflow:hidden;
+
+transition:.45s;
+
+box-shadow:
+0 18px 40px rgba(34,197,94,.30);
+
+}
+
+/* Shine */
+
+.why-btn::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.35),
+transparent
+);
+
+transition:.8s;
+
+}
+
+.why-btn:hover::before{
+
+left:120%;
+
+}
+
+.why-btn:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+0 25px 55px rgba(34,197,94,.35);
+
+}
+
+.why-btn i{
+
+transition:.35s;
+
+}
+
+.why-btn:hover i{
+
+transform:translateX(8px);
+
+}
+
+/*==================================
+SCROLL REVEAL
+==================================*/
+
+.why-counter-area,
+.why-btn{
+
+opacity:0;
+
+transform:translateY(70px);
+
+transition:.8s ease;
+
+}
+
+.why-section.show .why-counter-area{
+
+opacity:1;
+
+transform:translateY(0);
+
+transition-delay:.75s;
+
+}
+
+.why-section.show .why-btn{
+
+opacity:1;
+
+transform:translateY(0);
+
+transition-delay:.95s;
+
+}
+
+/*==================================
+FLOATING EFFECT
+==================================*/
+
+.counter-box{
+
+animation:counterFloat 5s ease-in-out infinite;
+
+}
+
+.counter-box:nth-child(2){
+
+animation-delay:.5s;
+
+}
+
+.counter-box:nth-child(3){
+
+animation-delay:1s;
+
+}
+
+@keyframes counterFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/*==================================
+GREEN DECORATION
+==================================*/
+
+.why-content{
+
+position:relative;
+
+}
+
+.why-content::before{
+
+content:"";
+
+position:absolute;
+
+width:150px;
+
+height:150px;
+
+border-radius:50%;
+
+background:rgba(34,197,94,.05);
+
+top:-30px;
+
+right:-40px;
+
+z-index:-1;
+
+}
+
+.why-content::after{
+
+content:"";
+
+position:absolute;
+
+width:18px;
+
+height:18px;
+
+border-radius:50%;
+
+background:#22c55e;
+
+bottom:90px;
+
+right:40px;
+
+animation:dotMove 4s infinite;
+
+}
+
+@keyframes dotMove{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/*==================================
+SMOOTH HOVER
+==================================*/
+
+@media (hover:hover){
+
+.counter-box:hover h3{
+
+transform:scale(1.08);
+
+transition:.35s;
+
+}
+
+.why-btn:hover{
+
+letter-spacing:.5px;
+
+}
+
+}
+
+/*==================================
+REDUCE MOTION
+==================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+.counter-box,
+.why-btn{
+
+animation:none;
+
+transition:none;
+
+}
+
+}
+
+/*=========================================================
+WHY CHOOSE US
+PART 2B
+RESPONSIVE CSS
+=========================================================*/
+
+/*==============================
+Large Desktop
+==============================*/
+
+@media (min-width:1600px){
+
+.why-section{
+
+padding:150px 0;
+
+}
+
+.why-container{
+
+max-width:1500px;
+
+gap:100px;
+
+}
+
+.why-image-area{
+
+min-height:820px;
+
+}
+
+.why-main-image{
+
+height:730px;
+
+}
+
+.why-floating-card{
+
+width:290px;
+
+padding:30px;
+
+}
+
+.why-content h2{
+
+font-size:64px;
+
+}
+
+.why-content>p{
+
+font-size:18px;
+
+}
+
+}
+
+/*==============================
+Desktop
+==============================*/
+
+@media (max-width:1400px){
+
+.why-container{
+
+gap:60px;
+
+}
+
+.why-main-image{
+
+height:600px;
+
+}
+
+.why-content h2{
+
+font-size:48px;
+
+}
+
+}
+
+/*==============================
+Laptop
+==============================*/
+
+@media (max-width:1200px){
+
+.why-section{
+
+padding:100px 0;
+
+}
+
+.why-container{
+
+gap:45px;
+
+}
+
+.why-main-image{
+
+height:560px;
+
+width:100%;
+
+}
+
+.why-image-area{
+
+min-height:620px;
+
+}
+
+.why-floating-card{
+
+width:220px;
+
+padding:20px;
+
+right:10px;
+
+top:90px;
+
+}
+
+.why-floating-card h3{
+
+font-size:28px;
+
+}
+
+.why-floating-card i{
+
+width:55px;
+
+height:55px;
+
+font-size:22px;
+
+}
+
+.why-experience{
+
+width:150px;
+
+height:150px;
+
+left:0;
+
+}
+
+.why-experience h2{
+
+font-size:46px;
+
+}
+
+.why-content h2{
+
+font-size:42px;
+
+}
+
+.why-features{
+
+gap:20px;
+
+}
+
+.why-card{
+
+padding:22px;
+
+}
+
+.why-icon{
+
+width:65px;
+
+height:65px;
+
+font-size:24px;
+
+}
+
+.why-text h4{
+
+font-size:20px;
+
+}
+
+}
+
+/*==============================
+Tablet Landscape
+==============================*/
+
+@media (max-width:991px){
+
+.why-section{
+
+padding:90px 0;
+
+}
+
+.why-container{
+
+grid-template-columns:1fr;
+
+gap:70px;
+
+}
+
+.why-image-area{
+
+min-height:560px;
+
+order:1;
+
+}
+
+.why-content{
+
+order:2;
+
+text-align:center;
+
+}
+
+.why-main-image{
+
+width:85%;
+
+margin:auto;
+
+}
+
+.why-floating-card{
+
+right:50px;
+
+}
+
+.why-experience{
+
+left:40px;
+
+}
+
+.why-content h2::after{
+
+margin-left:auto;
+
+margin-right:auto;
+
+}
+
+.why-features{
+
+grid-template-columns:repeat(2,1fr);
+
+text-align:left;
+
+}
+
+.why-counter-area{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+.why-btn{
+
+margin:auto;
+
+}
+
+}
+
+/*==============================
+Tablet Portrait
+==============================*/
+
+@media (max-width:768px){
+
+.why-section{
+
+padding:80px 0;
+
+}
+
+.why-main-image{
+
+width:100%;
+
+height:500px;
+
+}
+
+.why-image-area{
+
+min-height:500px;
+
+}
+
+.why-floating-card{
+
+width:190px;
+
+padding:18px;
+
+right:20px;
+
+top:70px;
+
+}
+
+.why-floating-card h3{
+
+font-size:24px;
+
+}
+
+.why-floating-card p{
+
+font-size:13px;
+
+}
+
+.why-floating-card i{
+
+width:48px;
+
+height:48px;
+
+font-size:18px;
+
+}
+
+.why-experience{
+
+width:130px;
+
+height:130px;
+
+left:10px;
+
+bottom:10px;
+
+}
+
+.why-experience h2{
+
+font-size:38px;
+
+}
+
+.why-experience span{
+
+font-size:13px;
+
+}
+
+.why-content h2{
+
+font-size:34px;
+
+}
+
+.why-content>p{
+
+font-size:15px;
+
+}
+
+.why-features{
+
+grid-template-columns:1fr;
+
+}
+
+.why-counter-area{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+.counter-box{
+
+padding:25px;
+
+}
+
+.why-btn{
+
+width:260px;
+
+justify-content:center;
+
+}
+
+}
+
+/*==============================
+Mobile
+==============================*/
+
+@media (max-width:576px){
+
+.why-section{
+
+padding:70px 0;
+
+}
+
+.why-container{
+
+width:92%;
+
+gap:55px;
+
+}
+
+.why-image-area{
+
+min-height:400px;
+
+}
+
+.why-main-image{
+
+height:380px;
+
+border-radius:22px;
+
+}
+
+.why-floating-card{
+
+width:170px;
+
+padding:15px;
+
+top:30px;
+
+right:10px;
+
+border-radius:18px;
+
+}
+
+.why-floating-card i{
+
+width:42px;
+
+height:42px;
+
+font-size:17px;
+
+}
+
+.why-floating-card h3{
+
+font-size:22px;
+
+}
+
+.why-floating-card p{
+
+font-size:12px;
+
+}
+
+.why-experience{
+
+width:105px;
+
+height:105px;
+
+left:0;
+
+bottom:-10px;
+
+border-radius:18px;
+
+}
+
+.why-experience h2{
+
+font-size:30px;
+
+}
+
+.why-experience span{
+
+font-size:11px;
+
+}
+
+.why-subtitle{
+
+font-size:13px;
+
+padding:8px 18px;
+
+}
+
+.why-content h2{
+
+font-size:28px;
+
+line-height:1.35;
+
+}
+
+.why-content>p{
+
+font-size:14px;
+
+line-height:1.8;
+
+}
+
+.why-card{
+
+padding:18px;
+
+gap:14px;
+
+}
+
+.why-icon{
+
+width:55px;
+
+height:55px;
+
+font-size:20px;
+
+min-width:55px;
+
+}
+
+.why-text h4{
+
+font-size:18px;
+
+}
+
+.why-text p{
+
+font-size:14px;
+
+}
+
+.counter-box h3{
+
+font-size:38px;
+
+}
+
+.counter-box span{
+
+font-size:14px;
+
+}
+
+.why-btn{
+
+width:100%;
+
+padding:16px;
+
+}
+
+}
+
+/*==============================
+Small Mobile
+==============================*/
+
+@media (max-width:400px){
+
+.why-main-image{
+
+height:320px;
+
+}
+
+.why-floating-card{
+
+width:150px;
+
+padding:12px;
+
+}
+
+.why-floating-card h3{
+
+font-size:18px;
+
+}
+
+.why-floating-card i{
+
+width:38px;
+
+height:38px;
+
+font-size:16px;
+
+}
+
+.why-experience{
+
+width:90px;
+
+height:90px;
+
+}
+
+.why-experience h2{
+
+font-size:24px;
+
+}
+
+.why-experience span{
+
+font-size:10px;
+
+}
+
+.why-content h2{
+
+font-size:24px;
+
+}
+
+.why-content>p{
+
+font-size:13px;
+
+}
+
+.why-card{
+
+flex-direction:column;
+
+text-align:center;
+
+align-items:center;
+
+}
+
+.why-icon{
+
+margin-bottom:8px;
+
+}
+
+.counter-box{
+
+padding:20px;
+
+}
+
+.counter-box h3{
+
+font-size:32px;
+
+}
+
+}
+
+/*==============================
+Touch Devices
+==============================*/
+
+@media (hover:none){
+
+.why-card:hover,
+
+.counter-box:hover,
+
+.why-main-image:hover,
+
+.why-floating-card:hover,
+
+.why-experience:hover,
+
+.why-btn:hover{
+
+transform:none;
+
+}
+
+}
+
+/*====================================
+BUTTON RIPPLE
+====================================*/
+
+.why-btn{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.why-ripple{
+
+position:absolute;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.35);
+
+transform:scale(0);
+
+pointer-events:none;
+
+animation:whyRipple .7s linear;
+
+}
+
+@keyframes whyRipple{
+
+to{
+
+transform:scale(4);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+<script>
+    /*====================================================
+        WHY CHOOSE US SECTION
+    ====================================================*/
+    
+    document.addEventListener("DOMContentLoaded", () => {
+    
+        const whySection = document.querySelector(".why-section");
+    
+        if (!whySection) return;
+    
+        /*====================================
+          SCROLL REVEAL
+        ====================================*/
+    
+        const observer = new IntersectionObserver((entries) => {
+    
+            entries.forEach(entry => {
+    
+                if (entry.isIntersecting) {
+    
+                    whySection.classList.add("show");
+    
+                    startCounters();
+    
+                    observer.unobserve(whySection);
+    
+                }
+    
+            });
+    
+        }, {
+    
+            threshold:0.25
+    
+        });
+    
+        observer.observe(whySection);
+    
+        /*====================================
+          COUNTER ANIMATION
+        ====================================*/
+    
+        function startCounters(){
+    
+            const counters=document.querySelectorAll(".counter");
+    
+            counters.forEach(counter=>{
+    
+                const target=+counter.dataset.target;
+    
+                const duration=2000;
+    
+                const increment=target/(duration/16);
+    
+                let current=0;
+    
+                function update(){
+    
+                    current+=increment;
+    
+                    if(current<target){
+    
+                        counter.innerText=Math.floor(current);
+    
+                        requestAnimationFrame(update);
+    
+                    }else{
+    
+                        counter.innerText=target;
+    
+                    }
+    
+                }
+    
+                update();
+    
+            });
+    
+        }
+    
+        /*====================================
+          PARALLAX IMAGE
+        ====================================*/
+    
+        const image=document.querySelector(".why-main-image");
+    
+        if(image && window.innerWidth>991){
+    
+            whySection.addEventListener("mousemove",(e)=>{
+    
+                const rect=whySection.getBoundingClientRect();
+    
+                const x=(e.clientX-rect.left)/rect.width-0.5;
+    
+                const y=(e.clientY-rect.top)/rect.height-0.5;
+    
+                image.style.transform=
+                `translate(${x*12}px,${y*12}px)`;
+    
+            });
+    
+            whySection.addEventListener("mouseleave",()=>{
+    
+                image.style.transform="translate(0,0)";
+    
+            });
+    
+        }
+    
+        /*====================================
+          FLOATING CARD
+        ====================================*/
+    
+        const floating=document.querySelector(".why-floating-card");
+    
+        if(floating){
+    
+            let direction=1;
+    
+            setInterval(()=>{
+    
+                direction*=-1;
+    
+                floating.style.transition="1.8s ease";
+    
+                floating.style.transform=
+                `translateY(${direction*10}px)`;
+    
+            },1800);
+    
+        }
+    
+        /*====================================
+          EXPERIENCE BOX
+        ====================================*/
+    
+        const exp=document.querySelector(".why-experience");
+    
+        if(exp){
+    
+            setInterval(()=>{
+    
+                exp.animate([
+    
+                    {
+    
+                        transform:"scale(1)"
+    
+                    },
+    
+                    {
+    
+                        transform:"scale(1.05)"
+    
+                    },
+    
+                    {
+    
+                        transform:"scale(1)"
+    
+                    }
+    
+                ],{
+    
+                    duration:2200
+    
+                });
+    
+            },2500);
+    
+        }
+    
+        /*====================================
+          FEATURE CARD HOVER
+        ====================================*/
+    
+        const cards=document.querySelectorAll(".why-card");
+    
+        cards.forEach(card=>{
+    
+            card.addEventListener("mouseenter",()=>{
+    
+                card.style.transition=".35s";
+    
+                card.style.transform="translateY(-10px)";
+    
+            });
+    
+            card.addEventListener("mouseleave",()=>{
+    
+                card.style.transform="translateY(0)";
+    
+            });
+    
+        });
+    
+        /*====================================
+          BUTTON RIPPLE
+        ====================================*/
+    
+        const button=document.querySelector(".why-btn");
+    
+        if(button){
+    
+            button.addEventListener("click",function(e){
+    
+                const ripple=document.createElement("span");
+    
+                const rect=this.getBoundingClientRect();
+    
+                const size=Math.max(rect.width,rect.height);
+    
+                ripple.style.width=size+"px";
+                ripple.style.height=size+"px";
+    
+                ripple.style.left=(e.clientX-rect.left-size/2)+"px";
+                ripple.style.top=(e.clientY-rect.top-size/2)+"px";
+    
+                ripple.classList.add("why-ripple");
+    
+                this.appendChild(ripple);
+    
+                ripple.addEventListener("animationend",()=>{
+    
+                    ripple.remove();
+    
+                });
+    
+            });
+    
+        }
+    
+    });
+    </script>
+
+    <!-- ==========================================
+     RENEWABLE BUSINESS CTA SECTION START
+========================================== -->
+
+
+<section class="re-cta-section">
+
+
+    <div class="re-cta-overlay"></div>
+
+
+    <div class="re-cta-container">
+
+
+
+        <div class="re-cta-content re-cta-reveal">
+
+
+
+            <span class="re-cta-tag">
+
+                <i class="fa-solid fa-leaf"></i>
+
+                GO GREEN WITH US
+
+            </span>
+
+
+
+            <h2>
+
+                Ready To Start A
+                <span>Business With Us?</span>
+
+            </h2>
+
+
+
+            <p>
+
+                Partner with our renewable energy experts and
+                build sustainable solutions that create a cleaner,
+                smarter and greener future.
+
+            </p>
+
+
+
+
+            <a href="./contact.html"
+               class="re-cta-btn">
+
+
+                Contact Us
+
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+
+            </a>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+<!-- ==========================================
+     RENEWABLE BUSINESS CTA SECTION END
+========================================== -->
+
+<style>
+    /* ==========================================
+   RENEWABLE BUSINESS CTA SECTION
+========================================== */
+
+
+.re-cta-section{
+
+
+width:100%;
+
+
+min-height:520px;
+
+
+position:relative;
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+overflow:hidden;
+
+
+background-image:
+
+url("./images/renewable-cta.jpg");
+
+
+background-size:cover;
+
+
+background-position:center;
+
+
+background-attachment:fixed;
+
+
+
+}
+
+
+
+
+
+
+/* Background Zoom Layer */
+
+
+.re-cta-section::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+inset:0;
+
+
+background-image:
+
+url("./energy3.webp");
+
+
+background-size:cover;
+
+
+background-position:center;
+
+
+transform:scale(1.15);
+
+
+transition:
+
+transform 2s ease;
+
+
+}
+
+
+
+
+
+
+.re-cta-section.re-cta-loaded::before{
+
+
+transform:scale(1);
+
+
+}
+
+
+
+
+
+
+
+/* Dark Renewable Overlay */
+
+
+.re-cta-overlay{
+
+
+position:absolute;
+
+
+inset:0;
+
+
+background:
+
+
+linear-gradient(
+
+    135deg,
+
+    rgba(2,30,15,.88),
+
+    rgba(0,80,45,.75)
+
+);
+
+
+z-index:1;
+
+
+}
+
+
+
+
+
+
+
+/* Green Glow Effect */
+
+
+.re-cta-section::after{
+
+
+content:"";
+
+
+position:absolute;
+
+
+width:400px;
+
+
+height:400px;
+
+
+border-radius:50%;
+
+
+background:
+
+rgba(88,255,120,.18);
+
+
+right:-150px;
+
+
+bottom:-150px;
+
+
+filter:blur(100px);
+
+
+}
+
+
+
+
+
+
+
+/* Container */
+
+
+.re-cta-container{
+
+
+width:100%;
+
+
+max-width:1200px;
+
+
+padding:80px 20px;
+
+
+position:relative;
+
+
+z-index:2;
+
+
+}
+
+
+
+
+
+
+
+/* Content */
+
+
+.re-cta-content{
+
+
+max-width:750px;
+
+
+margin:auto;
+
+
+text-align:center;
+
+
+}
+
+
+
+
+
+
+
+/* Tag */
+
+
+.re-cta-tag{
+
+
+display:inline-flex;
+
+
+align-items:center;
+
+
+gap:10px;
+
+
+padding:10px 24px;
+
+
+border-radius:50px;
+
+
+background:
+
+rgba(255,255,255,.12);
+
+
+border:
+
+1px solid rgba(255,255,255,.2);
+
+
+color:#7dff98;
+
+
+font-size:14px;
+
+
+font-weight:600;
+
+
+letter-spacing:1.5px;
+
+
+}
+
+
+
+
+
+
+
+/* Heading */
+
+
+.re-cta-content h2{
+
+
+margin-top:25px;
+
+
+color:white;
+
+
+font-size:48px;
+
+
+line-height:1.2;
+
+
+font-weight:700;
+
+
+}
+
+
+
+.re-cta-content h2 span{
+
+
+color:#69ff8a;
+
+
+}
+
+
+
+
+
+
+
+/* Paragraph */
+
+
+.re-cta-content p{
+
+
+margin:25px auto;
+
+
+max-width:650px;
+
+
+color:#d2e7d8;
+
+
+font-size:17px;
+
+
+line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+/* Button */
+
+
+.re-cta-btn{
+
+
+display:inline-flex;
+
+
+align-items:center;
+
+
+gap:12px;
+
+
+padding:15px 35px;
+
+
+border-radius:50px;
+
+
+background:
+
+linear-gradient(
+
+    135deg,
+
+    #65ff86,
+
+    #00c96b
+
+);
+
+
+color:#043019;
+
+
+font-size:16px;
+
+
+font-weight:700;
+
+
+text-decoration:none;
+
+
+transition:.4s ease;
+
+
+box-shadow:
+
+0 10px 30px
+
+rgba(0,255,120,.25);
+
+
+}
+
+
+
+
+
+
+.re-cta-btn:hover{
+
+
+transform:
+
+translateY(-8px);
+
+
+box-shadow:
+
+
+0 18px 40px
+
+rgba(0,255,120,.45);
+
+
+}
+
+
+
+
+
+
+.re-cta-btn i{
+
+
+transition:.4s ease;
+
+
+}
+
+
+
+.re-cta-btn:hover i{
+
+
+transform:
+
+translateX(8px);
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+SCROLL REVEAL
+===================================== */
+
+
+.re-cta-reveal{
+
+
+opacity:0;
+
+
+transform:
+
+translateY(60px);
+
+
+transition:
+
+.9s ease;
+
+
+}
+
+
+
+.re-cta-active{
+
+
+opacity:1;
+
+
+transform:
+
+translateY(0);
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+LAPTOP VIEW
+===================================== */
+
+
+@media(max-width:1200px){
+
+
+.re-cta-content h2{
+
+
+font-size:42px;
+
+
+}
+
+
+
+.re-cta-section{
+
+
+min-height:480px;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+TABLET VIEW
+===================================== */
+
+
+@media(max-width:900px){
+
+
+.re-cta-section{
+
+
+min-height:450px;
+
+
+background-attachment:
+
+scroll;
+
+
+}
+
+
+
+.re-cta-container{
+
+
+padding:70px 20px;
+
+
+}
+
+
+
+.re-cta-content h2{
+
+
+font-size:36px;
+
+
+}
+
+
+
+.re-cta-content p{
+
+
+font-size:16px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+MOBILE VIEW
+===================================== */
+
+
+@media(max-width:600px){
+
+
+.re-cta-section{
+
+
+min-height:430px;
+
+
+}
+
+
+
+.re-cta-container{
+
+
+padding:60px 15px;
+
+
+}
+
+
+
+.re-cta-tag{
+
+
+font-size:12px;
+
+
+padding:8px 18px;
+
+
+}
+
+
+
+.re-cta-content h2{
+
+
+font-size:28px;
+
+
+}
+
+
+
+.re-cta-content p{
+
+
+font-size:14px;
+
+
+line-height:1.7;
+
+
+}
+
+
+
+.re-cta-btn{
+
+
+padding:13px 28px;
+
+
+font-size:14px;
+
+
+}
+
+
+
+}
+</style>
+
+<script>
+    /* ==========================================
+   RENEWABLE CTA SECTION ANIMATION
+========================================== */
+
+
+(function(){
+
+
+const reCtaSection = document.querySelector(
+    ".re-cta-section"
+);
+
+
+const reCtaContent = document.querySelectorAll(
+    ".re-cta-reveal"
+);
+
+
+
+if(!reCtaSection){
+    return;
+}
+
+
+
+
+const reCtaObserver = new IntersectionObserver(
+
+
+    (entries)=>{
+
+
+        entries.forEach((entry)=>{
+
+
+            if(entry.isIntersecting){
+
+
+
+                // Background zoom animation
+
+                reCtaSection.classList.add(
+                    "re-cta-loaded"
+                );
+
+
+
+
+
+                // Content reveal animation
+
+                reCtaContent.forEach(
+                    (item,index)=>{
+
+
+                        setTimeout(()=>{
+
+
+                            item.classList.add(
+                                "re-cta-active"
+                            );
+
+
+                        }, index * 250);
+
+
+
+                    }
+                );
+
+
+
+
+
+                reCtaObserver.unobserve(
+                    entry.target
+                );
+
+
+
+            }
+
+
+
+        });
+
+
+
+    },
+
+
+    {
+        threshold:0.25
+    }
+
+
+
+);
+
+
+
+
+reCtaObserver.observe(
+    reCtaSection
+);
+
+
+
+})();
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<footer class="rstfooter-section">
+
+    <div class="rstfooter-container">
+
+        <!-- Column 1 -->
+        <div class="rstfooter-col rstfooter-first-col">
+            <a href="index.html" class="rstfooter-logo">
+                <img src="./white.webp" alt="Stackly Logo"
+                style="height:60px; filter: brightness(0) saturate(100%) invert(73%) sepia(94%) saturate(2874%) hue-rotate(92deg) brightness(103%) contrast(105%);">
+            </a>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, rerum!
+            </p>
+
+            <div class="rstfooter-social">
+                <a href="./404.html"><i class="fab fa-facebook-f"></i></a>
+                <a href="./404.html"><i class="fab fa-x-twitter"></i></a>
+                <a href="./404.html"><i class="fab fa-instagram"></i></a>
+                <a href="./404.html"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="rstfooter-col">
+            <h3>Working Hours</h3>
+
+            <ul class="rstfooter-hours">
+                <li><span>Mon - Fri</span><span>09:00 - 22:00</span></li>
+                <li><span>Saturday</span><span>11:00 - 00:00</span></li>
+                <li><span>Sunday</span><span>11:00 - 23:00</span></li>
+                <li><span>Happy Hour</span><span>17:00 - 21:00</span></li>
+            </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="rstfooter-col">
+            <h3>Contact Us</h3>
+
+            <p><i class="fas fa-map-marker-alt"></i> Salem Tamil Nadu</p>
+            <p><i class="fas fa-phone"></i> +91 9876543210</p>
+            <p><i class="fas fa-envelope"></i> booking@thestackly.com</p>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="rstfooter-col">
+            <h3>Newsletter</h3>
+            <p>Receive latest updates from us.</p>
+
+            <form id="rstfooterForm">
+                <input type="email" id="rstfooterEmail" placeholder="Enter Email">
+                <button type="submit">Subscribe</button>
+            </form>
+
+            <small id="rstfooterMsg"></small>
+        </div>
+
+    </div>
+
+    <div class="rstfooter-bottom">
+        © 2026 Stackly services. All Rights Reserved.
+    </div>
+
+</footer>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.rstfooter-section{
+    background:#111;
+    color:white;
+    padding:70px 20px;
+}
+
+.rstfooter-container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+    align-items:start;
+}
+
+.rstfooter-col{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+.rstfooter-col h3{
+    margin-bottom:25px;
+    color:#00ff88;
+    min-height:40px; /* makes all headings align */
+    display:flex;
+    align-items:center;
+}
+
+.rstfooter-col p{
+    color:#bbb;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.rstfooter-logo img{
+    width:160px;
+    margin-bottom:20px;
+    cursor:pointer;
+}
+
+.rstfooter-social{
+    display:flex;
+    gap:15px;
+    margin-top:10px;
+}
+
+.rstfooter-social a{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#222;
+    color:white;
+    text-decoration:none;
+    transition:.4s;
+}
+
+.rstfooter-social a:hover{
+    background:#00ff88;
+    color:black;
+}
+
+.rstfooter-hours{
+    list-style:none;
+    padding:0;
+}
+
+.rstfooter-hours li{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+    color:#bbb;
+    gap:20px;
+}
+
+#rstfooterForm{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+#rstfooterForm input{
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    outline:none;
+}
+
+#rstfooterForm button{
+    padding:14px;
+    border:none;
+    background:#123e29;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+#rstfooterMsg{
+    display:block;
+    margin-top:10px;
+    color:#00ff88;
+}
+
+.rstfooter-bottom{
+    text-align:center;
+    border-top:1px solid #333;
+    margin-top:50px;
+    padding-top:20px;
+    color:#999;
+}
+
+/* Tablet */
+@media(max-width:992px){
+    .rstfooter-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .rstfooter-container{
+        grid-template-columns:1fr;
+    }
+
+    .rstfooter-hours li{
+        flex-direction:column;
+        gap:5px;
+    }
+
+    .rstfooter-col h3{
+        min-height:auto;
+    }
+}
+</style>
+
+<script>
+document.getElementById("rstfooterForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const email = document.getElementById("rstfooterEmail").value.trim();
+    const msg = document.getElementById("rstfooterMsg");
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if(emailPattern.test(email)){
+        msg.style.color = "#4CAF50";
+        msg.innerText = "Email verified ✓";
+
+        setTimeout(()=>{
+            window.location.href = "404.html";
+        },1500);
+    } else {
+        msg.style.color = "#ff7b7b";
+        msg.innerText = "Fill details correctly";
+    }
+});
+</script>
+
+</body>
+</html>
