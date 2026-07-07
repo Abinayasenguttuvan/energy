@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet"
+href="css/dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="re-dashboard">
+
+    <!--======================
+        Sidebar
+    =======================-->
+
+    <aside class="re-sidebar" id="reSidebar">
+
+        <div class="re-sidebar-logo">
+
+            <a href="index.html">
+
+                <img src="white.webp"
+                alt="Logo">
+
+            </a>
+
+        </div>
+        <ul class="re-menu">
+
+            <li>
+
+                <a href="./admin-dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li >
+
+                <a href="./energy dash.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Energy Management
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./project dash.html">
+
+                    <i class="fa-solid fa-solar-panel"></i>
+
+                    Project management
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./cust.html">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    Customer management
+
+                </a>
+
+            </li>
+
+            <li class="active" >
+
+                <a href="./billing dash.html">
+
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+
+                    Billing & finance
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./report.html">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    Report Analytics
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./notification.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Notification
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./login.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+        </ul>
+
+    </aside>
+    <!--=====================
+        Main Area
+    =====================-->
+
+    <main class="re-main">
+
+        <!--==================
+            Topbar
+        ===================-->
+
+        <header class="re-topbar">
+
+            <div class="re-top-left">
+
+                <button id="menuBtn">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                
+
+            </div>
+
+            <div class="re-top-right">
+
+                <div class="re-user-email">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <span id="dashboardEmail"></span>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Dashboard content starts here -->
+
+        <section class="re-dashboard-content">
+
+           
+
+
+<div class="billing-dashboard">
+
+
+
+
+
+<!-- Header -->
+
+
+<section class="billing-header">
+
+
+<div>
+
+<h1>
+Billing Management Dashboard
+</h1>
+
+
+<p>
+Manage payments, invoices and renewable energy revenue.
+</p>
+
+
+</div>
+
+
+
+<div class="billing-status">
+
+<i class="fa-solid fa-wallet"></i>
+
+Finance Active
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Billing Summary Cards -->
+
+
+<section class="billing-cards">
+
+
+
+<div class="billing-card">
+
+
+<div class="billing-icon">
+
+<i class="fa-solid fa-indian-rupee-sign"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+Total Revenue
+</h3>
+
+<h2>
+₹45.8L
+</h2>
+
+<span>
+This Year
+</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="billing-card">
+
+
+<div class="billing-icon">
+
+<i class="fa-solid fa-file-invoice"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+Total Invoices
+</h3>
+
+<h2>
+1250
+</h2>
+
+<span>
+Generated Bills
+</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="billing-card">
+
+
+<div class="billing-icon">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+Paid Payments
+</h3>
+
+<h2>
+980
+</h2>
+
+<span>
+Completed
+</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="billing-card">
+
+
+<div class="billing-icon">
+
+<i class="fa-solid fa-clock"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+Pending Payments
+</h3>
+
+<h2>
+120
+</h2>
+
+<span>
+Awaiting Payment
+</span>
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Revenue Overview -->
+
+
+<section class="revenue-section">
+
+
+<h2>
+Revenue Overview
+</h2>
+
+
+
+<div class="revenue-grid">
+
+
+
+<div class="revenue-box">
+
+
+<i class="fa-solid fa-solar-panel"></i>
+
+
+<h3>
+Solar Revenue
+</h3>
+
+
+<h2>
+₹25L
+</h2>
+
+
+<p>
+Monthly Earnings
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="revenue-box">
+
+
+<i class="fa-solid fa-wind"></i>
+
+
+<h3>
+Wind Revenue
+</h3>
+
+
+<h2>
+₹14L
+</h2>
+
+
+<p>
+Monthly Earnings
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="revenue-box">
+
+
+<i class="fa-solid fa-water"></i>
+
+
+<h3>
+Hydro Revenue
+</h3>
+
+
+<h2>
+₹6.8L
+</h2>
+
+
+<p>
+Monthly Earnings
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Invoice Table -->
+
+
+<section class="invoice-section">
+
+
+<h2>
+Invoice Management
+</h2>
+
+
+
+<div class="invoice-table">
+
+
+<div class="invoice-row invoice-head">
+
+
+<span>
+Customer
+</span>
+
+
+<span>
+Invoice ID
+</span>
+
+
+<span>
+Amount
+</span>
+
+
+<span>
+Status
+</span>
+
+
+</div>
+
+
+
+
+
+
+<div class="invoice-row">
+
+
+<span>
+Arun Kumar
+</span>
+
+
+<span>
+INV-1025
+</span>
+
+
+<span>
+₹8500
+</span>
+
+
+<span class="paid">
+Paid
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="invoice-row">
+
+
+<span>
+Priya Sharma
+</span>
+
+
+<span>
+INV-1026
+</span>
+
+
+<span>
+₹6200
+</span>
+
+
+<span class="pending">
+Pending
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="invoice-row">
+
+
+<span>
+Rajesh Kumar
+</span>
+
+
+<span>
+INV-1027
+</span>
+
+
+<span>
+₹9500
+</span>
+
+
+<span class="paid">
+Paid
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Subscription Plans -->
+
+
+<section class="subscription-section">
+
+
+<h2>
+Energy Subscription Plans
+</h2>
+
+
+
+<div class="subscription-grid">
+
+
+
+<div class="plan-card">
+
+
+<i class="fa-solid fa-leaf"></i>
+
+
+<h3>
+Basic Plan
+</h3>
+
+
+<p>
+Solar Monitoring</p>
+
+
+<h2>
+₹999/month
+</h2>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="plan-card active-plan">
+
+
+<i class="fa-solid fa-bolt"></i>
+
+
+<h3>
+Premium Plan
+</h3>
+
+
+<p>
+Complete Energy Management</p>
+
+
+<h2>
+₹2499/month
+</h2>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="plan-card">
+
+
+<i class="fa-solid fa-building"></i>
+
+
+<h3>
+Enterprise Plan
+</h3>
+
+
+<p>
+Industrial Energy Solutions</p>
+
+
+<h2>
+Custom</h2>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Billing Activity -->
+
+
+<section class="billing-activity">
+
+
+<h2>
+Recent Billing Activities
+</h2>
+
+
+
+<div class="activity-row">
+
+
+<i class="fa-solid fa-money-check"></i>
+
+
+<p>
+Payment received from Solar customer.
+</p>
+
+
+<span>
+Today
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="activity-row">
+
+
+<i class="fa-solid fa-file-invoice"></i>
+
+
+<p>
+Monthly invoice generated successfully.
+</p>
+
+
+<span>
+Yesterday
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="activity-row">
+
+
+<i class="fa-solid fa-credit-card"></i>
+
+
+<p>
+Subscription payment completed.
+</p>
+
+
+<span>
+2 Days Ago
+</span>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+</div>
+
+
+
+            
+<style>
+    *{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+
+}
+
+
+
+body{
+
+background:#f1faf3;
+color:#21452d;
+padding:40px;
+
+}
+
+
+
+.billing-dashboard{
+
+max-width:1200px;
+margin:auto;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+Header
+========================== */
+
+
+.billing-header{
+
+background:white;
+padding:35px;
+border-radius:25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+margin-bottom:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+.billing-header h1{
+
+color:#145c2d;
+font-size:32px;
+
+}
+
+
+
+.billing-header p{
+
+color:#6b806f;
+margin-top:10px;
+
+}
+
+
+
+.billing-status{
+
+background:#e5f8ea;
+color:#168039;
+padding:14px 25px;
+border-radius:30px;
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:600;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+Billing Cards
+========================== */
+
+
+.billing-cards{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+margin-bottom:35px;
+
+}
+
+
+
+.billing-card{
+
+background:white;
+padding:25px;
+border-radius:20px;
+display:flex;
+align-items:center;
+gap:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.07);
+transition:.3s;
+
+}
+
+
+
+.billing-card:hover{
+
+transform:translateY(-7px);
+
+}
+
+
+
+.billing-icon{
+
+width:60px;
+height:60px;
+background:#ddf5e4;
+color:#168039;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:25px;
+
+}
+
+
+
+.billing-card h3{
+
+font-size:15px;
+
+}
+
+
+
+.billing-card h2{
+
+color:#168039;
+font-size:28px;
+margin:5px 0;
+
+}
+
+
+
+.billing-card span{
+
+color:#777;
+font-size:13px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+Common Sections
+========================== */
+
+
+.revenue-section,
+.invoice-section,
+.subscription-section,
+.billing-activity{
+
+
+background:white;
+padding:30px;
+border-radius:25px;
+margin-bottom:30px;
+box-shadow:0 10px 25px rgba(0,0,0,.07);
+
+
+}
+
+
+
+.revenue-section h2,
+.invoice-section h2,
+.subscription-section h2,
+.billing-activity h2{
+
+color:#145c2d;
+margin-bottom:25px;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+Revenue Cards
+========================== */
+
+
+.revenue-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+
+}
+
+
+
+.revenue-box{
+
+background:#f5fbf6;
+padding:25px;
+border-radius:20px;
+text-align:center;
+
+}
+
+
+
+.revenue-box i{
+
+width:60px;
+height:60px;
+background:#ddf5e4;
+color:#168039;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+margin:auto;
+font-size:25px;
+
+}
+
+
+
+.revenue-box h3{
+
+margin:15px 0 8px;
+color:#145c2d;
+
+}
+
+
+
+.revenue-box h2{
+
+color:#168039;
+
+}
+
+
+
+.revenue-box p{
+
+color:#777;
+margin-top:5px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+Invoice Table
+========================== */
+
+
+.invoice-table{
+
+display:flex;
+flex-direction:column;
+gap:12px;
+
+}
+
+
+
+.invoice-row{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+padding:18px;
+background:#f5fbf6;
+border-radius:15px;
+align-items:center;
+
+}
+
+
+
+.invoice-head{
+
+background:#168039;
+color:white;
+font-weight:600;
+
+}
+
+
+
+.paid{
+
+color:#168039;
+font-weight:600;
+
+}
+
+
+
+.pending{
+
+color:#d98b00;
+font-weight:600;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+Subscription
+========================== */
+
+
+.subscription-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+
+}
+
+
+
+.plan-card{
+
+background:#f5fbf6;
+padding:30px;
+border-radius:20px;
+text-align:center;
+
+}
+
+
+
+.plan-card i{
+
+width:60px;
+height:60px;
+background:#ddf5e4;
+color:#168039;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+margin:auto;
+font-size:25px;
+
+}
+
+
+
+.plan-card h3{
+
+color:#145c2d;
+margin:15px 0;
+
+}
+
+
+
+.plan-card p{
+
+color:#777;
+
+}
+
+
+
+.plan-card h2{
+
+color:#168039;
+margin-top:15px;
+
+}
+
+
+
+.active-plan{
+
+border:2px solid #168039;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+Activity
+========================== */
+
+
+.activity-row{
+
+background:#f5fbf6;
+padding:18px;
+border-radius:15px;
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:15px;
+
+}
+
+
+
+.activity-row i{
+
+width:45px;
+height:45px;
+background:#ddf5e4;
+color:#168039;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+
+}
+
+
+
+.activity-row p{
+
+flex:1;
+
+}
+
+
+
+.activity-row span{
+
+color:#168039;
+font-weight:600;
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================
+Laptop
+========================== */
+
+
+@media(max-width:1200px){
+
+
+.billing-cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.revenue-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.subscription-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================
+Tablet
+========================== */
+
+
+@media(max-width:768px){
+
+
+body{
+
+padding:20px;
+
+}
+
+
+
+.billing-header{
+
+flex-direction:column;
+align-items:flex-start;
+
+}
+
+
+
+.billing-header h1{
+
+font-size:26px;
+
+}
+
+
+
+.billing-cards{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.revenue-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.subscription-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.revenue-section,
+.invoice-section,
+.subscription-section,
+.billing-activity{
+
+padding:20px;
+
+}
+
+
+
+.invoice-head{
+
+display:none;
+
+}
+
+
+
+.invoice-row{
+
+grid-template-columns:1fr;
+gap:10px;
+
+}
+
+
+
+.activity-row{
+
+flex-wrap:wrap;
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+Mobile
+========================== */
+
+
+@media(max-width:480px){
+
+
+.billing-header{
+
+padding:20px;
+
+}
+
+
+
+.billing-header h1{
+
+font-size:22px;
+
+}
+
+
+
+.billing-card{
+
+padding:20px;
+
+}
+
+
+
+.billing-card h2{
+
+font-size:23px;
+
+}
+
+
+
+.revenue-box{
+
+padding:20px;
+
+}
+
+
+
+.activity-row{
+
+flex-direction:column;
+align-items:flex-start;
+
+}
+
+
+}
+    </style>
+
+
+<script src="js/dashboard.js"></script>
+
+<style>
+    /*==========================================
+    GOOGLE FONT
+==========================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==========================================
+    RESET
+==========================================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f8f4;
+    color:#222;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/*==========================================
+    VARIABLES
+==========================================*/
+
+:root{
+
+    --primary:#2E7D32;
+    --primary-dark:#1B5E20;
+    --secondary:#4CAF50;
+    --light:#F7FFF8;
+    --border:#dce8dc;
+    --white:#ffffff;
+    --text:#222;
+    --text-light:#666;
+    --shadow:0 10px 35px rgba(0,0,0,.08);
+
+}
+
+/*==========================================
+        LAYOUT
+==========================================*/
+
+.re-dashboard{
+
+    display:flex;
+    min-height:100vh;
+    width:100%;
+
+}
+
+/*==========================================
+        SIDEBAR
+==========================================*/
+
+.re-sidebar{
+
+    width:270px;
+    background:linear-gradient(180deg,#1B5E20,#2E7D32,#43A047);
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    height:100vh;
+    overflow-y:auto;
+    transition:.35s;
+    z-index:999;
+
+}
+
+.re-sidebar-logo{
+
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+}
+
+.re-sidebar-logo img{
+
+    width:170px;
+    transition:.4s;
+
+}
+
+.re-sidebar-logo img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*==========================================
+        MENU
+==========================================*/
+
+.re-menu{
+
+    padding:25px 15px;
+
+}
+
+.re-menu li{
+
+    margin-bottom:10px;
+
+}
+
+.re-menu li a{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:14px 18px;
+    border-radius:12px;
+    transition:.3s;
+    font-size:15px;
+    font-weight:500;
+
+}
+
+.re-menu li a i{
+
+    width:22px;
+    text-align:center;
+    font-size:18px;
+
+}
+
+.re-menu li a:hover{
+
+    background:rgba(255,255,255,.18);
+    transform:translateX(8px);
+
+}
+
+.re-menu li.active a{
+
+    background:#fff;
+    color:var(--primary-dark);
+    font-weight:600;
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+}
+
+/*==========================================
+        MAIN
+==========================================*/
+
+.re-main{
+
+    flex:1;
+    margin-left:270px;
+    width:calc(100% - 270px);
+    min-height:100vh;
+
+}
+
+/*==========================================
+        TOPBAR
+==========================================*/
+
+.re-topbar{
+
+    position:sticky;
+    top:0;
+    background:#fff;
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    z-index:100;
+
+}
+
+/*==========================================
+        LEFT
+==========================================*/
+
+.re-top-left{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+}
+
+.re-home-logo img{
+
+    width:150px;
+
+}
+
+/*==========================================
+        MENU BUTTON
+==========================================*/
+
+#menuBtn{
+
+    display:none;
+    width:46px;
+    height:46px;
+    border:none;
+    border-radius:12px;
+    background:var(--primary);
+    color:#fff;
+    cursor:pointer;
+    font-size:20px;
+    transition:.3s;
+
+}
+
+#menuBtn:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/*==========================================
+        EMAIL
+==========================================*/
+
+.re-user-email{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#F4FFF5;
+    border:1px solid #dce8dc;
+    padding:12px 20px;
+    border-radius:50px;
+    color:var(--primary-dark);
+    font-weight:600;
+    font-size:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.05);
+
+}
+
+.re-user-email i{
+
+    font-size:18px;
+    color:#43A047;
+
+}
+
+/*==========================================
+        CONTENT
+==========================================*/
+
+.re-dashboard-content{
+
+    padding:40px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:34px;
+    margin-bottom:12px;
+    color:#1B5E20;
+
+}
+
+.re-dashboard-content p{
+
+    color:#666;
+    line-height:1.8;
+
+}
+
+/*==========================================
+        TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.re-sidebar{
+
+    left:-280px;
+
+}
+
+.re-sidebar.active{
+
+    left:0;
+
+}
+
+.re-main{
+
+    margin-left:0;
+    width:100%;
+
+}
+
+#menuBtn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.re-topbar{
+
+    padding:0 20px;
+
+}
+
+}
+
+/*==========================================
+        MOBILE
+==========================================*/
+
+@media(max-width:768px){
+
+.re-topbar{
+
+    height:70px;
+    padding:0 15px;
+
+}
+
+.re-home-logo img{
+
+    width:120px;
+
+}
+
+.re-user-email{
+
+    padding:10px 14px;
+    font-size:13px;
+    gap:8px;
+
+}
+
+.re-dashboard-content{
+
+    padding:25px 18px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:28px;
+
+}
+
+}
+
+/*==========================================
+        SMALL MOBILE
+==========================================*/
+
+@media(max-width:576px){
+
+.re-user-email{
+
+    max-width:170px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+
+}
+
+.re-home-logo img{
+
+    width:110px;
+
+}
+
+.re-dashboard-content{
+
+    padding:20px 15px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:24px;
+
+}
+
+}
+
+/*==========================================
+        SCROLLBAR
+==========================================*/
+
+.re-sidebar::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.re-sidebar::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.35);
+    border-radius:50px;
+
+}
+
+.re-sidebar::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/*==========================================
+        SIDEBAR ANIMATION
+==========================================*/
+
+.re-sidebar{
+
+    animation:slideSidebar .6s ease;
+
+}
+
+@keyframes slideSidebar{
+
+    from{
+
+        transform:translateX(-100%);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+        opacity:1;
+
+    }
+
+}
+
+/*==========================================
+        TOPBAR ANIMATION
+==========================================*/
+
+.re-topbar{
+
+    animation:topFade .6s ease;
+
+}
+
+@keyframes topFade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-25px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+/*==============================
+    MOBILE MENU
+==============================*/
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("reSidebar");
+
+if (menuBtn) {
+
+    menuBtn.addEventListener("click", function () {
+
+        sidebar.classList.toggle("active");
+
+    });
+
+}
+
+/*==============================
+    DISPLAY USER EMAIL
+==============================*/
+
+const emailSpan = document.getElementById("dashboardEmail");
+
+let email = "";
+
+// First check stackly_session
+const session = localStorage.getItem("stackly_session");
+
+if (session) {
+
+    const user = JSON.parse(session);
+
+    email = user.email;
+
+}
+
+// Otherwise check loggedInUserEmail
+if (!email) {
+
+    email = localStorage.getItem("loggedInUserEmail");
+
+}
+
+// Display email
+if (emailSpan) {
+
+    emailSpan.textContent = email || "Guest User";
+
+}
+
+});
+</script>
+
+
+
+</body>
+</html>

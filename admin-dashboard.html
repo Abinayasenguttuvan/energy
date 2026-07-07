@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet"
+href="css/dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="re-dashboard">
+
+    <!--======================
+        Sidebar
+    =======================-->
+
+    <aside class="re-sidebar" id="reSidebar">
+
+        <div class="re-sidebar-logo">
+
+            <a href="index.html">
+
+                <img src="white.webp"
+                alt="Logo">
+
+            </a>
+
+        </div>
+
+        <ul class="re-menu">
+
+            <li class="active">
+
+                <a href="./admin-dashboard.html" class="active">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./energy dash.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Energy Management
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./project dash.html">
+
+                    <i class="fa-solid fa-solar-panel"></i>
+
+                    Project management
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./cust.html">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    Customer management
+
+                </a>
+
+            </li>
+
+            <li >
+
+                <a href="./billing dash.html">
+
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+
+                    Billing & finance
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./report.html">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    Report Analytics
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./notification.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Notification
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./login.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+        </ul>
+
+    </aside>
+
+    <!--=====================
+        Main Area
+    =====================-->
+
+    <main class="re-main">
+
+        <!--==================
+            Topbar
+        ===================-->
+
+        <header class="re-topbar">
+
+            <div class="re-top-left">
+
+                <button id="menuBtn">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                
+
+            </div>
+
+            <div class="re-top-right">
+
+                <div class="re-user-email">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <span id="dashboardEmail"></span>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Dashboard content starts here -->
+
+        <section class="re-dashboard-content">
+
+            
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+
+<body>
+
+
+<div class="admin-dashboard">
+
+
+
+
+
+<!-- Dashboard Header -->
+
+
+<section class="admin-header">
+
+
+<div>
+
+<h1>
+Renewable Energy Admin Dashboard
+</h1>
+
+
+<p>
+Monitor energy production, projects and business performance.
+</p>
+
+
+</div>
+
+
+
+<div class="admin-status">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Admin Access
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- Overview Cards -->
+
+
+<section class="admin-cards">
+
+
+<div class="admin-card">
+
+
+<div class="admin-icon">
+
+<i class="fa-solid fa-solar-panel"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+Total Energy Generated
+</h3>
+
+<h2>
+850 MW
+</h2>
+
+<span>
+This Year
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="admin-card">
+
+
+<div class="admin-icon">
+
+<i class="fa-solid fa-money-bill-trend-up"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+Total Revenue
+</h3>
+
+<h2>
+₹24.5L
+</h2>
+
+<span>
+Monthly Income
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="admin-card">
+
+
+<div class="admin-icon">
+
+<i class="fa-solid fa-leaf"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+Carbon Saved
+</h3>
+
+<h2>
+25 Tons
+</h2>
+
+<span>
+Environmental Impact
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="admin-card">
+
+
+<div class="admin-icon">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+Active Users
+</h3>
+
+<h2>
+1250
+</h2>
+
+<span>
+Energy Customers
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Charts Section -->
+
+
+
+
+
+
+
+
+
+<!-- Bar Chart -->
+
+
+<div class="chart-box">
+
+
+<h2>
+Monthly Revenue
+</h2>
+
+
+<canvas id="revenueBarChart"></canvas>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Line Graph -->
+
+
+<section class="graph-section">
+
+
+<h2>
+Energy Growth Analytics
+</h2>
+
+
+<div class="graph-box">
+
+<canvas id="energyGrowthChart"></canvas>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Project Management -->
+
+
+<section class="project-management">
+
+
+<h2>
+Project Overview
+</h2>
+
+
+
+<div class="project-grid">
+
+
+
+<div>
+
+<h3>
+Solar Projects
+</h3>
+
+<p>
+18 Active Projects
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+Wind Projects
+</h3>
+
+<p>
+12 Active Projects
+</p>
+
+</div>
+
+
+
+
+<div>
+
+<h3>
+Hydro Projects
+</h3>
+
+<p>
+6 Active Projects
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+// Pie Chart
+
+
+new Chart(document.getElementById("energyPieChart"),{
+
+type:"pie",
+
+data:{
+
+
+labels:[
+"Solar",
+"Wind",
+"Hydro"
+],
+
+
+datasets:[{
+
+data:[
+55,
+30,
+15
+]
+
+
+}]
+
+
+}
+
+
+});
+
+
+
+
+
+
+
+
+// Bar Chart
+
+
+new Chart(document.getElementById("revenueBarChart"),{
+
+
+type:"bar",
+
+
+data:{
+
+
+labels:[
+"Jan",
+"Feb",
+"Mar",
+"Apr",
+"May"
+],
+
+
+datasets:[{
+
+
+label:"Revenue",
+
+data:[
+20,
+35,
+25,
+50,
+65
+]
+
+
+}]
+
+
+}
+
+
+
+});
+
+
+
+
+
+
+
+
+// Line Graph
+
+
+new Chart(document.getElementById("energyGrowthChart"),{
+
+
+type:"line",
+
+
+data:{
+
+
+labels:[
+"2022",
+"2023",
+"2024",
+"2025",
+"2026"
+],
+
+
+datasets:[{
+
+
+label:"Energy Growth",
+
+
+data:[
+200,
+350,
+500,
+700,
+850
+]
+
+
+
+}]
+
+
+}
+
+
+
+});
+
+
+
+</script>
+
+
+
+<style>
+    *{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+
+}
+
+
+body{
+
+background:#f1faf3;
+color:#21452d;
+padding:40px;
+
+}
+
+
+
+.admin-dashboard{
+
+max-width:1200px;
+margin:auto;
+
+}
+
+
+
+
+
+
+/* =========================
+Header
+========================= */
+
+
+.admin-header{
+
+background:white;
+padding:35px;
+border-radius:25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+margin-bottom:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+.admin-header h1{
+
+font-size:32px;
+color:#145c2d;
+
+}
+
+
+
+.admin-header p{
+
+margin-top:10px;
+color:#6b806f;
+
+}
+
+
+
+.admin-status{
+
+background:#e4f8e8;
+color:#168039;
+padding:14px 25px;
+border-radius:30px;
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:600;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+Cards
+========================= */
+
+
+.admin-cards{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+margin-bottom:35px;
+
+}
+
+
+
+.admin-card{
+
+background:white;
+padding:25px;
+border-radius:20px;
+display:flex;
+align-items:center;
+gap:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.07);
+transition:.3s;
+
+}
+
+
+
+.admin-card:hover{
+
+transform:translateY(-7px);
+
+}
+
+
+
+.admin-icon{
+
+width:60px;
+height:60px;
+border-radius:50%;
+background:#ddf5e4;
+color:#168039;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:25px;
+
+}
+
+
+
+.admin-card h3{
+
+font-size:15px;
+
+}
+
+
+
+.admin-card h2{
+
+color:#168039;
+font-size:28px;
+margin:5px 0;
+
+}
+
+
+
+.admin-card span{
+
+color:#777;
+font-size:13px;
+
+}
+
+
+
+
+
+
+
+/* =========================
+Charts
+========================= */
+
+
+.charts-container{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+margin-bottom:30px;
+
+}
+
+
+
+.chart-box,
+.graph-section,
+.project-management{
+
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.07);
+
+}
+
+
+
+.chart-box h2,
+.graph-section h2,
+.project-management h2{
+
+color:#145c2d;
+margin-bottom:25px;
+
+}
+
+
+
+.chart-box canvas{
+
+max-height:300px;
+
+}
+
+
+
+
+
+
+
+/* =========================
+Growth Graph
+========================= */
+
+
+.graph-section{
+
+margin-bottom:30px;
+
+}
+
+
+
+.graph-box{
+
+width:100%;
+height:350px;
+
+}
+
+
+
+.graph-box canvas{
+
+width:100%!important;
+height:100%!important;
+
+}
+
+
+
+
+
+
+
+/* =========================
+Projects
+========================= */
+
+
+.project-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+
+}
+
+
+
+.project-grid div{
+
+background:#f5fbf6;
+padding:25px;
+border-radius:20px;
+text-align:center;
+
+}
+
+
+
+.project-grid h3{
+
+color:#145c2d;
+margin-bottom:10px;
+
+}
+
+
+
+.project-grid p{
+
+color:#168039;
+font-weight:600;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+Laptop
+========================= */
+
+
+@media(max-width:1200px){
+
+
+.admin-cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.charts-container{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.project-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+Tablet
+========================= */
+
+
+@media(max-width:768px){
+
+
+body{
+
+padding:20px;
+
+}
+
+
+
+.admin-header{
+
+flex-direction:column;
+align-items:flex-start;
+
+}
+
+
+
+.admin-header h1{
+
+font-size:26px;
+
+}
+
+
+
+.admin-cards{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.chart-box,
+.graph-section,
+.project-management{
+
+padding:20px;
+
+}
+
+
+
+.project-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.graph-box{
+
+height:280px;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+Mobile
+========================= */
+
+
+@media(max-width:480px){
+
+
+.admin-header{
+
+padding:20px;
+
+}
+
+
+
+.admin-header h1{
+
+font-size:22px;
+
+}
+
+
+
+.admin-card{
+
+padding:20px;
+
+}
+
+
+
+.admin-card h2{
+
+font-size:23px;
+
+}
+
+
+
+.chart-box canvas{
+
+max-height:220px;
+
+}
+
+
+
+.graph-box{
+
+height:220px;
+
+}
+
+
+
+.project-grid div{
+
+padding:20px;
+
+}
+
+
+
+}
+</style>
+
+
+
+<script src="js/dashboard.js"></script>
+
+<style>
+    /*==========================================
+    GOOGLE FONT
+==========================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==========================================
+    RESET
+==========================================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f8f4;
+    color:#222;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/*==========================================
+    VARIABLES
+==========================================*/
+
+:root{
+
+    --primary:#2E7D32;
+    --primary-dark:#1B5E20;
+    --secondary:#4CAF50;
+    --light:#F7FFF8;
+    --border:#dce8dc;
+    --white:#ffffff;
+    --text:#222;
+    --text-light:#666;
+    --shadow:0 10px 35px rgba(0,0,0,.08);
+
+}
+
+/*==========================================
+        LAYOUT
+==========================================*/
+
+.re-dashboard{
+
+    display:flex;
+    min-height:100vh;
+    width:100%;
+
+}
+
+/*==========================================
+        SIDEBAR
+==========================================*/
+
+.re-sidebar{
+
+    width:270px;
+    background:linear-gradient(180deg,#1B5E20,#2E7D32,#43A047);
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    height:100vh;
+    overflow-y:auto;
+    transition:.35s;
+    z-index:999;
+
+}
+
+.re-sidebar-logo{
+
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+}
+
+.re-sidebar-logo img{
+
+    width:170px;
+    transition:.4s;
+
+}
+
+.re-sidebar-logo img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*==========================================
+        MENU
+==========================================*/
+
+.re-menu{
+
+    padding:25px 15px;
+
+}
+
+.re-menu li{
+
+    margin-bottom:10px;
+
+}
+
+.re-menu li a{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:14px 18px;
+    border-radius:12px;
+    transition:.3s;
+    font-size:15px;
+    font-weight:500;
+
+}
+
+.re-menu li a i{
+
+    width:22px;
+    text-align:center;
+    font-size:18px;
+
+}
+
+.re-menu li a:hover{
+
+    background:rgba(255,255,255,.18);
+    transform:translateX(8px);
+
+}
+
+.re-menu li.active a{
+
+    background:#fff;
+    color:var(--primary-dark);
+    font-weight:600;
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+}
+
+/*==========================================
+        MAIN
+==========================================*/
+
+.re-main{
+
+    flex:1;
+    margin-left:270px;
+    width:calc(100% - 270px);
+    min-height:100vh;
+
+}
+
+/*==========================================
+        TOPBAR
+==========================================*/
+
+.re-topbar{
+
+    position:sticky;
+    top:0;
+    background:#fff;
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    z-index:100;
+
+}
+
+/*==========================================
+        LEFT
+==========================================*/
+
+.re-top-left{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+}
+
+.re-home-logo img{
+
+    width:150px;
+
+}
+
+/*==========================================
+        MENU BUTTON
+==========================================*/
+
+#menuBtn{
+
+    display:none;
+    width:46px;
+    height:46px;
+    border:none;
+    border-radius:12px;
+    background:var(--primary);
+    color:#fff;
+    cursor:pointer;
+    font-size:20px;
+    transition:.3s;
+
+}
+
+#menuBtn:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/*==========================================
+        EMAIL
+==========================================*/
+
+.re-user-email{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#F4FFF5;
+    border:1px solid #dce8dc;
+    padding:12px 20px;
+    border-radius:50px;
+    color:var(--primary-dark);
+    font-weight:600;
+    font-size:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.05);
+
+}
+
+.re-user-email i{
+
+    font-size:18px;
+    color:#43A047;
+
+}
+
+/*==========================================
+        CONTENT
+==========================================*/
+
+.re-dashboard-content{
+
+    padding:40px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:34px;
+    margin-bottom:12px;
+    color:#1B5E20;
+
+}
+
+.re-dashboard-content p{
+
+    color:#666;
+    line-height:1.8;
+
+}
+
+/*==========================================
+        TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.re-sidebar{
+
+    left:-280px;
+
+}
+
+.re-sidebar.active{
+
+    left:0;
+
+}
+
+.re-main{
+
+    margin-left:0;
+    width:100%;
+
+}
+
+#menuBtn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.re-topbar{
+
+    padding:0 20px;
+
+}
+
+}
+
+/*==========================================
+        MOBILE
+==========================================*/
+
+@media(max-width:768px){
+
+.re-topbar{
+
+    height:70px;
+    padding:0 15px;
+
+}
+
+.re-home-logo img{
+
+    width:120px;
+
+}
+
+.re-user-email{
+
+    padding:10px 14px;
+    font-size:13px;
+    gap:8px;
+
+}
+
+.re-dashboard-content{
+
+    padding:25px 18px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:28px;
+
+}
+
+}
+
+/*==========================================
+        SMALL MOBILE
+==========================================*/
+
+@media(max-width:576px){
+
+.re-user-email{
+
+    max-width:170px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+
+}
+
+.re-home-logo img{
+
+    width:110px;
+
+}
+
+.re-dashboard-content{
+
+    padding:20px 15px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:24px;
+
+}
+
+}
+
+/*==========================================
+        SCROLLBAR
+==========================================*/
+
+.re-sidebar::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.re-sidebar::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.35);
+    border-radius:50px;
+
+}
+
+.re-sidebar::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/*==========================================
+        SIDEBAR ANIMATION
+==========================================*/
+
+.re-sidebar{
+
+    animation:slideSidebar .6s ease;
+
+}
+
+@keyframes slideSidebar{
+
+    from{
+
+        transform:translateX(-100%);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+        opacity:1;
+
+    }
+
+}
+
+/*==========================================
+        TOPBAR ANIMATION
+==========================================*/
+
+.re-topbar{
+
+    animation:topFade .6s ease;
+
+}
+
+@keyframes topFade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-25px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+/*==============================
+    MOBILE MENU
+==============================*/
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("reSidebar");
+
+if (menuBtn) {
+
+    menuBtn.addEventListener("click", function () {
+
+        sidebar.classList.toggle("active");
+
+    });
+
+}
+
+/*==============================
+    DISPLAY USER EMAIL
+==============================*/
+
+const emailSpan = document.getElementById("dashboardEmail");
+
+let email = "";
+
+// First check stackly_session
+const session = localStorage.getItem("stackly_session");
+
+if (session) {
+
+    const user = JSON.parse(session);
+
+    email = user.email;
+
+}
+
+// Otherwise check loggedInUserEmail
+if (!email) {
+
+    email = localStorage.getItem("loggedInUserEmail");
+
+}
+
+// Display email
+if (emailSpan) {
+
+    emailSpan.textContent = email || "Guest User";
+
+}
+
+});
+</script>
+
+
+
+</body>
+</html>
