@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>User Dashboard</title>
+
+<link rel="stylesheet"
+href="css/dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="re-dashboard">
+
+    <!--======================
+        Sidebar
+    =======================-->
+
+    <aside class="re-sidebar" id="reSidebar">
+
+        <div class="re-sidebar-logo">
+
+            <a href="index.html">
+
+                <img src="white.webp"
+                alt="Logo">
+
+            </a>
+
+        </div>
+
+        <ul class="re-menu">
+
+            <li >
+
+                <a href="./user-dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./myprofile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    My Profile
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./project.html">
+
+                    <i class="fa-solid fa-solar-panel"></i>
+
+                    My Projects
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./energy.html">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    Energy Usage
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./billing.html">
+
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+
+                    Billing
+
+                </a>
+
+            </li>
+
+            <li class="active">
+
+                <a href="./support.html">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    Support
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./login.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+        </ul>
+
+    </aside>
+
+    <!--=====================
+        Main Area
+    =====================-->
+
+    <main class="re-main">
+
+        <!--==================
+            Topbar
+        ===================-->
+
+        <header class="re-topbar">
+
+            <div class="re-top-left">
+
+                <button id="menuBtn">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                
+
+            </div>
+
+            <div class="re-top-right">
+
+                <div class="re-user-email">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <span id="dashboardEmail"></span>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Dashboard content starts here -->
+
+        <section class="re-dashboard-content">
+
+            <!-- Support Header -->
+
+
+<section class="support-header">
+
+
+    <div>
+    
+    <h1>
+    Energy Support Center
+    </h1>
+    
+    <p>
+    Get help with your renewable energy system and services.
+    </p>
+    
+    </div>
+    
+    
+    <div class="support-status">
+    
+    <i class="fa-solid fa-headset"></i>
+    
+    Support Available
+    
+    </div>
+    
+    
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Support Summary -->
+    
+    
+    <section class="support-cards">
+    
+    
+    
+    <div class="support-card">
+    
+    <div class="support-icon">
+    
+    <i class="fa-solid fa-ticket"></i>
+    
+    </div>
+    
+    
+    <div>
+    
+    <h3>
+    Active Tickets
+    </h3>
+    
+    <h2>
+    03
+    </h2>
+    
+    <span>
+    Currently Open
+    </span>
+    
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="support-card">
+    
+    <div class="support-icon">
+    
+    <i class="fa-solid fa-circle-check"></i>
+    
+    </div>
+    
+    
+    <div>
+    
+    <h3>
+    Resolved Issues
+    </h3>
+    
+    <h2>
+    25
+    </h2>
+    
+    <span>
+    Completed Requests
+    </span>
+    
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="support-card">
+    
+    <div class="support-icon">
+    
+    <i class="fa-solid fa-clock"></i>
+    
+    </div>
+    
+    
+    <div>
+    
+    <h3>
+    Response Time
+    </h3>
+    
+    <h2>
+    2 Hrs
+    </h2>
+    
+    <span>
+    Average Reply
+    </span>
+    
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="support-card">
+    
+    <div class="support-icon">
+    
+    <i class="fa-solid fa-star"></i>
+    
+    </div>
+    
+    
+    <div>
+    
+    <h3>
+    Support Rating
+    </h3>
+    
+    <h2>
+    4.8
+    </h2>
+    
+    <span>
+    Customer Satisfaction
+    </span>
+    
+    </div>
+    
+    </div>
+    
+    
+    
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Create Support Request -->
+    
+    
+    <section class="request-section">
+    
+    
+    <h2>
+    Create Support Request
+    </h2>
+    
+    
+    
+    <div class="request-grid">
+    
+    
+    
+    <div class="request-box">
+    
+    
+    <i class="fa-solid fa-solar-panel"></i>
+    
+    
+    <h3>
+    Solar System Issue
+    </h3>
+    
+    
+    <p>
+    Report panel, inverter or installation problems.
+    </p>
+    
+    
+    <a href="404.html">
+    Raise Request
+    </a>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="request-box">
+    
+    
+    <i class="fa-solid fa-bolt"></i>
+    
+    
+    <h3>
+    Energy Monitoring Issue
+    </h3>
+    
+    
+    <p>
+    Get help with energy tracking and reports.
+    </p>
+    
+    
+    <a href="404.html">
+    Raise Request
+    </a>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="request-box">
+    
+    
+    <i class="fa-solid fa-file-invoice"></i>
+    
+    
+    <h3>
+    Billing Support
+    </h3>
+    
+    
+    <p>
+    Resolve payment and invoice related queries.
+    </p>
+    
+    
+    <a href="404.html">
+    Raise Request
+    </a>
+    
+    
+    </div>
+    
+    
+    
+    </div>
+    
+    
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Recent Tickets -->
+    
+    
+    <section class="ticket-section">
+    
+    
+    <h2>
+    Recent Support Activity
+    </h2>
+    
+    
+    
+    <div class="ticket-list">
+    
+    
+    <div class="ticket-item">
+    
+    <i class="fa-solid fa-circle-check"></i>
+    
+    
+    <span>
+    Solar inverter maintenance completed
+    </span>
+    
+    
+    <b>
+    Resolved
+    </b>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    <div class="ticket-item">
+    
+    <i class="fa-solid fa-spinner"></i>
+    
+    
+    <span>
+    Energy meter verification request
+    </span>
+    
+    
+    <b>
+    Pending
+    </b>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    <div class="ticket-item">
+    
+    <i class="fa-solid fa-message"></i>
+    
+    
+    <span>
+    Billing clarification submitted
+    </span>
+    
+    
+    <b>
+    Open
+    </b>
+    
+    
+    </div>
+    
+    
+    
+    </div>
+    
+    
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Contact Support -->
+    
+    
+    <section class="contact-section">
+    
+    
+    <h2>
+    Contact Support Team
+    </h2>
+    
+    
+    
+    <div class="contact-card">
+    
+    
+    <div>
+    
+    <i class="fa-solid fa-phone"></i>
+    
+    <h3>
+    Call Support
+    </h3>
+    
+    <p>
+    1800-123-456
+    </p>
+    
+    </div>
+    
+    
+    
+    <div>
+    
+    <i class="fa-solid fa-envelope"></i>
+    
+    <h3>
+    Email Support
+    </h3>
+    
+    <p>
+    support@greenenergy.com
+    </p>
+    
+    </div>
+    
+    
+    
+    
+    <div>
+    
+    <i class="fa-solid fa-comments"></i>
+    
+    <h3>
+    Live Chat
+    </h3>
+    
+    <p>
+    Available 24/7
+    </p>
+    
+    </div>
+    
+    
+    </div>
+    
+    
+    
+    </section>
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <style>
+        *{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+
+}
+
+
+
+body{
+
+background:#f1faf3;
+color:#21452d;
+padding:40px;
+
+}
+
+
+
+.support-dashboard{
+
+max-width:1200px;
+margin:auto;
+
+}
+
+
+
+
+
+
+/* ==========================
+Support Header
+========================== */
+
+
+.support-header{
+
+background:white;
+padding:35px;
+border-radius:25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+margin-bottom:30px;
+
+}
+
+
+
+.support-header h1{
+
+font-size:32px;
+color:#145c2d;
+
+}
+
+
+
+.support-header p{
+
+margin-top:10px;
+color:#6b806f;
+
+}
+
+
+
+.support-status{
+
+background:#e5f8ea;
+color:#168039;
+padding:14px 25px;
+border-radius:30px;
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:600;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+Support Cards
+========================== */
+
+
+.support-cards{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+margin-bottom:35px;
+
+}
+
+
+
+.support-card{
+
+background:white;
+padding:25px;
+border-radius:20px;
+display:flex;
+align-items:center;
+gap:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.07);
+transition:.3s;
+
+}
+
+
+
+.support-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+.support-icon{
+
+width:60px;
+height:60px;
+background:#ddf5e4;
+color:#168039;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:25px;
+
+}
+
+
+
+.support-card h3{
+
+font-size:16px;
+margin-bottom:8px;
+
+}
+
+
+
+.support-card h2{
+
+color:#168039;
+font-size:28px;
+
+}
+
+
+
+.support-card span{
+
+font-size:13px;
+color:#777;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+Request Section
+========================== */
+
+
+.request-section,
+.ticket-section,
+.contact-section{
+
+background:white;
+padding:30px;
+border-radius:25px;
+margin-bottom:30px;
+box-shadow:0 10px 25px rgba(0,0,0,.07);
+
+}
+
+
+
+.request-section h2,
+.ticket-section h2,
+.contact-section h2{
+
+color:#145c2d;
+margin-bottom:25px;
+
+}
+
+
+
+
+
+
+.request-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+
+}
+
+
+
+.request-box{
+
+background:#f5fbf6;
+padding:25px;
+border-radius:20px;
+text-align:center;
+
+}
+
+
+
+.request-box i{
+
+width:60px;
+height:60px;
+background:#ddf5e4;
+color:#168039;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+font-size:25px;
+
+}
+
+
+
+.request-box h3{
+
+margin:18px 0 10px;
+color:#145c2d;
+
+}
+
+
+
+.request-box p{
+
+color:#667;
+font-size:14px;
+margin-bottom:20px;
+
+}
+
+
+
+.request-box a{
+
+display:inline-block;
+text-decoration:none;
+background:#168039;
+color:white;
+padding:10px 22px;
+border-radius:25px;
+transition:.3s;
+
+}
+
+
+
+.request-box a:hover{
+
+background:#0f612d;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+Ticket Section
+========================== */
+
+
+.ticket-list{
+
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+
+
+.ticket-item{
+
+background:#f5fbf6;
+padding:18px;
+border-radius:15px;
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+
+
+.ticket-item i{
+
+color:#168039;
+font-size:20px;
+
+}
+
+
+
+.ticket-item span{
+
+flex:1;
+
+}
+
+
+
+.ticket-item b{
+
+color:#145c2d;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+Contact Section
+========================== */
+
+
+.contact-card{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+
+}
+
+
+
+.contact-card div{
+
+background:#f5fbf6;
+padding:25px;
+text-align:center;
+border-radius:18px;
+
+}
+
+
+
+.contact-card i{
+
+width:55px;
+height:55px;
+background:#ddf5e4;
+color:#168039;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:auto;
+font-size:23px;
+
+}
+
+
+
+.contact-card h3{
+
+margin:15px 0 8px;
+color:#145c2d;
+
+}
+
+
+
+.contact-card p{
+
+color:#777;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+Laptop View
+========================== */
+
+
+@media(max-width:1200px){
+
+
+.support-cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.request-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.contact-card{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+Tablet View
+========================== */
+
+
+@media(max-width:768px){
+
+
+body{
+
+padding:20px;
+
+}
+
+
+
+.support-header{
+
+flex-direction:column;
+align-items:flex-start;
+
+}
+
+
+
+.support-header h1{
+
+font-size:26px;
+
+}
+
+
+
+.support-cards{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.request-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.contact-card{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.request-section,
+.ticket-section,
+.contact-section{
+
+padding:20px;
+
+}
+
+
+
+.ticket-item{
+
+flex-wrap:wrap;
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+Mobile View
+========================== */
+
+
+@media(max-width:480px){
+
+
+.support-header{
+
+padding:20px;
+
+}
+
+
+
+.support-header h1{
+
+font-size:22px;
+
+}
+
+
+
+.support-card{
+
+padding:20px;
+
+}
+
+
+
+.support-card h2{
+
+font-size:24px;
+
+}
+
+
+
+.request-box{
+
+padding:20px;
+
+}
+
+
+
+.ticket-item{
+
+flex-direction:column;
+align-items:flex-start;
+
+}
+
+
+
+.contact-card div{
+
+padding:20px;
+
+}
+
+
+}
+    </style>
+
+        
+
+    </main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+<style>
+    /*==========================================
+    GOOGLE FONT
+==========================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==========================================
+    RESET
+==========================================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f8f4;
+    color:#222;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/*==========================================
+    VARIABLES
+==========================================*/
+
+:root{
+
+    --primary:#2E7D32;
+    --primary-dark:#1B5E20;
+    --secondary:#4CAF50;
+    --light:#F7FFF8;
+    --border:#dce8dc;
+    --white:#ffffff;
+    --text:#222;
+    --text-light:#666;
+    --shadow:0 10px 35px rgba(0,0,0,.08);
+
+}
+
+/*==========================================
+        LAYOUT
+==========================================*/
+
+.re-dashboard{
+
+    display:flex;
+    min-height:100vh;
+    width:100%;
+
+}
+
+/*==========================================
+        SIDEBAR
+==========================================*/
+
+.re-sidebar{
+
+    width:270px;
+    background:linear-gradient(180deg,#1B5E20,#2E7D32,#43A047);
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    height:100vh;
+    overflow-y:auto;
+    transition:.35s;
+    z-index:999;
+
+}
+
+.re-sidebar-logo{
+
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+}
+
+.re-sidebar-logo img{
+
+    width:170px;
+    transition:.4s;
+
+}
+
+.re-sidebar-logo img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*==========================================
+        MENU
+==========================================*/
+
+.re-menu{
+
+    padding:25px 15px;
+
+}
+
+.re-menu li{
+
+    margin-bottom:10px;
+
+}
+
+.re-menu li a{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:14px 18px;
+    border-radius:12px;
+    transition:.3s;
+    font-size:15px;
+    font-weight:500;
+
+}
+
+.re-menu li a i{
+
+    width:22px;
+    text-align:center;
+    font-size:18px;
+
+}
+
+.re-menu li a:hover{
+
+    background:rgba(255,255,255,.18);
+    transform:translateX(8px);
+
+}
+
+.re-menu li.active a{
+
+    background:#fff;
+    color:var(--primary-dark);
+    font-weight:600;
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+}
+
+/*==========================================
+        MAIN
+==========================================*/
+
+.re-main{
+
+    flex:1;
+    margin-left:270px;
+    width:calc(100% - 270px);
+    min-height:100vh;
+
+}
+
+/*==========================================
+        TOPBAR
+==========================================*/
+
+.re-topbar{
+
+    position:sticky;
+    top:0;
+    background:#fff;
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    z-index:100;
+
+}
+
+/*==========================================
+        LEFT
+==========================================*/
+
+.re-top-left{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+}
+
+.re-home-logo img{
+
+    width:150px;
+
+}
+
+/*==========================================
+        MENU BUTTON
+==========================================*/
+
+#menuBtn{
+
+    display:none;
+    width:46px;
+    height:46px;
+    border:none;
+    border-radius:12px;
+    background:var(--primary);
+    color:#fff;
+    cursor:pointer;
+    font-size:20px;
+    transition:.3s;
+
+}
+
+#menuBtn:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/*==========================================
+        EMAIL
+==========================================*/
+
+.re-user-email{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#F4FFF5;
+    border:1px solid #dce8dc;
+    padding:12px 20px;
+    border-radius:50px;
+    color:var(--primary-dark);
+    font-weight:600;
+    font-size:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.05);
+
+}
+
+.re-user-email i{
+
+    font-size:18px;
+    color:#43A047;
+
+}
+
+/*==========================================
+        CONTENT
+==========================================*/
+
+.re-dashboard-content{
+
+    padding:40px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:34px;
+    margin-bottom:12px;
+    color:#1B5E20;
+
+}
+
+.re-dashboard-content p{
+
+    color:#666;
+    line-height:1.8;
+
+}
+
+/*==========================================
+        TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.re-sidebar{
+
+    left:-280px;
+
+}
+
+.re-sidebar.active{
+
+    left:0;
+
+}
+
+.re-main{
+
+    margin-left:0;
+    width:100%;
+
+}
+
+#menuBtn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.re-topbar{
+
+    padding:0 20px;
+
+}
+
+}
+
+/*==========================================
+        MOBILE
+==========================================*/
+
+@media(max-width:768px){
+
+.re-topbar{
+
+    height:70px;
+    padding:0 15px;
+
+}
+
+.re-home-logo img{
+
+    width:120px;
+
+}
+
+.re-user-email{
+
+    padding:10px 14px;
+    font-size:13px;
+    gap:8px;
+
+}
+
+.re-dashboard-content{
+
+    padding:25px 18px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:28px;
+
+}
+
+}
+
+/*==========================================
+        SMALL MOBILE
+==========================================*/
+
+@media(max-width:576px){
+
+.re-user-email{
+
+    max-width:170px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+
+}
+
+.re-home-logo img{
+
+    width:110px;
+
+}
+
+.re-dashboard-content{
+
+    padding:20px 15px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:24px;
+
+}
+
+}
+
+/*==========================================
+        SCROLLBAR
+==========================================*/
+
+.re-sidebar::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.re-sidebar::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.35);
+    border-radius:50px;
+
+}
+
+.re-sidebar::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/*==========================================
+        SIDEBAR ANIMATION
+==========================================*/
+
+.re-sidebar{
+
+    animation:slideSidebar .6s ease;
+
+}
+
+@keyframes slideSidebar{
+
+    from{
+
+        transform:translateX(-100%);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+        opacity:1;
+
+    }
+
+}
+
+/*==========================================
+        TOPBAR ANIMATION
+==========================================*/
+
+.re-topbar{
+
+    animation:topFade .6s ease;
+
+}
+
+@keyframes topFade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-25px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+/*==============================
+    MOBILE MENU
+==============================*/
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("reSidebar");
+
+if (menuBtn) {
+
+    menuBtn.addEventListener("click", function () {
+
+        sidebar.classList.toggle("active");
+
+    });
+
+}
+
+/*==============================
+    DISPLAY USER EMAIL
+==============================*/
+
+const emailSpan = document.getElementById("dashboardEmail");
+
+let email = "";
+
+// First check stackly_session
+const session = localStorage.getItem("stackly_session");
+
+if (session) {
+
+    const user = JSON.parse(session);
+
+    email = user.email;
+
+}
+
+// Otherwise check loggedInUserEmail
+if (!email) {
+
+    email = localStorage.getItem("loggedInUserEmail");
+
+}
+
+// Display email
+if (emailSpan) {
+
+    emailSpan.textContent = email || "Guest User";
+
+}
+
+});
+</script>
+
+
+
+</body>
+</html>

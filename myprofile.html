@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>User Dashboard</title>
+
+<link rel="stylesheet"
+href="css/dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="re-dashboard">
+
+    <!--======================
+        Sidebar
+    =======================-->
+
+    <aside class="re-sidebar" id="reSidebar">
+
+        <div class="re-sidebar-logo">
+
+            <a href="index.html">
+
+                <img src="white.webp"
+                alt="Logo">
+
+            </a>
+
+        </div>
+
+        <ul class="re-menu">
+
+            <li>
+
+                <a href="./user-dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li class="active">
+
+                <a href="./myprofile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    My Profile
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./project.html">
+
+                    <i class="fa-solid fa-solar-panel"></i>
+
+                    My Projects
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./energy.html">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    Energy Usage
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./billing.html">
+
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+
+                    Billing
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./support.html">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    Support
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./login.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!--=====================
+        Main Area
+    =====================-->
+
+    <main class="re-main">
+
+        <!--==================
+            Topbar
+        ===================-->
+
+        <header class="re-topbar">
+
+            <div class="re-top-left">
+
+                <button id="menuBtn">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                
+
+            </div>
+
+            <div class="re-top-right">
+
+                <div class="re-user-email">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <span id="dashboardEmail"></span>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Dashboard content starts here -->
+
+        <section class="re-dashboard-content">
+
+        
+<!-- Profile Card -->
+
+<section class="profile-card">
+
+
+<div class="profile-image">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+
+<div class="profile-info">
+
+
+<h1>
+Abinaya S
+</h1>
+
+<p>
+Renewable Energy User
+</p>
+
+
+<div class="user-status">
+
+<i class="fa-solid fa-circle"></i>
+Active Solar Account
+
+</div>
+
+
+</div>
+
+
+<a href="404.html" class="edit-profile-btn">
+    Edit Profile
+</a>
+
+</section>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+
+body{
+
+    background:#f1faf3;
+    color:#21452d;
+    padding:40px;
+
+}
+
+
+
+.profile-container{
+
+    max-width:1200px;
+    margin:auto;
+
+}
+
+
+
+
+
+/* ==========================
+   Profile Card
+========================== */
+
+
+.profile-card{
+
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    gap:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    margin-bottom:30px;
+
+}
+
+
+
+.profile-image{
+
+    width:100px;
+    height:100px;
+    background:#198754;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+
+}
+
+
+
+.profile-info{
+
+    flex:1;
+
+}
+
+
+
+.profile-info h1{
+
+    color:#145c2d;
+    font-size:30px;
+
+}
+
+
+
+.profile-info p{
+
+    color:#6b806f;
+    margin:8px 0;
+
+}
+
+
+
+.user-status{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#e5f8ea;
+    color:#168039;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:14px;
+
+}
+
+
+
+.user-status i{
+
+    font-size:10px;
+
+}
+
+
+
+.profile-card button{
+
+    border:none;
+    background:#168039;
+    color:white;
+    padding:12px 25px;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:15px;
+
+}
+
+
+
+
+/* ==========================
+ Energy Overview
+========================== */
+
+
+.energy-overview,
+.details-section,
+.impact-section,
+.activity-section{
+
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    margin-bottom:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.07);
+
+}
+
+
+
+section h2{
+
+    color:#145c2d;
+    margin-bottom:25px;
+    font-size:25px;
+
+}
+
+
+
+
+.energy-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+
+}
+
+
+
+.energy-box{
+
+    text-align:center;
+    background:#f5fbf6;
+    padding:25px;
+    border-radius:18px;
+    transition:.3s;
+
+}
+
+
+
+.energy-box:hover{
+
+    transform:translateY(-7px);
+
+}
+
+
+
+.energy-box i{
+
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#dff5e5;
+    color:#168039;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    font-size:25px;
+
+}
+
+
+
+.energy-box h3{
+
+    margin:15px 0 10px;
+    font-size:16px;
+
+}
+
+
+
+.energy-box p{
+
+    font-size:25px;
+    font-weight:700;
+    color:#168039;
+
+}
+
+
+
+
+
+/* ==========================
+ Details
+========================== */
+
+
+.details-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+
+}
+
+
+
+.details-grid div{
+
+    background:#f7fbf8;
+    padding:20px;
+    border-radius:15px;
+
+}
+
+
+
+.details-grid label{
+
+    font-size:14px;
+    color:#777;
+
+}
+
+
+
+.details-grid p{
+
+    margin-top:8px;
+    font-weight:600;
+
+}
+
+
+
+
+
+/* ==========================
+ Impact
+========================== */
+
+
+.impact-card{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:#eaf8ed;
+    padding:25px;
+    border-radius:18px;
+
+}
+
+
+
+.impact-card i{
+
+    font-size:45px;
+    color:#168039;
+
+}
+
+
+
+.impact-card p{
+
+    color:#5f7465;
+    margin-top:8px;
+
+}
+
+
+
+
+
+/* ==========================
+ Activity
+========================== */
+
+
+.activity-list{
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+}
+
+
+
+.activity-item{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px;
+    background:#f6faf7;
+    border-radius:15px;
+
+}
+
+
+
+.activity-item i{
+
+    color:#168039;
+    font-size:22px;
+
+}
+
+
+
+.activity-item span{
+
+    flex:1;
+    margin-left:15px;
+
+}
+
+
+
+.activity-item b{
+
+    color:#145c2d;
+
+}
+
+
+
+
+
+/* ==========================
+ Laptop
+========================== */
+
+
+@media(max-width:1200px){
+
+
+.energy-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+
+
+/* ==========================
+ Tablet
+========================== */
+
+
+@media(max-width:768px){
+
+
+body{
+
+    padding:20px;
+
+}
+
+
+
+.profile-card{
+
+    flex-direction:column;
+    text-align:center;
+
+}
+
+
+
+.profile-info{
+
+    text-align:center;
+
+}
+
+
+
+.profile-card button{
+
+    width:100%;
+
+}
+
+
+
+.energy-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.details-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.impact-card{
+
+    flex-direction:column;
+    text-align:center;
+
+}
+
+
+
+.activity-item{
+
+    gap:10px;
+
+}
+
+
+
+}
+
+
+
+.edit-profile-btn{
+
+display:inline-block;
+text-decoration:none;
+border:none;
+background:#168039;
+color:white;
+padding:12px 25px;
+border-radius:25px;
+cursor:pointer;
+font-size:15px;
+transition:.3s;
+
+}
+
+
+.edit-profile-btn:hover{
+
+background:#0f5f2b;
+transform:translateY(-3px);
+
+}
+
+/* ==========================
+ Mobile
+========================== */
+
+
+@media(max-width:480px){
+
+
+
+.profile-container{
+
+    width:100%;
+
+}
+
+
+
+.profile-card,
+.energy-overview,
+.details-section,
+.impact-section,
+.activity-section{
+
+    padding:20px;
+
+}
+
+
+
+.profile-image{
+
+    width:80px;
+    height:80px;
+    font-size:30px;
+
+}
+
+
+
+.profile-info h1{
+
+    font-size:24px;
+
+}
+
+
+
+section h2{
+
+    font-size:21px;
+
+}
+
+
+
+.energy-box p{
+
+    font-size:22px;
+
+}
+
+
+
+.activity-item{
+
+    flex-wrap:wrap;
+
+}
+
+
+}
+</style>
+
+
+
+
+
+<!-- Energy Overview -->
+
+
+<section class="energy-overview">
+
+
+<h2>
+Energy Overview
+</h2>
+
+
+<div class="energy-grid">
+
+
+<div class="energy-box">
+
+<i class="fa-solid fa-solar-panel"></i>
+
+<h3>
+Solar Capacity
+</h3>
+
+<p>
+5 KW
+</p>
+
+</div>
+
+
+
+
+<div class="energy-box">
+
+<i class="fa-solid fa-bolt"></i>
+
+<h3>
+Energy Generated
+</h3>
+
+<p>
+420 kWh
+</p>
+
+</div>
+
+
+
+
+<div class="energy-box">
+
+<i class="fa-solid fa-wallet"></i>
+
+<h3>
+Monthly Savings
+</h3>
+
+<p>
+₹4250
+</p>
+
+</div>
+
+
+
+
+<div class="energy-box">
+
+<i class="fa-solid fa-leaf"></i>
+
+<h3>
+CO₂ Reduction
+</h3>
+
+<p>
+120 Kg
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- User Details -->
+
+
+<section class="details-section">
+
+
+<h2>
+Personal Information
+</h2>
+
+
+<div class="details-grid">
+
+
+<div>
+
+<label>
+Email
+</label>
+
+<p>
+abinaya@email.com
+</p>
+
+</div>
+
+
+
+<div>
+
+<label>
+Location
+</label>
+
+<p>
+Tamil Nadu, India
+</p>
+
+</div>
+
+
+
+<div>
+
+<label>
+System Installed
+</label>
+
+<p>
+Solar Panel System
+</p>
+
+</div>
+
+
+
+<div>
+
+<label>
+Installation Date
+</label>
+
+<p>
+12 March 2026
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Environmental Impact -->
+
+
+<section class="impact-section">
+
+
+<h2>
+Environmental Impact
+</h2>
+
+
+<div class="impact-card">
+
+
+<div>
+
+<i class="fa-solid fa-tree"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+Clean Energy Contribution
+</h3>
+
+<p>
+Your renewable energy system has helped reduce carbon emissions and supports a greener environment.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Recent Activity -->
+
+
+<section class="activity-section">
+
+
+<h2>
+Recent Energy Activity
+</h2>
+
+
+
+<div class="activity-list">
+
+
+<div class="activity-item">
+
+<i class="fa-solid fa-sun"></i>
+
+<span>
+Solar Production Increased
+</span>
+
+<b>
++25%
+</b>
+
+
+</div>
+
+
+
+<div class="activity-item">
+
+<i class="fa-solid fa-battery-half"></i>
+
+<span>
+Battery Charged
+</span>
+
+<b>
+85%
+</b>
+
+
+</div>
+
+
+
+
+<div class="activity-item">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>
+Energy Efficiency
+</span>
+
+<b>
+92%
+</b>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+<style>
+    /*==========================================
+    GOOGLE FONT
+==========================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==========================================
+    RESET
+==========================================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f8f4;
+    color:#222;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/*==========================================
+    VARIABLES
+==========================================*/
+
+:root{
+
+    --primary:#2E7D32;
+    --primary-dark:#1B5E20;
+    --secondary:#4CAF50;
+    --light:#F7FFF8;
+    --border:#dce8dc;
+    --white:#ffffff;
+    --text:#222;
+    --text-light:#666;
+    --shadow:0 10px 35px rgba(0,0,0,.08);
+
+}
+
+/*==========================================
+        LAYOUT
+==========================================*/
+
+.re-dashboard{
+
+    display:flex;
+    min-height:100vh;
+    width:100%;
+
+}
+
+/*==========================================
+        SIDEBAR
+==========================================*/
+
+.re-sidebar{
+
+    width:270px;
+    background:linear-gradient(180deg,#1B5E20,#2E7D32,#43A047);
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    height:100vh;
+    overflow-y:auto;
+    transition:.35s;
+    z-index:999;
+
+}
+
+.re-sidebar-logo{
+
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+}
+
+.re-sidebar-logo img{
+
+    width:170px;
+    transition:.4s;
+
+}
+
+.re-sidebar-logo img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*==========================================
+        MENU
+==========================================*/
+
+.re-menu{
+
+    padding:25px 15px;
+
+}
+
+.re-menu li{
+
+    margin-bottom:10px;
+
+}
+
+.re-menu li a{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:14px 18px;
+    border-radius:12px;
+    transition:.3s;
+    font-size:15px;
+    font-weight:500;
+
+}
+
+.re-menu li a i{
+
+    width:22px;
+    text-align:center;
+    font-size:18px;
+
+}
+
+.re-menu li a:hover{
+
+    background:rgba(255,255,255,.18);
+    transform:translateX(8px);
+
+}
+
+.re-menu li.active a{
+
+    background:#fff;
+    color:var(--primary-dark);
+    font-weight:600;
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+}
+
+/*==========================================
+        MAIN
+==========================================*/
+
+.re-main{
+
+    flex:1;
+    margin-left:270px;
+    width:calc(100% - 270px);
+    min-height:100vh;
+
+}
+
+/*==========================================
+        TOPBAR
+==========================================*/
+
+.re-topbar{
+
+    position:sticky;
+    top:0;
+    background:#fff;
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    z-index:100;
+
+}
+
+/*==========================================
+        LEFT
+==========================================*/
+
+.re-top-left{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+}
+
+.re-home-logo img{
+
+    width:150px;
+
+}
+
+/*==========================================
+        MENU BUTTON
+==========================================*/
+
+#menuBtn{
+
+    display:none;
+    width:46px;
+    height:46px;
+    border:none;
+    border-radius:12px;
+    background:var(--primary);
+    color:#fff;
+    cursor:pointer;
+    font-size:20px;
+    transition:.3s;
+
+}
+
+#menuBtn:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/*==========================================
+        EMAIL
+==========================================*/
+
+.re-user-email{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#F4FFF5;
+    border:1px solid #dce8dc;
+    padding:12px 20px;
+    border-radius:50px;
+    color:var(--primary-dark);
+    font-weight:600;
+    font-size:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.05);
+
+}
+
+.re-user-email i{
+
+    font-size:18px;
+    color:#43A047;
+
+}
+
+/*==========================================
+        CONTENT
+==========================================*/
+
+.re-dashboard-content{
+
+    padding:40px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:34px;
+    margin-bottom:12px;
+    color:#1B5E20;
+
+}
+
+.re-dashboard-content p{
+
+    color:#666;
+    line-height:1.8;
+
+}
+
+/*==========================================
+        TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.re-sidebar{
+
+    left:-280px;
+
+}
+
+.re-sidebar.active{
+
+    left:0;
+
+}
+
+.re-main{
+
+    margin-left:0;
+    width:100%;
+
+}
+
+#menuBtn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.re-topbar{
+
+    padding:0 20px;
+
+}
+
+}
+
+/*==========================================
+        MOBILE
+==========================================*/
+
+@media(max-width:768px){
+
+.re-topbar{
+
+    height:70px;
+    padding:0 15px;
+
+}
+
+.re-home-logo img{
+
+    width:120px;
+
+}
+
+.re-user-email{
+
+    padding:10px 14px;
+    font-size:13px;
+    gap:8px;
+
+}
+
+.re-dashboard-content{
+
+    padding:25px 18px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:28px;
+
+}
+
+}
+
+/*==========================================
+        SMALL MOBILE
+==========================================*/
+
+@media(max-width:576px){
+
+.re-user-email{
+
+    max-width:170px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+
+}
+
+.re-home-logo img{
+
+    width:110px;
+
+}
+
+.re-dashboard-content{
+
+    padding:20px 15px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:24px;
+
+}
+
+}
+
+/*==========================================
+        SCROLLBAR
+==========================================*/
+
+.re-sidebar::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.re-sidebar::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.35);
+    border-radius:50px;
+
+}
+
+.re-sidebar::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/*==========================================
+        SIDEBAR ANIMATION
+==========================================*/
+
+.re-sidebar{
+
+    animation:slideSidebar .6s ease;
+
+}
+
+@keyframes slideSidebar{
+
+    from{
+
+        transform:translateX(-100%);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+        opacity:1;
+
+    }
+
+}
+
+/*==========================================
+        TOPBAR ANIMATION
+==========================================*/
+
+.re-topbar{
+
+    animation:topFade .6s ease;
+
+}
+
+@keyframes topFade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-25px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+/*==============================
+    MOBILE MENU
+==============================*/
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("reSidebar");
+
+if (menuBtn) {
+
+    menuBtn.addEventListener("click", function () {
+
+        sidebar.classList.toggle("active");
+
+    });
+
+}
+
+/*==============================
+    DISPLAY USER EMAIL
+==============================*/
+
+const emailSpan = document.getElementById("dashboardEmail");
+
+let email = "";
+
+// First check stackly_session
+const session = localStorage.getItem("stackly_session");
+
+if (session) {
+
+    const user = JSON.parse(session);
+
+    email = user.email;
+
+}
+
+// Otherwise check loggedInUserEmail
+if (!email) {
+
+    email = localStorage.getItem("loggedInUserEmail");
+
+}
+
+// Display email
+if (emailSpan) {
+
+    emailSpan.textContent = email || "Guest User";
+
+}
+
+});
+</script>
+
+
+
+</body>
+</html>

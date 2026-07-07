@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>User Dashboard</title>
+
+<link rel="stylesheet"
+href="css/dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="re-dashboard">
+
+    <!--======================
+        Sidebar
+    =======================-->
+
+    <aside class="re-sidebar" id="reSidebar">
+
+        <div class="re-sidebar-logo">
+
+            <a href="index.html">
+
+                <img src="white.webp"
+                alt="Logo">
+
+            </a>
+
+        </div>
+
+        <ul class="re-menu">
+
+            <li>
+
+                <a href="./user-dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./myprofile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    My Profile
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./project.html">
+
+                    <i class="fa-solid fa-solar-panel"></i>
+
+                    My Projects
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./energy.html">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    Energy Usage
+
+                </a>
+
+            </li>
+
+            <li class="active">
+
+                <a href="./billing.html">
+
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+
+                    Billing
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./support.html">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    Support
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./login.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+        </ul>
+
+    </aside>
+
+    <!--=====================
+        Main Area
+    =====================-->
+
+    <main class="re-main">
+
+        <!--==================
+            Topbar
+        ===================-->
+
+        <header class="re-topbar">
+
+            <div class="re-top-left">
+
+                <button id="menuBtn">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                
+
+            </div>
+
+            <div class="re-top-right">
+
+                <div class="re-user-email">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <span id="dashboardEmail"></span>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Dashboard content starts here -->
+
+        <section class="re-dashboard-content">
+
+            
+
+<div class="billing-dashboard">
+
+
+
+<!-- Billing Header -->
+
+
+<section class="billing-header">
+
+
+<div>
+
+<h1>
+Energy Billing Dashboard
+</h1>
+
+<p>
+Manage your renewable energy payments and invoices.
+</p>
+
+</div>
+
+
+<div class="payment-status">
+
+<i class="fa-solid fa-circle-check"></i>
+
+Payment Active
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Billing Summary Cards -->
+
+
+<section class="billing-cards">
+
+
+<div class="bill-card">
+
+
+<div class="bill-icon">
+
+<i class="fa-solid fa-file-invoice-dollar"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+Current Bill
+</h3>
+
+<h2>
+₹2,450
+</h2>
+
+<span>
+March 2026
+</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="bill-card">
+
+
+<div class="bill-icon">
+
+<i class="fa-solid fa-solar-panel"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+Solar Credit
+</h3>
+
+<h2>
+₹850
+</h2>
+
+<span>
+Energy Contribution
+</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="bill-card">
+
+
+<div class="bill-icon">
+
+<i class="fa-solid fa-wallet"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+Total Savings
+</h3>
+
+<h2>
+₹18,500
+</h2>
+
+<span>
+Yearly Savings
+</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="bill-card">
+
+
+<div class="bill-icon">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+Next Due Date
+</h3>
+
+<h2>
+15 Apr
+</h2>
+
+<span>
+Upcoming Payment
+</span>
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- Monthly Billing -->
+
+
+<section class="monthly-billing">
+
+
+<h2>
+Monthly Billing Summary
+</h2>
+
+
+<div class="billing-details">
+
+
+<div>
+
+<label>
+Energy Generated
+</label>
+
+<h3>
+560 kWh
+</h3>
+
+</div>
+
+
+
+<div>
+
+<label>
+Energy Consumed
+</label>
+
+<h3>
+320 kWh
+</h3>
+
+</div>
+
+
+
+<div>
+
+<label>
+Grid Usage
+</label>
+
+<h3>
+120 kWh
+</h3>
+
+</div>
+
+
+
+<div>
+
+<label>
+Final Amount
+</label>
+
+<h3>
+₹2450
+</h3>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Invoice History -->
+
+
+<section class="invoice-section">
+
+
+<h2>
+Invoice History
+</h2>
+
+
+
+<div class="invoice-table">
+
+
+<div class="invoice-row">
+
+
+<span>
+March 2026
+</span>
+
+
+<b>
+₹2450
+</b>
+
+
+<a href="404.html" style="
+    display:inline-block;
+    text-decoration:none;
+    background:#168039;
+    color:white;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:14px;
+">
+    Download
+</a>
+
+
+</div>
+
+
+
+
+
+<div class="invoice-row">
+
+
+<span>
+February 2026
+</span>
+
+
+<b>
+₹2200
+</b>
+
+
+<a href="404.html" style="
+    display:inline-block;
+    text-decoration:none;
+    background:#168039;
+    color:white;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:14px;
+">
+    Download
+</a>
+
+</div>
+
+
+
+
+
+<div class="invoice-row">
+
+
+<span>
+January 2026
+</span>
+
+
+<b>
+₹2100
+</b>
+
+
+<a href="404.html" style="
+    display:inline-block;
+    text-decoration:none;
+    background:#168039;
+    color:white;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:14px;
+">
+    Download
+</a>
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+<style>
+    *{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+
+}
+
+
+body{
+
+    background:#f2faf4;
+    color:#21452d;
+    padding:40px;
+
+}
+
+
+.billing-dashboard{
+
+    max-width:1200px;
+    margin:auto;
+
+}
+
+
+
+/* =========================
+   Billing Header
+========================= */
+
+
+.billing-header{
+
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    margin-bottom:30px;
+
+}
+
+
+
+.billing-header h1{
+
+    font-size:32px;
+    color:#145c2d;
+
+}
+
+
+
+.billing-header p{
+
+    margin-top:10px;
+    color:#6b806f;
+
+}
+
+
+
+.payment-status{
+
+    background:#e3f8e8;
+    color:#168039;
+    padding:12px 25px;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:600;
+
+}
+
+
+
+
+
+/* =========================
+   Billing Cards
+========================= */
+
+
+.billing-cards{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-bottom:35px;
+
+}
+
+
+
+.bill-card{
+
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.07);
+    transition:.3s;
+
+}
+
+
+
+.bill-card:hover{
+
+    transform:translateY(-7px);
+
+}
+
+
+
+.bill-icon{
+
+    width:60px;
+    height:60px;
+    background:#ddf5e4;
+    color:#168039;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:25px;
+
+}
+
+
+
+.bill-card h3{
+
+    font-size:16px;
+    margin-bottom:8px;
+
+}
+
+
+
+.bill-card h2{
+
+    font-size:26px;
+    color:#168039;
+
+}
+
+
+
+.bill-card span{
+
+    color:#777;
+    font-size:13px;
+
+}
+
+
+
+
+
+
+/* =========================
+ Monthly Billing
+========================= */
+
+
+.monthly-billing,
+.invoice-section,
+.payment-section{
+
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    margin-bottom:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.07);
+
+}
+
+
+
+.monthly-billing h2,
+.invoice-section h2,
+.payment-section h2{
+
+    color:#145c2d;
+    margin-bottom:25px;
+
+}
+
+
+
+.billing-details{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+
+}
+
+
+
+.billing-details div{
+
+    background:#f5fbf6;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+
+}
+
+
+
+.billing-details label{
+
+    color:#777;
+    font-size:14px;
+
+}
+
+
+
+.billing-details h3{
+
+    margin-top:10px;
+    color:#168039;
+    font-size:24px;
+
+}
+
+
+
+
+
+
+
+/* =========================
+ Invoice History
+========================= */
+
+
+.invoice-table{
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+}
+
+
+
+.invoice-row{
+
+    background:#f5fbf6;
+    padding:18px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+}
+
+
+
+.invoice-row span{
+
+    font-weight:600;
+
+}
+
+
+
+.invoice-row b{
+
+    color:#168039;
+
+}
+
+
+
+.invoice-row button{
+
+    border:none;
+    background:#168039;
+    color:white;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+
+}
+
+
+
+.invoice-row button:hover{
+
+    background:#0f612d;
+
+}
+
+
+
+
+
+
+/* =========================
+ Payment
+========================= */
+
+
+.payment-card{
+
+    background:#f5fbf6;
+    padding:25px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+}
+
+
+
+.payment-card i{
+
+    width:55px;
+    height:55px;
+    background:#ddf5e4;
+    color:#168039;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+
+}
+
+
+
+.payment-card h3{
+
+    color:#145c2d;
+
+}
+
+
+
+.payment-card p{
+
+    color:#777;
+    margin-top:5px;
+
+}
+
+
+
+
+
+
+
+/* =========================
+ Laptop View
+========================= */
+
+
+@media(max-width:1200px){
+
+
+.billing-cards{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.billing-details{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+ Tablet View
+========================= */
+
+
+@media(max-width:768px){
+
+
+body{
+
+    padding:20px;
+
+}
+
+
+
+.billing-header{
+
+    flex-direction:column;
+    align-items:flex-start;
+
+}
+
+
+
+.billing-header h1{
+
+    font-size:26px;
+
+}
+
+
+
+.billing-cards{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.billing-details{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.monthly-billing,
+.invoice-section,
+.payment-section{
+
+    padding:20px;
+
+}
+
+
+
+.invoice-row{
+
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+
+}
+
+
+
+.invoice-row button{
+
+    width:100%;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+ Mobile View
+========================= */
+
+
+@media(max-width:480px){
+
+
+.billing-header{
+
+    padding:20px;
+
+}
+
+
+
+.billing-header h1{
+
+    font-size:22px;
+
+}
+
+
+
+.bill-card{
+
+    padding:20px;
+
+}
+
+
+
+.bill-card h2{
+
+    font-size:22px;
+
+}
+
+
+
+.billing-details h3{
+
+    font-size:21px;
+
+}
+
+
+
+.payment-card{
+
+    flex-direction:column;
+    text-align:center;
+
+}
+
+
+
+}
+</style>
+
+
+
+
+
+
+<!-- Payment Method -->
+
+
+<section class="payment-section">
+
+
+<h2>
+Payment Method
+</h2>
+
+
+<div class="payment-card">
+
+
+<i class="fa-solid fa-credit-card"></i>
+
+
+<div>
+
+<h3>
+UPI Payment
+</h3>
+
+<p>
+Default payment method connected
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+</div>
+
+
+
+
+
+    </main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+<style>
+    /*==========================================
+    GOOGLE FONT
+==========================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==========================================
+    RESET
+==========================================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f8f4;
+    color:#222;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/*==========================================
+    VARIABLES
+==========================================*/
+
+:root{
+
+    --primary:#2E7D32;
+    --primary-dark:#1B5E20;
+    --secondary:#4CAF50;
+    --light:#F7FFF8;
+    --border:#dce8dc;
+    --white:#ffffff;
+    --text:#222;
+    --text-light:#666;
+    --shadow:0 10px 35px rgba(0,0,0,.08);
+
+}
+
+/*==========================================
+        LAYOUT
+==========================================*/
+
+.re-dashboard{
+
+    display:flex;
+    min-height:100vh;
+    width:100%;
+
+}
+
+/*==========================================
+        SIDEBAR
+==========================================*/
+
+.re-sidebar{
+
+    width:270px;
+    background:linear-gradient(180deg,#1B5E20,#2E7D32,#43A047);
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    height:100vh;
+    overflow-y:auto;
+    transition:.35s;
+    z-index:999;
+
+}
+
+.re-sidebar-logo{
+
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+}
+
+.re-sidebar-logo img{
+
+    width:170px;
+    transition:.4s;
+
+}
+
+.re-sidebar-logo img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*==========================================
+        MENU
+==========================================*/
+
+.re-menu{
+
+    padding:25px 15px;
+
+}
+
+.re-menu li{
+
+    margin-bottom:10px;
+
+}
+
+.re-menu li a{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:14px 18px;
+    border-radius:12px;
+    transition:.3s;
+    font-size:15px;
+    font-weight:500;
+
+}
+
+.re-menu li a i{
+
+    width:22px;
+    text-align:center;
+    font-size:18px;
+
+}
+
+.re-menu li a:hover{
+
+    background:rgba(255,255,255,.18);
+    transform:translateX(8px);
+
+}
+
+.re-menu li.active a{
+
+    background:#fff;
+    color:var(--primary-dark);
+    font-weight:600;
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+}
+
+/*==========================================
+        MAIN
+==========================================*/
+
+.re-main{
+
+    flex:1;
+    margin-left:270px;
+    width:calc(100% - 270px);
+    min-height:100vh;
+
+}
+
+/*==========================================
+        TOPBAR
+==========================================*/
+
+.re-topbar{
+
+    position:sticky;
+    top:0;
+    background:#fff;
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    z-index:100;
+
+}
+
+/*==========================================
+        LEFT
+==========================================*/
+
+.re-top-left{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+}
+
+.re-home-logo img{
+
+    width:150px;
+
+}
+
+/*==========================================
+        MENU BUTTON
+==========================================*/
+
+#menuBtn{
+
+    display:none;
+    width:46px;
+    height:46px;
+    border:none;
+    border-radius:12px;
+    background:var(--primary);
+    color:#fff;
+    cursor:pointer;
+    font-size:20px;
+    transition:.3s;
+
+}
+
+#menuBtn:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/*==========================================
+        EMAIL
+==========================================*/
+
+.re-user-email{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#F4FFF5;
+    border:1px solid #dce8dc;
+    padding:12px 20px;
+    border-radius:50px;
+    color:var(--primary-dark);
+    font-weight:600;
+    font-size:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.05);
+
+}
+
+.re-user-email i{
+
+    font-size:18px;
+    color:#43A047;
+
+}
+
+/*==========================================
+        CONTENT
+==========================================*/
+
+.re-dashboard-content{
+
+    padding:40px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:34px;
+    margin-bottom:12px;
+    color:#1B5E20;
+
+}
+
+.re-dashboard-content p{
+
+    color:#666;
+    line-height:1.8;
+
+}
+
+/*==========================================
+        TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.re-sidebar{
+
+    left:-280px;
+
+}
+
+.re-sidebar.active{
+
+    left:0;
+
+}
+
+.re-main{
+
+    margin-left:0;
+    width:100%;
+
+}
+
+#menuBtn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.re-topbar{
+
+    padding:0 20px;
+
+}
+
+}
+
+/*==========================================
+        MOBILE
+==========================================*/
+
+@media(max-width:768px){
+
+.re-topbar{
+
+    height:70px;
+    padding:0 15px;
+
+}
+
+.re-home-logo img{
+
+    width:120px;
+
+}
+
+.re-user-email{
+
+    padding:10px 14px;
+    font-size:13px;
+    gap:8px;
+
+}
+
+.re-dashboard-content{
+
+    padding:25px 18px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:28px;
+
+}
+
+}
+
+/*==========================================
+        SMALL MOBILE
+==========================================*/
+
+@media(max-width:576px){
+
+.re-user-email{
+
+    max-width:170px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+
+}
+
+.re-home-logo img{
+
+    width:110px;
+
+}
+
+.re-dashboard-content{
+
+    padding:20px 15px;
+
+}
+
+.re-dashboard-content h1{
+
+    font-size:24px;
+
+}
+
+}
+
+/*==========================================
+        SCROLLBAR
+==========================================*/
+
+.re-sidebar::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.re-sidebar::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.35);
+    border-radius:50px;
+
+}
+
+.re-sidebar::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/*==========================================
+        SIDEBAR ANIMATION
+==========================================*/
+
+.re-sidebar{
+
+    animation:slideSidebar .6s ease;
+
+}
+
+@keyframes slideSidebar{
+
+    from{
+
+        transform:translateX(-100%);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+        opacity:1;
+
+    }
+
+}
+
+/*==========================================
+        TOPBAR ANIMATION
+==========================================*/
+
+.re-topbar{
+
+    animation:topFade .6s ease;
+
+}
+
+@keyframes topFade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-25px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+/*==============================
+    MOBILE MENU
+==============================*/
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("reSidebar");
+
+if (menuBtn) {
+
+    menuBtn.addEventListener("click", function () {
+
+        sidebar.classList.toggle("active");
+
+    });
+
+}
+
+/*==============================
+    DISPLAY USER EMAIL
+==============================*/
+
+const emailSpan = document.getElementById("dashboardEmail");
+
+let email = "";
+
+// First check stackly_session
+const session = localStorage.getItem("stackly_session");
+
+if (session) {
+
+    const user = JSON.parse(session);
+
+    email = user.email;
+
+}
+
+// Otherwise check loggedInUserEmail
+if (!email) {
+
+    email = localStorage.getItem("loggedInUserEmail");
+
+}
+
+// Display email
+if (emailSpan) {
+
+    emailSpan.textContent = email || "Guest User";
+
+}
+
+});
+</script>
+
+
+
+</body>
+</html>
