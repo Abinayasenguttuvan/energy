@@ -23,7 +23,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
 <div class="overlay"></div>
 
 <!-- Sidebar -->
-
+<div class="dashboard-wrapper">
 <aside class="sidebar">
 
 <div class="sidebar-header">
@@ -90,7 +90,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
 
     <li>
         <a href="./index.html">
-            <i class="fa-solid fa-right-from-bracket"></i>
+            <i class="fas fa-chart-line"></i>
             <span>Logout</span>
         </a>
     </li>
@@ -151,312 +151,169 @@ user@gmail.com
 
 <p>
 
-<!-- ================================
-USER DASHBOARD - PART 1A
-================================ -->
+<!-- ===========================
+USER DASHBOARD HERO
+=========================== -->
 
-<section class="user-home">
+<section class="udash-hero">
 
-    <!-- Welcome Banner -->
+    <div class="udash-overlay"></div>
 
-    <div class="user-banner">
+    <div class="udash-content">
 
-        <div class="banner-left">
+        <span class="udash-badge">
+            🌿 Renewable Energy Dashboard
+        </span>
 
-            <span class="banner-badge">
-                🌿 Renewable Energy Dashboard
-            </span>
+        <h1>
+            Welcome Back 
+            <span id="userName">User</span> 👋
+        </h1>
 
-            <h1>
-                Welcome,
-                <span id="dashboardUserName">User</span>
-                👋
-            </h1>
+        <p>
+            Manage your renewable energy services, monitor production,
+            track your projects, and view your reports from one place.
+        </p>
 
-            <p>
-                Monitor your renewable energy production, battery health,
-                carbon savings and electricity usage from one dashboard.
-            </p>
+        <div class="udash-buttons">
 
-            <div class="banner-buttons">
+            <a href="404.html" class="udash-btn-primary">
+                Explore Services
+            </a>
 
-                <a href="404.html" class="green-btn">
-                    View Reports
-                </a>
-
-                <a href="404.html" class="dark-btn">
-                    Energy Details
-                </a>
-
-            </div>
+            <a href="404.html" class="udash-btn-secondary">
+                View Reports
+            </a>
 
         </div>
-
-        <div class="banner-right">
-
-            <div class="energy-circle">
-
-                ⚡
-
-            </div>
-
-            <h2>Today's Status</h2>
-
-            <h3 id="todayDate"></h3>
-
-            <p>
-
-                Solar Production Active
-
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================================
-PART 1B - ENERGY OVERVIEW
-========================================= -->
-
-<section class="energy-overview-section">
-
-    <div class="section-title">
-        <h2>⚡ Energy Overview</h2>
-        <p>Monitor the live status of your renewable energy system.</p>
-    </div>
-
-    <div class="energy-overview-grid">
-
-        <div class="overview-card">
-            <div class="overview-icon solar">
-                <i class="fas fa-solar-panel"></i>
-            </div>
-
-            <h3>Solar Panels</h3>
-
-            <h1>98%</h1>
-
-            <span class="status online">
-                ● Online
-            </span>
-
-            <div class="progress">
-                <div class="progress-bar solar-progress"></div>
-            </div>
-        </div>
-
-        <div class="overview-card">
-            <div class="overview-icon battery">
-                <i class="fas fa-car-battery"></i>
-            </div>
-
-            <h3>Battery Health</h3>
-
-            <h1>89%</h1>
-
-            <span class="status excellent">
-                ● Excellent
-            </span>
-
-            <div class="progress">
-                <div class="progress-bar battery-progress"></div>
-            </div>
-        </div>
-
-        <div class="overview-card">
-            <div class="overview-icon grid">
-                <i class="fas fa-bolt"></i>
-            </div>
-
-            <h3>Grid Status</h3>
-
-            <h1>Stable</h1>
-
-            <span class="status online">
-                ● Connected
-            </span>
-
-            <div class="progress">
-                <div class="progress-bar grid-progress"></div>
-            </div>
-        </div>
-
-        <div class="overview-card">
-            <div class="overview-icon eco">
-                <i class="fas fa-leaf"></i>
-            </div>
-
-            <h3>CO₂ Saved</h3>
-
-            <h1>1.8 T</h1>
-
-            <span class="status excellent">
-                ● Eco Friendly
-            </span>
-
-            <div class="progress">
-                <div class="progress-bar eco-progress"></div>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-TODAY'S SUMMARY
-========================================= -->
-
-<section class="summary-section">
-
-    <div class="summary-card">
-
-        <h3>Today's Production</h3>
-
-        <h1>45.8 kWh</h1>
-
-        <p>↑ +8% compared to yesterday</p>
-
-    </div>
-
-    <div class="summary-card">
-
-        <h3>Today's Consumption</h3>
-
-        <h1>27.4 kWh</h1>
-
-        <p>Efficient energy usage</p>
-
-    </div>
-
-    <div class="summary-card">
-
-        <h3>Money Saved</h3>
-
-        <h1>₹580</h1>
-
-        <p>Using renewable energy</p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-QUICK ACTIONS
-========================================= -->
-
-<section class="quick-actions">
-
-    <div class="section-title">
-
-        <h2>🚀 Quick Actions</h2>
-
-    </div>
-
-    <div class="action-grid">
-
-        <a href="404.html" class="action-btn">
-            <i class="fas fa-chart-line"></i>
-            View Reports
-        </a>
-
-        <a href="404.html" class="action-btn">
-            <i class="fas fa-file-download"></i>
-            Download Report
-        </a>
-
-        <a href="404.html" class="action-btn">
-            <i class="fas fa-wallet"></i>
-            Billing
-        </a>
-
-        <a href="404.html" class="action-btn">
-            <i class="fas fa-headset"></i>
-            Support
-        </a>
 
     </div>
 
 </section>
 
 <style>
-    /*=====================================
-SECTION TITLE
-=====================================*/
+    /*====================================
+USER DASHBOARD HERO
+Non Conflicting CSS
+====================================*/
 
-.section-title{
-margin-bottom:25px;
-}
+.udash-hero{
 
-.section-title h2{
-font-size:30px;
-color:#18b857;
-margin-bottom:8px;
-}
+position:relative;
 
-.section-title p{
-color:#666;
-}
+min-height:500px;
 
+display:flex;
 
-/*=====================================
-OVERVIEW GRID
-=====================================*/
+align-items:center;
 
-.energy-overview-section{
+padding:80px 60px;
 
-margin-top:50px;
+border-radius:25px;
+
+overflow:hidden;
+
+margin:25px;
+
+background:url("./energy.webp") center center/cover no-repeat;
 
 }
 
-.energy-overview-grid{
+.udash-overlay{
 
-display:grid;
+position:absolute;
 
-grid-template-columns:repeat(4,1fr);
+top:0;
 
-gap:25px;
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+135deg,
+rgba(0,0,0,.82),
+rgba(0,120,60,.55)
+);
 
 }
 
-.overview-card{
+.udash-content{
 
-background:#121212;
+position:relative;
 
-padding:25px;
+z-index:2;
 
-border-radius:18px;
+max-width:650px;
 
 color:#fff;
 
-text-align:center;
+}
 
-transition:.35s;
+.udash-badge{
+
+display:inline-block;
+
+padding:10px 22px;
+
+background:#00d26a;
+
+color:#fff;
+
+border-radius:30px;
+
+font-size:15px;
+
+font-weight:600;
+
+margin-bottom:22px;
 
 }
 
-.overview-card:hover{
+.udash-content h1{
 
-transform:translateY(-8px);
+font-size:52px;
 
-box-shadow:0 20px 35px rgba(24,184,87,.25);
+line-height:1.2;
+
+margin-bottom:20px;
 
 }
 
-.overview-icon{
+.udash-content h1 span{
 
-width:70px;
+color:#00ff88;
 
-height:70px;
+}
 
-margin:auto;
+.udash-content p{
 
-border-radius:50%;
+font-size:18px;
+
+line-height:1.8;
+
+color:#e6e6e6;
+
+margin-bottom:35px;
+
+max-width:600px;
+
+}
+
+.udash-buttons{
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.udash-btn-primary,
+
+.udash-btn-secondary{
 
 display:flex;
 
@@ -464,355 +321,319 @@ align-items:center;
 
 justify-content:center;
 
-font-size:28px;
+width:190px;
 
-margin-bottom:20px;
-
-}
-
-.solar{
-
-background:#16a34a;
-
-}
-
-.battery{
-
-background:#22c55e;
-
-}
-
-.grid{
-
-background:#059669;
-
-}
-
-.eco{
-
-background:#15803d;
-
-}
-
-.overview-card h3{
-
-margin-bottom:15px;
-
-font-size:20px;
-
-}
-
-.overview-card h1{
-
-font-size:34px;
-
-margin-bottom:10px;
-
-}
-
-.status{
-
-font-size:14px;
-
-display:inline-block;
-
-margin-bottom:20px;
-
-}
-
-.online{
-
-color:#22c55e;
-
-}
-
-.excellent{
-
-color:#86efac;
-
-}
-
-/* Progress */
-
-.progress{
-
-height:8px;
-
-background:#2b2b2b;
+height:55px;
 
 border-radius:30px;
-
-overflow:hidden;
-
-}
-
-.progress-bar{
-
-height:100%;
-
-border-radius:30px;
-
-background:#22c55e;
-
-}
-
-.solar-progress{
-
-width:98%;
-
-}
-
-.battery-progress{
-
-width:89%;
-
-}
-
-.grid-progress{
-
-width:100%;
-
-}
-
-.eco-progress{
-
-width:92%;
-
-}
-
-
-/*=====================================
-SUMMARY
-=====================================*/
-
-.summary-section{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:25px;
-
-margin:50px 0;
-
-}
-
-.summary-card{
-
-background:linear-gradient(135deg,#14532d,#22c55e);
-
-padding:30px;
-
-border-radius:18px;
-
-color:#fff;
-
-transition:.3s;
-
-}
-
-.summary-card:hover{
-
-transform:translateY(-8px);
-
-}
-
-.summary-card h3{
-
-margin-bottom:15px;
-
-}
-
-.summary-card h1{
-
-font-size:38px;
-
-margin-bottom:10px;
-
-}
-
-
-/*=====================================
-ACTION BUTTONS
-=====================================*/
-
-.action-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:20px;
-
-}
-
-.action-btn{
-
-background:#111;
-
-color:#fff;
-
-padding:18px;
-
-border-radius:15px;
-
-text-align:center;
 
 text-decoration:none;
 
-transition:.3s;
-
 font-weight:600;
 
-}
-
-.action-btn i{
-
-display:block;
-
-font-size:28px;
-
-margin-bottom:12px;
-
-color:#22c55e;
+transition:.35s;
 
 }
 
-.action-btn:hover{
+.udash-btn-primary{
 
-background:#18b857;
+background:#00d26a;
 
-transform:translateY(-6px);
+color:#fff;
 
 }
 
+.udash-btn-primary:hover{
 
-/*=====================================
-RESPONSIVE
-=====================================*/
+background:#00ff88;
+
+color:#111;
+
+}
+
+.udash-btn-secondary{
+
+border:2px solid #00ff88;
+
+color:#fff;
+
+}
+
+.udash-btn-secondary:hover{
+
+background:#00ff88;
+
+color:#111;
+
+}
+
+/*====================
+Laptop
+====================*/
+
+@media(max-width:1200px){
+
+.udash-content h1{
+
+font-size:42px;
+
+}
+
+}
+
+/*====================
+Tablet
+====================*/
 
 @media(max-width:992px){
 
-.energy-overview-grid{
+.udash-hero{
 
-grid-template-columns:repeat(2,1fr);
+padding:60px 35px;
 
-}
+min-height:430px;
 
-.summary-section{
-
-grid-template-columns:1fr;
+margin:20px;
 
 }
 
-.action-grid{
+.udash-content h1{
 
-grid-template-columns:repeat(2,1fr);
+font-size:36px;
+
+}
+
+.udash-content p{
+
+font-size:16px;
 
 }
 
 }
+
+/*====================
+Mobile
+====================*/
 
 @media(max-width:768px){
 
-.energy-overview-grid{
+.udash-hero{
 
-grid-template-columns:1fr;
+padding:45px 20px;
 
-}
+min-height:380px;
 
-.action-grid{
+margin:15px;
 
-grid-template-columns:1fr;
+text-align:center;
 
-}
-
-.section-title h2{
-
-font-size:24px;
+justify-content:center;
 
 }
 
-.summary-card h1{
+.udash-content{
+
+max-width:100%;
+
+}
+
+.udash-content h1{
 
 font-size:30px;
+
+}
+
+.udash-content p{
+
+font-size:15px;
+
+}
+
+.udash-buttons{
+
+justify-content:center;
+
+}
+
+.udash-btn-primary,
+
+.udash-btn-secondary{
+
+width:100%;
+
+max-width:260px;
 
 }
 
 }
 </style>
 
-    <!-- Statistics -->
-
-    <div class="dashboard-cards">
-
-        <div class="energy-card">
-
-            <div class="card-icon">
-
-                ☀
-
-            </div>
-
-            <h4>Total Energy</h4>
-
-            <h2>2,450 kWh</h2>
-
-            <span>+18% This Month</span>
-
-        </div>
 
 
+<!--====================================
+DASHBOARD OVERVIEW
+=====================================-->
 
-        <div class="energy-card">
+<section class="udash-overview">
 
-            <div class="card-icon">
+    <div class="udash-overview-heading">
 
-                🔋
+        <h2>Energy Overview</h2>
 
-            </div>
+        <p>
+            Track your renewable energy performance with a quick summary of your account.
+        </p>
 
-            <h4>Battery Health</h4>
+    </div>
 
-            <h2>89%</h2>
+    <div class="udash-overview-grid">
 
-            <span>Excellent</span>
+        <!-- Card 1 -->
+
+        <div class="udash-overview-card">
+
+            <div class="udash-overview-icon">☀️</div>
+
+            <h3>Energy Generated</h3>
+
+            <h1>1,245 kWh</h1>
+
+            <p>Generated this month</p>
 
         </div>
 
+        <!-- Card 2 -->
 
+        <div class="udash-overview-card">
 
-        <div class="energy-card">
+            <div class="udash-overview-icon">🔋</div>
 
-            <div class="card-icon">
+            <h3>Battery Level</h3>
 
-                🌿
+            <h1>92%</h1>
 
-            </div>
-
-            <h4>Carbon Saved</h4>
-
-            <h2>1.8 Tons</h2>
-
-            <span>Eco Friendly</span>
+            <p>Current storage capacity</p>
 
         </div>
 
+        <!-- Card 3 -->
 
+        <div class="udash-overview-card">
 
-        <div class="energy-card">
+            <div class="udash-overview-icon">🌿</div>
 
-            <div class="card-icon">
+            <h3>Carbon Saved</h3>
 
-                💰
+            <h1>480 kg</h1>
+
+            <p>CO₂ emissions reduced</p>
+
+        </div>
+
+        <!-- Card 4 -->
+
+        <div class="udash-overview-card">
+
+            <div class="udash-overview-icon">⚡</div>
+
+            <h3>System Status</h3>
+
+            <h1>Online</h1>
+
+            <p>All systems operating normally</p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================
+USER PERFORMANCE ANALYTICS
+===================================== -->
+
+<section class="ud-performance">
+
+    <div class="ud-performance-title">
+
+        <h2>Performance Analytics</h2>
+
+        <p>
+            Monitor your renewable energy production and system performance.
+        </p>
+
+    </div>
+
+    <div class="ud-performance-grid">
+
+        <!-- Left Side -->
+
+        <div class="ud-performance-left">
+
+            <div class="ud-stat-box">
+
+                <div class="ud-stat-icon">⚡</div>
+
+                <div>
+
+                    <h3>Today's Energy</h3>
+
+                    <h2>18.5 kWh</h2>
+
+                </div>
 
             </div>
 
-            <h4>Monthly Savings</h4>
+            <div class="ud-stat-box">
 
-            <h2>₹12,850</h2>
+                <div class="ud-stat-icon">🌞</div>
 
-            <span>Compared to Grid</span>
+                <div>
+
+                    <h3>Solar Efficiency</h3>
+
+                    <h2>96%</h2>
+
+                </div>
+
+            </div>
+
+            <div class="ud-stat-box">
+
+                <div class="ud-stat-icon">🌿</div>
+
+                <div>
+
+                    <h3>Carbon Saved</h3>
+
+                    <h2>560 kg</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Center Chart -->
+
+        <div class="ud-chart-card">
+
+            <h3>Weekly Energy Output</h3>
+
+            <canvas id="energyChart"></canvas>
+
+        </div>
+
+        <!-- Right Side -->
+
+        <div class="ud-image-card">
+
+            <img src="./hydro energy.webp" alt="Renewable Energy">
+
+            <h3>Smart Energy</h3>
+
+            <p>
+                Your renewable energy system is operating efficiently and producing clean power.
+            </p>
 
         </div>
 
@@ -820,192 +641,47 @@ font-size:30px;
 
 </section>
 
+
 <style>
-    /* ===================================
-PART 1A
-=================================== */
+    /*==================================
+USER OVERVIEW
+==================================*/
 
-.user-home{
+.udash-overview{
 
-padding:30px;
-
-}
-
-/* Banner */
-
-.user-banner{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-gap:30px;
-
-background:linear-gradient(135deg,#0f3d22,#18b857);
-
-padding:40px;
-
-border-radius:20px;
-
-color:#fff;
-
-box-shadow:0 20px 40px rgba(0,0,0,.2);
-
-margin-bottom:35px;
-
-flex-wrap:wrap;
+padding:60px 25px;
 
 }
 
-.banner-left{
-
-flex:1;
-
-min-width:280px;
-
-}
-
-.banner-badge{
-
-display:inline-block;
-
-background:#ffffff22;
-
-padding:8px 18px;
-
-border-radius:30px;
-
-margin-bottom:20px;
-
-font-size:14px;
-
-}
-
-.banner-left h1{
-
-font-size:38px;
-
-margin-bottom:18px;
-
-}
-
-.banner-left h1 span{
-
-color:#c4ff75;
-
-}
-
-.banner-left p{
-
-font-size:17px;
-
-line-height:1.7;
-
-margin-bottom:25px;
-
-color:#eefef3;
-
-}
-
-.banner-buttons{
-
-display:flex;
-
-gap:15px;
-
-flex-wrap:wrap;
-
-}
-
-.green-btn,
-
-.dark-btn{
-
-text-decoration:none;
-
-padding:13px 24px;
-
-border-radius:30px;
-
-font-weight:600;
-
-transition:.3s;
-
-}
-
-.green-btn{
-
-background:#fff;
-
-color:#0f6d37;
-
-}
-
-.green-btn:hover{
-
-transform:translateY(-4px);
-
-}
-
-.dark-btn{
-
-background:#111;
-
-color:#fff;
-
-}
-
-.dark-btn:hover{
-
-background:#222;
-
-}
-
-.banner-right{
-
-width:280px;
+.udash-overview-heading{
 
 text-align:center;
 
-background:#ffffff15;
-
-padding:30px;
-
-border-radius:20px;
+margin-bottom:40px;
 
 }
 
-.energy-circle{
+.udash-overview-heading h2{
 
-width:90px;
-
-height:90px;
-
-background:#fff;
-
-border-radius:50%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:42px;
-
-margin:auto;
-
-margin-bottom:20px;
+font-size:34px;
 
 color:#18b857;
+
+margin-bottom:12px;
+
+}
+
+.udash-overview-heading p{
+
+color:#666;
+
+font-size:16px;
 
 }
 
 /* Cards */
 
-.dashboard-cards{
+.udash-overview-grid{
 
 display:grid;
 
@@ -1015,81 +691,111 @@ gap:25px;
 
 }
 
-.energy-card{
+.udash-overview-card{
 
 background:#111;
 
 color:#fff;
 
-padding:25px;
+padding:30px 25px;
 
 border-radius:18px;
 
-transition:.3s;
+text-align:center;
 
 border-top:5px solid #18b857;
 
+transition:.35s;
+
 }
 
-.energy-card:hover{
+.udash-overview-card:hover{
 
 transform:translateY(-8px);
 
+box-shadow:0 15px 30px rgba(24,184,87,.25);
+
+}
+
+.udash-overview-icon{
+
+width:75px;
+
+height:75px;
+
+margin:0 auto 20px;
+
 background:#18b857;
 
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:36px;
+
 }
 
-.card-icon{
+.udash-overview-card h3{
 
-font-size:38px;
+font-size:20px;
 
-margin-bottom:18px;
+margin-bottom:12px;
 
 }
 
-.energy-card h4{
+.udash-overview-card h1{
 
-font-size:18px;
+font-size:34px;
+
+color:#22c55e;
 
 margin-bottom:10px;
 
 }
 
-.energy-card h2{
+.udash-overview-card p{
 
-font-size:32px;
+color:#d5d5d5;
 
-margin-bottom:10px;
-
-}
-
-.energy-card span{
-
-color:#ddd;
-
-font-size:15px;
+line-height:1.6;
 
 }
 
-.energy-card:hover span{
+/* Laptop */
 
-color:#fff;
+@media(max-width:1200px){
 
-}
-
-/* Tablet */
-
-@media(max-width:992px){
-
-.dashboard-cards{
+.udash-overview-grid{
 
 grid-template-columns:repeat(2,1fr);
 
 }
 
-.banner-left h1{
+}
 
-font-size:32px;
+/* Tablet */
+
+@media(max-width:768px){
+
+.udash-overview{
+
+padding:40px 20px;
+
+}
+
+.udash-overview-heading h2{
+
+font-size:28px;
+
+}
+
+.udash-overview-grid{
+
+grid-template-columns:1fr;
 
 }
 
@@ -1097,105 +803,33 @@ font-size:32px;
 
 /* Mobile */
 
-@media(max-width:768px){
-
-.user-banner{
-
-padding:25px;
-
-text-align:center;
-
-justify-content:center;
-
-}
-
-.banner-right{
-
-width:100%;
-
-}
-
-.banner-buttons{
-
-justify-content:center;
-
-}
-
-.dashboard-cards{
-
-grid-template-columns:1fr;
-
-}
-
-.banner-left h1{
-
-font-size:28px;
-
-}
-
-.banner-left p{
-
-font-size:15px;
-
-}
-
-}
-
-/* Small Mobile */
-
 @media(max-width:480px){
 
-.user-home{
+.udash-overview-card{
 
-padding:15px;
-
-}
-
-.banner-left h1{
-
-font-size:24px;
+padding:25px 20px;
 
 }
 
-.energy-card h2{
+.udash-overview-icon{
+
+width:65px;
+
+height:65px;
+
+font-size:30px;
+
+}
+
+.udash-overview-card h1{
 
 font-size:28px;
 
 }
 
 }
+
 </style>
-
-<script>
-    /* User Name */
-
-const session = JSON.parse(localStorage.getItem("stackly_session"));
-
-if(session){
-
-document.getElementById("dashboardUserName").textContent = session.name;
-
-}
-
-/* Date */
-
-const options={
-
-weekday:"long",
-
-day:"numeric",
-
-month:"long",
-
-year:"numeric"
-
-};
-
-document.getElementById("todayDate").innerHTML=
-
-new Date().toLocaleDateString("en-IN",options);
-</script>
-
 </p>
 
 </div>
@@ -1721,9 +1355,724 @@ width:130px;
 }
 
 }
+/* .dashboard-wrapper{
+
+min-height:100vh;
+
+background:
+linear-gradient(
+135deg,
+#050505,
+#0d1f17,
+#01120a,
+#067f49
+); */
+
+/* padding:25px; */
+
+
 </style>
 
 
+<style>
+    /*==================================
+Performance Analytics
+==================================*/
+
+.ud-performance{
+
+padding:60px 25px;
+
+}
+
+.ud-performance-title{
+
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+.ud-performance-title h2{
+
+font-size:34px;
+
+color:#00ff88;
+
+margin-bottom:10px;
+
+}
+
+.ud-performance-title p{
+
+color:#d5d5d5;
+
+}
+
+.ud-performance-grid{
+
+display:grid;
+
+grid-template-columns:1fr 2fr 1fr;
+
+gap:25px;
+
+align-items:stretch;
+
+}
+
+.ud-performance-left{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.ud-stat-box{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+background:#141414;
+
+padding:20px;
+
+border-radius:18px;
+
+border-left:5px solid #00ff88;
+
+}
+
+.ud-stat-icon{
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+background:#00ff88;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:28px;
+
+}
+
+.ud-stat-box h3{
+
+color:#ddd;
+
+margin-bottom:6px;
+
+}
+
+.ud-stat-box h2{
+
+color:#00ff88;
+
+}
+
+.ud-chart-card{
+
+background:#141414;
+
+padding:25px;
+
+border-radius:20px;
+
+}
+
+.ud-chart-card h3{
+
+color:#00ff88;
+
+margin-bottom:20px;
+
+text-align:center;
+
+}
+
+.ud-image-card{
+
+background:#141414;
+
+padding:25px;
+
+border-radius:20px;
+
+text-align:center;
+
+}
+
+.ud-image-card img{
+
+width:100%;
+
+max-width:220px;
+
+margin:auto;
+
+display:block;
+
+margin-bottom:20px;
+
+}
+
+.ud-image-card h3{
+
+color:#00ff88;
+
+margin-bottom:10px;
+
+}
+
+.ud-image-card p{
+
+color:#ccc;
+
+line-height:1.7;
+
+}
+/*==================================
+Performance Analytics
+==================================*/
+
+.ud-performance{
+
+width:100%;
+
+padding:60px 30px;
+
+}
+
+.ud-performance-title{
+
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+.ud-performance-title h2{
+
+font-size:36px;
+
+color:#00ff88;
+
+margin-bottom:12px;
+
+font-weight:700;
+
+}
+
+.ud-performance-title p{
+
+color: black;
+
+font-size:16px;
+
+line-height:1.8;
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+/*=============================
+Grid
+=============================*/
+
+.ud-performance-grid{
+
+display:grid;
+
+grid-template-columns:300px 1fr 300px;
+
+gap:25px;
+
+align-items:stretch;
+
+}
+
+/*=============================
+Left Cards
+=============================*/
+
+.ud-performance-left{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+height:100%;
+
+}
+
+.ud-stat-box{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+background:#141414;
+
+padding:20px;
+
+border-radius:18px;
+
+border-left:5px solid #00ff88;
+
+height:100%;
+
+transition:.3s;
+
+}
+
+.ud-stat-box:hover{
+
+transform:translateY(-5px);
+
+}
+
+.ud-stat-icon{
+
+width:60px;
+
+height:60px;
+
+flex-shrink:0;
+
+border-radius:50%;
+
+background:#00ff88;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:28px;
+
+}
+
+.ud-stat-box h3{
+
+color:#ddd;
+
+font-size:16px;
+
+margin-bottom:6px;
+
+}
+
+.ud-stat-box h2{
+
+font-size:28px;
+
+color:#00ff88;
+
+}
+
+/*=============================
+Chart
+=============================*/
+
+.ud-chart-card{
+
+background:#141414;
+
+padding:25px;
+
+border-radius:20px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+.ud-chart-card h3{
+
+text-align:center;
+
+margin-bottom:20px;
+
+color:#00ff88;
+
+}
+
+.ud-chart-card canvas{
+
+width:100%!important;
+
+height:320px!important;
+
+}
+
+/*=============================
+Image Card
+=============================*/
+
+.ud-image-card{
+
+background:#141414;
+
+padding:25px;
+
+border-radius:20px;
+
+text-align:center;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+.ud-image-card img{
+
+width:100%;
+
+max-width:220px;
+
+height:auto;
+
+margin:auto;
+
+margin-bottom:20px;
+
+object-fit:contain;
+
+}
+
+.ud-image-card h3{
+
+color:#00ff88;
+
+margin-bottom:10px;
+
+font-size:24px;
+
+}
+
+.ud-image-card p{
+
+color:#ccc;
+
+line-height:1.8;
+
+}
+
+/*====================================
+Large Desktop
+====================================*/
+
+@media (min-width:1400px){
+
+.ud-performance-grid{
+
+grid-template-columns:330px 1fr 330px;
+
+}
+
+}
+
+/*====================================
+Laptop
+====================================*/
+
+@media (max-width:1200px){
+
+.ud-performance{
+
+padding:50px 25px;
+
+}
+
+.ud-performance-grid{
+
+grid-template-columns:280px 1fr;
+
+}
+
+.ud-image-card{
+
+grid-column:1/-1;
+
+max-width:500px;
+
+margin:auto;
+
+}
+
+}
+
+/*====================================
+Tablet
+====================================*/
+
+@media (max-width:992px){
+
+.ud-performance{
+
+padding:45px 20px;
+
+}
+
+.ud-performance-title h2{
+
+font-size:30px;
+
+}
+
+.ud-performance-grid{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+.ud-chart-card canvas{
+
+height:280px!important;
+
+}
+
+.ud-image-card{
+
+max-width:450px;
+
+margin:auto;
+
+}
+
+}
+
+/*====================================
+Mobile
+====================================*/
+
+@media (max-width:768px){
+
+.ud-performance{
+
+padding:35px 15px;
+
+}
+
+.ud-performance-title{
+
+margin-bottom:30px;
+
+}
+
+.ud-performance-title h2{
+
+font-size:26px;
+
+}
+
+.ud-performance-title p{
+
+font-size:15px;
+
+}
+
+.ud-stat-box{
+
+padding:18px;
+
+gap:15px;
+
+}
+
+.ud-stat-icon{
+
+width:50px;
+
+height:50px;
+
+font-size:22px;
+
+}
+
+.ud-stat-box h2{
+
+font-size:22px;
+
+}
+
+.ud-chart-card{
+
+padding:18px;
+
+}
+
+.ud-chart-card canvas{
+
+height:230px!important;
+
+}
+
+.ud-image-card{
+
+padding:20px;
+
+}
+
+.ud-image-card img{
+
+max-width:180px;
+
+}
+
+.ud-image-card h3{
+
+font-size:22px;
+
+}
+
+}
+
+/*====================================
+Small Mobile
+====================================*/
+
+@media (max-width:480px){
+
+.ud-performance{
+
+padding:30px 12px;
+
+}
+
+.ud-performance-title h2{
+
+font-size:22px;
+
+}
+
+.ud-performance-title p{
+
+font-size:14px;
+
+}
+
+.ud-stat-box{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.ud-stat-icon{
+
+margin-bottom:10px;
+
+}
+
+.ud-chart-card canvas{
+
+height:200px!important;
+
+}
+
+.ud-image-card img{
+
+max-width:150px;
+
+}
+
+.ud-image-card h3{
+
+font-size:20px;
+
+}
+
+.ud-image-card p{
+
+font-size:14px;
+
+}
+
+}
+
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx=document.getElementById("energyChart");
+
+new Chart(ctx,{
+type:"line",
+data:{
+labels:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+datasets:[{
+label:"Energy (kWh)",
+data:[12,18,15,22,20,26,24],
+borderColor:"#00ff88",
+backgroundColor:"rgba(0,255,136,.2)",
+fill:true,
+tension:.4
+}]
+},
+options:{
+responsive:true,
+plugins:{
+legend:{
+labels:{
+color:"#ffffff"
+}
+}
+},
+scales:{
+x:{
+ticks:{
+color:"#ffffff"
+},
+grid:{
+color:"#333"
+}
+},
+y:{
+ticks:{
+color:"#ffffff"
+},
+grid:{
+color:"#333"
+}
+}
+}
+}
+});
+</script>
+
+</div>
 
 <script>
     const sidebar = document.querySelector(".sidebar");
