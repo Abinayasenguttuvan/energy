@@ -9886,7 +9886,7 @@ reCtaObserver.observe(
             </a>
 
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, rerum!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, rerum Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aliquam!
             </p>
 
             <div class="rstfooter-social">
@@ -9901,21 +9901,54 @@ reCtaObserver.observe(
         <div class="rstfooter-col">
             <h3>Working Hours</h3>
 
+            <div class="rstfooter-hours-heading">
+            
+                <span>Day</span>
+            
+                <span>Timing</span>
+            
+            </div>
+            
             <ul class="rstfooter-hours">
-                <li><span>Mon - Fri</span><span>09:00 - 22:00</span></li>
-                <li><span>Saturday</span><span>11:00 - 00:00</span></li>
-                <li><span>Sunday</span><span>11:00 - 23:00</span></li>
-                <li><span>Happy Hour</span><span>17:00 - 21:00</span></li>
+            
+                <li>
+                    <span>Mon - Fri</span>
+                    <span>09:00 - 22:00</span>
+                </li>
+            
+                <li>
+                    <span>Saturday</span>
+                    <span>11:00 - 00:00</span>
+                </li>
+            
+                <li>
+                    <span>Sunday</span>
+                    <span>11:00 - 23:00</span>
+                </li>
+            
+                <li>
+                    <span>Happy Hour</span>
+                    <span>17:00 - 21:00</span>
+                </li>
+            
             </ul>
         </div>
 
         <!-- Column 3 -->
         <div class="rstfooter-col">
-            <h3>Contact Us</h3>
 
-            <p><i class="fas fa-map-marker-alt"></i> Salem Tamil Nadu</p>
+            <h3>Get in Touch</h3>
+        
+            <p><i class="fas fa-map-marker-alt"></i> Salem, Tamil Nadu</p>
+        
             <p><i class="fas fa-phone"></i> +91 9876543210</p>
-            <p><i class="fas fa-envelope"></i> booking@thestackly.com</p>
+        
+            <p><i class="fas fa-envelope"></i> contact@stacklyenergy.com</p>
+        
+            <p><i class="fas fa-clock"></i> Energy source business</p>
+        
+            <p><i class="fas fa-headset"></i> 24/7 Customer Support</p>
+        
         </div>
 
         <!-- Column 4 -->
@@ -9939,149 +9972,545 @@ reCtaObserver.observe(
 
 </footer>
 
+
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    /*==================================
+CONTACT US
+==================================*/
+
+.rstfooter-col p{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:12px;
+
+margin-bottom:16px;
+
+color:#cfcfcf;
+
+font-size:15px;
+
+line-height:1.8;
+
 }
 
-.rstfooter-section{
-    background:#111;
-    color:white;
-    padding:70px 20px;
+.rstfooter-col p:last-child{
+
+margin-bottom:0;
+
 }
 
-.rstfooter-container{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:40px;
-    align-items:start;
+.rstfooter-col p i{
+
+width:22px;
+
+min-width:22px;
+
+margin-top:3px;
+
+color:#00ff88;
+
+font-size:16px;
+
+text-align:center;
+
 }
+
+/* Hover Effect */
+
+.rstfooter-col p:hover{
+
+color:#ffffff;
+
+transition:.3s;
+
+}
+
+.rstfooter-col p:hover i{
+
+transform:scale(1.1);
+
+transition:.3s;
+
+}
+
+/*==========================
+Laptop
+==========================*/
+
+@media(max-width:1200px){
+
+.rstfooter-col p{
+
+font-size:15px;
+
+}
+
+}
+
+/*==========================
+Tablet
+==========================*/
+
+@media(max-width:768px){
 
 .rstfooter-col{
-    display:flex;
-    flex-direction:column;
-    height:100%;
-}
 
-.rstfooter-col h3{
-    margin-bottom:25px;
-    color:#00ff88;
-    min-height:40px; /* makes all headings align */
-    display:flex;
-    align-items:center;
+text-align:left;
+
 }
 
 .rstfooter-col p{
-    color:#bbb;
-    line-height:1.8;
-    margin-bottom:15px;
+
+font-size:14px;
+
+margin-bottom:14px;
+
+gap:10px;
+
 }
 
-.rstfooter-logo img{
-    width:160px;
-    margin-bottom:20px;
-    cursor:pointer;
+.rstfooter-col p i{
+
+width:20px;
+
+min-width:20px;
+
+font-size:15px;
+
 }
 
-.rstfooter-social{
-    display:flex;
-    gap:15px;
-    margin-top:10px;
 }
 
-.rstfooter-social a{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#222;
-    color:white;
-    text-decoration:none;
-    transition:.4s;
+/*==========================
+Mobile
+==========================*/
+
+@media(max-width:480px){
+
+.rstfooter-col p{
+
+font-size:14px;
+
+line-height:1.7;
+
+gap:8px;
+
 }
 
-.rstfooter-social a:hover{
-    background:#00ff88;
-    color:black;
+.rstfooter-col p i{
+
+width:18px;
+
+min-width:18px;
+
+font-size:14px;
+
 }
 
-.rstfooter-hours{
-    list-style:none;
-    padding:0;
 }
-
-.rstfooter-hours li{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:15px;
-    color:#bbb;
-    gap:20px;
-}
-
-#rstfooterForm{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-#rstfooterForm input{
-    padding:14px;
-    border:none;
-    border-radius:8px;
-    outline:none;
-}
-
-#rstfooterForm button{
-    padding:14px;
-    border:none;
-    background:#123e29;
-    color:white;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:700;
-}
-
-#rstfooterMsg{
-    display:block;
-    margin-top:10px;
-    color:#00ff88;
-}
-
-.rstfooter-bottom{
-    text-align:center;
-    border-top:1px solid #333;
-    margin-top:50px;
-    padding-top:20px;
-    color:#999;
-}
-
-/* Tablet */
-@media(max-width:992px){
-    .rstfooter-container{
-        grid-template-columns:repeat(2,1fr);
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
     }
-}
-
-/* Mobile */
-@media(max-width:768px){
-    .rstfooter-container{
-        grid-template-columns:1fr;
+    
+    .rstfooter-section{
+    
+        background:#111;
+        color:#fff;
+        padding:70px 25px 30px;
+    
     }
-
-    .rstfooter-hours li{
+    
+    .rstfooter-container{
+    
+        max-width:1300px;
+        margin:auto;
+    
+        display:grid;
+        grid-template-columns:repeat(4,minmax(220px,1fr));
+    
+        gap:40px;
+    
+        align-items:flex-start;
+    
+    }
+    
+    .rstfooter-col{
+    
+        display:flex;
         flex-direction:column;
-        gap:5px;
+    
+        height:100%;
+    
     }
-
+    
+    .rstfooter-logo{
+    
+        display:inline-block;
+        margin-bottom:18px;
+    
+    }
+    
+    .rstfooter-logo img{
+    
+        width:170px;
+        height:auto;
+        display:block;
+    
+    }
+    
     .rstfooter-col h3{
-        min-height:auto;
+    
+        color:#00ff88;
+    
+        font-size:22px;
+    
+        margin-bottom:20px;
+    
+        min-height:40px;
+    
+        display:flex;
+        align-items:center;
+    
     }
-}
-</style>
+    
+    .rstfooter-col p{
+    
+        color:#cfcfcf;
+    
+        line-height:1.8;
+    
+        margin-bottom:16px;
+    
+    }
+    
+    /*==========================
+    Social Icons
+    ==========================*/
+    
+    .rstfooter-social{
+    
+        display:flex;
+    
+        gap:15px;
+    
+        margin-top:auto;
+    
+        padding-top:10px;
+    
+    }
+    
+    .rstfooter-social a{
+    
+        width:45px;
+        height:45px;
+    
+        border-radius:50%;
+    
+        display:flex;
+    
+        justify-content:center;
+        align-items:center;
+    
+        text-decoration:none;
+    
+        background:#1f1f1f;
+    
+        color:#fff;
+    
+        transition:.3s;
+    
+    }
+    
+    .rstfooter-social a:hover{
+    
+        background:#00ff88;
+    
+        color:#111;
+    
+        transform:translateY(-4px);
+    
+    }
+    
+    /*==========================
+    Working Hours
+    ==========================*/
+    
+    .rstfooter-hours{
+    
+        list-style:none;
+    
+    }
+    
+    .rstfooter-hours-heading{
+    
+        display:flex;
+    
+        justify-content:space-between;
+    
+        color:#00ff88;
+    
+        font-weight:700;
+    
+        margin-bottom:15px;
+    
+        padding-bottom:10px;
+    
+        border-bottom:1px solid #333;
+    
+    }
+    
+    .rstfooter-hours li{
+    
+        display:flex;
+    
+        justify-content:space-between;
+    
+        align-items:center;
+    
+        gap:30px;
+    
+        padding:12px 0;
+    
+        border-bottom:1px solid #2d2d2d;
+    
+        color:#d5d5d5;
+    
+    }
+    
+    .rstfooter-hours li:last-child{
+    
+        border-bottom:none;
+    
+    }
+    
+    /*==========================
+    Contact
+    ==========================*/
+    
+    .rstfooter-col p i{
+    
+        width:24px;
+    
+        color:#00ff88;
+    
+    }
+    
+    /*==========================
+    Newsletter
+    ==========================*/
+    
+    #rstfooterForm{
+    
+        display:flex;
+    
+        flex-direction:column;
+    
+        gap:15px;
+    
+    }
+    
+    #rstfooterForm input{
+    
+        padding:14px;
+    
+        border:none;
+    
+        border-radius:8px;
+    
+        outline:none;
+    
+        font-size:15px;
+    
+    }
+    
+    #rstfooterForm button{
+    
+        padding:14px;
+    
+        border:none;
+    
+        border-radius:8px;
+    
+        background:#00b86b;
+    
+        color:#fff;
+    
+        font-weight:700;
+    
+        cursor:pointer;
+    
+        transition:.3s;
+    
+    }
+    
+    #rstfooterForm button:hover{
+    
+        background:#00ff88;
+    
+        color:#111;
+    
+    }
+    
+    #rstfooterMsg{
+    
+        display:block;
+    
+        margin-top:10px;
+    
+        color:#00ff88;
+    
+    }
+    
+    /*==========================
+    Bottom
+    ==========================*/
+    
+    .rstfooter-bottom{
+    
+        border-top:1px solid #2e2e2e;
+    
+        margin-top:45px;
+    
+        padding-top:22px;
+    
+        text-align:center;
+    
+        color:#9c9c9c;
+    
+    }
+    
+    /*==========================
+    Laptop
+    ==========================*/
+    
+    @media (max-width:1200px){
+    
+    .rstfooter-container{
+    
+    grid-template-columns:repeat(2,1fr);
+    
+    gap:35px;
+    
+    }
+    
+    }
+    
+    /*==========================
+    Tablet
+    ==========================*/
+    
+    @media (max-width:768px){
+    
+    .rstfooter-section{
+    
+    padding:50px 20px 25px;
+    
+    }
+    
+    .rstfooter-container{
+    
+    grid-template-columns:1fr;
+    
+    gap:30px;
+    
+    }
+    
+    .rstfooter-col{
+    
+    text-align:left;
+    
+    }
+    
+    .rstfooter-col h3{
+    
+    min-height:auto;
+    
+    margin-bottom:15px;
+    
+    }
+    
+    .rstfooter-hours-heading{
+    
+    font-size:15px;
+    
+    }
+    
+    .rstfooter-hours li{
+    
+    padding:10px 0;
+    
+    }
+    
+    .rstfooter-social{
+    
+    margin-top:15px;
+    
+    }
+    
+    }
+    
+    /*==========================
+    Mobile
+    ==========================*/
+    
+    @media (max-width:480px){
+    
+    .rstfooter-section{
+    
+    padding:40px 15px 20px;
+    
+    }
+    
+    .rstfooter-logo img{
+    
+    width:150px;
+    
+    }
+    
+    .rstfooter-col h3{
+    
+    font-size:20px;
+    
+    }
+    
+    .rstfooter-hours-heading{
+    
+    font-size:14px;
+    
+    }
+    
+    .rstfooter-hours li{
+    
+    font-size:14px;
+    
+    gap:15px;
+    
+    }
+    
+    #rstfooterForm input,
+    
+    #rstfooterForm button{
+    
+    padding:12px;
+    
+    }
+    
+    .rstfooter-social a{
+    
+    width:40px;
+    
+    height:40px;
+    
+    }
+    
+    }
+    </style>
+    
 
 <script>
 document.getElementById("rstfooterForm").addEventListener("submit", function(e){
